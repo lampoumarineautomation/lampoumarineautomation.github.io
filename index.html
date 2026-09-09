@@ -3,154 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lampou Marine Automation Systems</title>
+    <title>Lampou Marine Automation Systems | Συστήματα Αυτοματισμού & Επιτήρησης Σκαφών</title>
+    <meta name="description" content="Εξειδικευμένες λύσεις ναυτικών αυτοματισμών, ηλεκτρολογικών εγκαταστάσεων και συστημάτων επιτήρησης σκαφών αναψυχής στη Λαμία και όλη την Ελλάδα.">
     <style>
+        :root {
+            --primary-color: #0b2545;
+            --secondary-color: #134074;
+            --accent-color: #00a8e8;
+            --text-color: #1d2d44;
+            --bg-color: #f4f6f9;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            position: relative;
+            min-height: 100vh;
         }
+
+        /* Φόντο Υδατογράφημα με το Λογότυπο */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('image_11.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: min(80vw, 500px);
+            opacity: 0.07; /* Αχνό εφέ φόντου */
+            z-index: -1;
+            pointer-events: none;
+        }
+
         header {
-            background: linear-gradient(135deg, #002b49, #005b94);
-            color: #fff;
-            padding: 3rem 1rem;
+            background-color: rgba(11, 37, 69, 0.95);
+            color: white;
             text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
+
+        .logo-container {
+            margin-bottom: 1rem;
+        }
+
+        .logo-img {
+            max-width: 140px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background: #ffffff;
+            padding: 5px;
+        }
+
         header h1 {
             font-size: 2.2rem;
+            letter-spacing: 1px;
             margin-bottom: 0.5rem;
+            color: #ffffff;
         }
+
         header p {
             font-size: 1.1rem;
-            opacity: 0.9;
+            color: var(--accent-color);
+            font-weight: 500;
         }
+
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 0 1.5rem;
         }
-        .hero-img {
-            width: 100%;
-            max-height: 380px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            margin-bottom: 2rem;
-        }
-        .section {
-            background: #fff;
+
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 12px;
             padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--accent-color);
+            backdrop-filter: blur(5px);
         }
-        .section h2 {
-            color: #002b49;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #005b94;
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #e0e0e0;
             padding-bottom: 0.5rem;
         }
-        .services-list {
-            list-style-type: none;
+
+        ul {
+            list-style: none;
         }
-        .services-list li {
-            padding: 0.6rem 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
+
+        ul li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
         }
-        .services-list li::before {
+
+        ul li::before {
             content: "✓";
-            color: #005b94;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
             font-weight: bold;
-            margin-right: 0.8rem;
+            font-size: 1.2rem;
         }
-        .services-list li:last-child {
-            border-bottom: none;
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
         }
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            margin-top: 1rem;
-        }
-        .contact-btn {
-            display: inline-block;
-            padding: 0.8rem 1.2rem;
-            background-color: #005b94;
-            color: #fff;
+
+        .contact-info a {
+            color: var(--secondary-color);
             text-decoration: none;
-            border-radius: 6px;
             font-weight: bold;
-            text-align: center;
-            transition: background 0.2s ease;
         }
-        .contact-btn:hover {
-            background-color: #002b49;
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
         }
-        .contact-btn.whatsapp {
-            background-color: #25D366;
+
+        .btn-call {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 168, 232, 0.3);
+            transition: background 0.3s ease;
         }
-        .contact-btn.viber {
-            background-color: #7360F2;
+
+        .btn-call:hover {
+            background-color: #0080b3;
         }
+
         footer {
             text-align: center;
             padding: 1.5rem;
-            background: #002b49;
-            color: #fff;
-            margin-top: 3rem;
+            background-color: var(--primary-color);
+            color: #ffffff;
             font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+            .card {
+                padding: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Lampou Marine Automation Systems</h1>
-        <p>Εξειδικευμένες Λύσεις Ηλεκτρολογικών & Αυτοματισμών Σκαφών</p>
+        <div class="logo-container">
+            <img src="image_11.png" alt="Lampou Marine Automation Systems Logo" class="logo-img">
+        </div>
+        <h1>LAMPOU MARINE AUTOMATION SYSTEMS</h1>
+        <p>Εξειδικευμένα Συστήματα Αυτοματισμού & Επιτήρησης Σκαφών</p>
     </header>
 
     <div class="container">
-        <img class="hero-img" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" alt="Marine Automation & Industrial Electronics">
 
-        <div class="section">
+        <section class="card">
             <h2>Σχετικά με Εμάς</h2>
-            <p>Η <strong>Lampou Marine Automation Systems</strong> παρέχει ολοκληρωμένες υπηρεσίες σχεδιασμού, εγκατάστασης και συντήρησης ηλεκτρολογικών συστημάτων και βιομηχανικών αυτοματισμών για σκάφη θαλάσσης.</p>
-        </div>
+            <p>Η <strong>Lampou Marine Automation Systems</strong> παρέχει προηγμένες τεχνολογικές λύσεις για τη διαχείριση, την επιτήρηση και τον αυτοματισμό θαλάσσιων σκαφών. Με έμφαση στην αξιοπιστία, την ασφάλεια και την καινοτομία, σχεδιάζουμε εξειδικευμένα συστήματα προσαρμοσμένα στις ανάγκες κάθε σκάφους.</p>
+        </section>
 
-        <div class="section">
-            <h2>Υπηρεσίες & Συστήματα Αυτοματισμού</h2>
-            <ul class="services-list">
-                <li>Συστήματα Αυτοματισμού & Ελέγχου Σκαφών με PLC (Siemens LOGO!)</li>
-                <li>Έλεγχος & Παρακολούθηση Στάθμης Δεξαμενών (Καύσιμα, Νερό)</li>
-                <li>Συστήματα Συναγερμού & Ειδοποιήσεων (Ανιχνευτές Καπνού, Θερμοκρασίας, LPG, Φλοτέρ)</li>
-                <li>Ηλεκτρολογικές Επισκευές & Αναβαθμίσεις Εξωλέμβιων Μηχανών</li>
-                <li>Εξειδικευμένες Ηλεκτρονικές & Ηλεκτρολογικές Εγκαταστάσεις Σκαφών</li>
+        <section class="card">
+            <h2>Οι Υπηρεσίες μας</h2>
+            <ul>
+                <li><strong>Συστήματα Επιτήρησης Σκάφους:</strong> Παρακολούθηση παραμέτρων (θερμοκρασίες, στάθμη υδάτων, καύσιμα, μπαταρίες).</li>
+                <li><strong>Αυτοματισμοί LOGO! & PLC:</strong> Σχεδιασμός και προγραμματισμός βιομηχανικών/ναυτικών PLC για αυτόματο έλεγχο αντλιών, φωτισμού και ασφάλειας.</li>
+                <li><strong>Ηλεκτρολογικές Εγκαταστάσεις Σκαφών:</strong> Αναβαθμίσεις, επιδιορθώσεις και συντήρηση ηλεκτρολογικών κυκλωμάτων.</li>
+                <li><strong>Συστήματα Ειδοποίησης & Ασφάλειας:</strong> Ειδοποιήσεις συναγερμών, ανίχνευση καπνού/LPG και απομακρυσμένη πρόσβαση.</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
+        <section class="card">
             <h2>Επικοινωνία</h2>
-            <p>Για πληροφορίες, τεχνική υποστήριξη και μελέτη εγκατάστασης στο σκάφος σας, επικοινωνήστε μαζί μας:</p>
-            
             <div class="contact-info">
-                <a class="contact-btn" href="tel:+306932942432">📞 Τηλέφωνο: +30 693 294 2432</a>
-                <a class="contact-btn whatsapp" href="https://wa.me/306932942432" target="_blank">💬 WhatsApp: +30 693 294 2432</a>
-                <a class="contact-btn viber" href="viber://chat?number=%2B306932942432" target="_blank">📱 Viber: +30 693 294 2432</a>
-                <a class="contact-btn" href="mailto:peterlampou@hotmail.com">✉️ Email: peterlampou@hotmail.com</a>
+                <p><strong>Υπεύθυνος:</strong> Πέτρος Λάμπου</p>
+                <p><strong>Περιοχή:</strong> Λαμία & Κεντρική Ελλάδα (Εξυπηρέτηση Πανελλαδικά)</p>
+                <p><strong>Email:</strong> <a href="mailto:lampoumarineautomation@gmail.com">lampoumarineautomation@gmail.com</a></p>
+                <a href="mailto:lampoumarineautomation@gmail.com" class="btn-call">Στείλτε μας Email</a>
             </div>
-        </div>
+        </section>
+
     </div>
 
     <footer>
-        <p>&copy; Lampou Marine Automation Systems. All rights reserved.</p>
+        <p>&copy; 2026 Lampou Marine Automation Systems. All Rights Reserved.</p>
     </footer>
 
 </body>
