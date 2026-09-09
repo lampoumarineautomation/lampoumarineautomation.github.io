@@ -12,6 +12,8 @@
             --accent-color: #00a8e8;
             --text-color: #1d2d44;
             --bg-color: #f4f6f9;
+            --whatsapp-color: #25D366;
+            --viber-color: #7360F2;
         }
 
         * {
@@ -41,7 +43,7 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: min(80vw, 500px);
-            opacity: 0.07; /* Αχνό εφέ φόντου */
+            opacity: 0.08; /* Αχνό εφέ φόντου */
             z-index: -1;
             pointer-events: none;
         }
@@ -135,27 +137,32 @@
             font-weight: bold;
         }
 
-        .contact-info a:hover {
-            color: var(--accent-color);
-            text-decoration: underline;
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1.2rem;
         }
 
-        .btn-call {
+        .btn-action {
             display: inline-block;
-            background-color: var(--accent-color);
             color: white;
-            padding: 0.8rem 1.8rem;
+            padding: 0.8rem 1.4rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 1rem;
-            box-shadow: 0 4px 10px rgba(0, 168, 232, 0.3);
-            transition: background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: opacity 0.3s ease;
         }
 
-        .btn-call:hover {
-            background-color: #0080b3;
+        .btn-action:hover {
+            opacity: 0.9;
         }
+
+        .btn-call { background-color: var(--accent-color); }
+        .btn-viber { background-color: var(--viber-color); }
+        .btn-whatsapp { background-color: var(--whatsapp-color); }
+        .btn-email { background-color: var(--primary-color); }
 
         footer {
             text-align: center;
@@ -172,6 +179,12 @@
             }
             .card {
                 padding: 1.2rem;
+            }
+            .contact-buttons {
+                flex-direction: column;
+            }
+            .btn-action {
+                text-align: center;
             }
         }
     </style>
@@ -208,8 +221,15 @@
             <div class="contact-info">
                 <p><strong>Υπεύθυνος:</strong> Πέτρος Λάμπου</p>
                 <p><strong>Περιοχή:</strong> Λαμία & Κεντρική Ελλάδα (Εξυπηρέτηση Πανελλαδικά)</p>
-                <p><strong>Email:</strong> <a href="mailto:lampoumarineautomation@gmail.com">lampoumarineautomation@gmail.com</a></p>
-                <a href="mailto:lampoumarineautomation@gmail.com" class="btn-call">Στείλτε μας Email</a>
+                <p><strong>Τηλέφωνο:</strong> <a href="tel:+306932942432">+30 693 294 2432</a></p>
+                <p><strong>Email:</strong> <a href="mailto:peterlampou@hotmail.com">peterlampou@hotmail.com</a></p>
+                
+                <div class="contact-buttons">
+                    <a href="tel:+306932942432" class="btn-action btn-call">📞 Κλήση</a>
+                    <a href="viber://chat?number=%2B306932942432" class="btn-action btn-viber">💬 Viber</a>
+                    <a href="https://wa.me/306932942432" class="btn-action btn-whatsapp">💬 WhatsApp</a>
+                    <a href="mailto:peterlampou@hotmail.com" class="btn-action btn-email">✉️ Email</a>
+                </div>
             </div>
         </section>
 
