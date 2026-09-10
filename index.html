@@ -221,6 +221,22 @@
             margin-top: 3rem;
         }
 
+        .counter-box {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            opacity: 0.95;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         @media (max-width: 600px) {
             header h1 {
                 font-size: 1.6rem;
@@ -314,6 +330,14 @@
 
     <footer>
         <p>&copy; 2026 Lampou Marine Automation Systems. All Rights Reserved.</p>
+        
+        <!-- Μετρητής Επισκεπτών -->
+        <div class="counter-box">
+            <span id="counter-label">👁️ Επισκέπτες:</span>
+            <a href="https://www.freecounterstat.com" title="free counter">
+                <img src="https://counter6.optistats.ovh/private/freecounterstat.php?tp=0&digit=a001&id=1" border="0" alt="free counter" style="vertical-align: middle;">
+            </a>
+        </div>
     </footer>
 
     <!-- Script Μετάφρασης -->
@@ -346,7 +370,8 @@
                 lblLocation: "Περιοχή:",
                 txtLocation: "Λαμία & Κεντρική Ελλάδα (Εξυπηρέτηση Πανελλαδικά)",
                 lblPhone: "Τηλέφωνο:",
-                btnCall: "📞 Κλήση"
+                btnCall: "📞 Κλήση",
+                counterLabel: "👁️ Επισκέπτες:"
             },
             en: {
                 subtitle: "Specialized Automation & Monitoring Systems (Marine, Industrial, Domestic)",
@@ -375,7 +400,8 @@
                 lblLocation: "Location:",
                 txtLocation: "Lamia & Central Greece (Nationwide Service)",
                 lblPhone: "Phone:",
-                btnCall: "📞 Call"
+                btnCall: "📞 Call",
+                counterLabel: "👁️ Visitors:"
             },
             fr: {
                 subtitle: "Systèmes d'Automatisme et de Surveillance (Marine, Industrie, Domotique)",
@@ -404,7 +430,8 @@
                 lblLocation: "Zone d'action :",
                 txtLocation: "Lamie & Grèce Centrale (Service dans toute la Grèce)",
                 lblPhone: "Téléphone :",
-                btnCall: "📞 Appeler"
+                btnCall: "📞 Appeler",
+                counterLabel: "👁️ Visiteurs :"
             },
             de: {
                 subtitle: "Automatisierungs- & Überwachungssysteme (Marine, Industrie, Haushalt)",
@@ -433,7 +460,8 @@
                 lblLocation: "Standort:",
                 txtLocation: "Lamia & Zentralgriechenland (Landesweiter Service)",
                 lblPhone: "Telefon:",
-                btnCall: "📞 Anrufen"
+                btnCall: "📞 Anrufen",
+                counterLabel: "👁️ Besucher:"
             }
         };
 
@@ -464,6 +492,7 @@
             document.getElementById('lbl-location').nextSibling.textContent = " " + t.txtLocation;
             document.getElementById('lbl-phone').innerText = t.lblPhone;
             document.getElementById('btn-call').innerText = t.btnCall;
+            document.getElementById('counter-label').innerText = t.counterLabel;
         }
     </script>
 
