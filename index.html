@@ -32,6 +32,27 @@
             background-color: var(--light-bg);
             color: var(--text-color);
             line-height: 1.6;
+            position: relative;
+        }
+
+        /* Φόντο με Υδατογράφημα Λογότυπου σε όλη τη σελίδα */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70vw;
+            max-width: 600px;
+            height: 70vw;
+            max-height: 600px;
+            background-image: url('logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.05; /* Πολύ απαλή διαφάνεια για να μη δυσκολεύει την ανάγνωση */
+            z-index: -1;
+            pointer-events: none;
         }
 
         /* Sticky Navigation Bar */
@@ -48,11 +69,23 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        .nav-logo {
+        .nav-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-logo-text {
             color: var(--accent-color);
             font-size: 1.2rem;
             font-weight: bold;
-            text-decoration: none;
             letter-spacing: 0.5px;
         }
 
@@ -123,7 +156,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(10, 25, 47, 0.88), rgba(10, 25, 47, 0.88)), url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             color: var(--white);
             padding: 80px 20px;
             text-align: center;
@@ -170,7 +203,8 @@
         }
 
         .card {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.92); /* Ελαφρώς διαφανές για να αχνοφαίνεται το watermark */
+            backdrop-filter: blur(4px);
             padding: 25px 20px;
             border-radius: 10px;
             box-shadow: var(--card-shadow);
@@ -204,7 +238,8 @@
 
         /* About Section */
         .about-box {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(4px);
             padding: 35px 25px;
             border-radius: 10px;
             box-shadow: var(--card-shadow);
@@ -219,7 +254,8 @@
 
         /* Contact Section */
         .contact-section {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(4px);
             padding: 40px 20px;
             border-radius: 12px;
             text-align: center;
@@ -325,6 +361,11 @@
             .lang-switcher {
                 margin-left: 0;
             }
+
+            body::before {
+                width: 85vw;
+                height: 85vw;
+            }
         }
     </style>
 </head>
@@ -332,7 +373,10 @@
 
     <!-- Sticky Navigation Bar -->
     <nav class="navbar">
-        <a href="#home" class="nav-logo">Lampou Marine</a>
+        <a href="#home" class="nav-logo-container">
+            <img src="logo.png" alt="Lampou Marine Logo" class="nav-logo-img">
+            <span class="nav-logo-text">Lampou Marine</span>
+        </a>
         
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
