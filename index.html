@@ -25,6 +25,7 @@
             --header: 76px;
             --alarm-red: #ff3b30;
             --alarm-green: #34c759;
+            --alarm-yellow: #f39c12;
         }
 
         *{box-sizing:border-box;margin:0;padding:0}
@@ -85,10 +86,13 @@
         .btn-outline{border-color:rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.06)}
         .btn-outline:hover{border-color:var(--cyan2);color:var(--cyan2);transform:translateY(-2px)}
 
-        /* LOGO SIMULATOR SECTION (LIVE DEMO) */
+        /* SIMULATORS SECTION */
         .simulator-section{background:#040e1b;padding:80px 0;color:#fff;border-top:1px solid rgba(19,198,232,0.2);border-bottom:1px solid rgba(19,198,232,0.2)}
+        .simulations-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+        @media(max-width:1050px){.simulations-grid{grid-template-columns:1fr}}
+
         .logo-device{
-            max-width:700px;margin:0 auto;background:#111c2e;border:4px solid #22344f;
+            background:#111c2e;border:4px solid #22344f;
             border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.6);overflow:hidden;font-family:monospace;
         }
         .logo-screen-header{
@@ -96,28 +100,55 @@
             border-bottom:2px solid #22344f;font-size:0.85rem;color:var(--cyan2);
         }
         .logo-lcd{
-            background:#98c379;color:#112211;margin:25px;padding:20px;border-radius:6px;
+            background:#98c379;color:#112211;margin:20px;padding:18px;border-radius:6px;
             min-height:210px;box-shadow:inset 0 4px 10px rgba(0,0,0,0.3);font-family:Courier New, monospace;
         }
-        .lcd-title{font-weight:bold;font-size:1.1rem;border-bottom:2px solid #112211;padding-bottom:6px;margin-bottom:12px;display:flex;justify-content:space-between;}
-        .alarm-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:0.95rem;font-weight:bold;}
-        .badge-ok{background:#28a745;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;}
-        .badge-alert{background:#dc3545;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.8rem;animation:blink 1s infinite;}
+        .lcd-title{font-weight:bold;font-size:1.05rem;border-bottom:2px solid #112211;padding-bottom:6px;margin-bottom:10px;display:flex;justify-content:space-between;}
+        .alarm-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:0.9rem;font-weight:bold;}
+        .badge-ok{background:#28a745;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;}
+        .badge-alert{background:#dc3545;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;animation:blink 1s infinite;}
         @keyframes blink{0%{opacity:1;}50%{opacity:0.4;}100%{opacity:1;}}
 
-        .logo-controls{padding:0 25px 25px 25px;display:flex;flex-direction:column;gap:15px;}
-        .control-panel-row{display:flex;justify-content:space-between;align-items:center;background:#1a283f;padding:12px 18px;border-radius:10px;}
-        .control-label{font-size:0.9rem;color:#cbd5e1;font-family:Segoe UI, sans-serif;}
-        .switch {position: relative; display: inline-block; width: 50px; height: 26px;}
+        .logo-controls{padding:0 20px 20px 20px;display:flex;flex-direction:column;gap:12px;}
+        .control-panel-row{display:flex;justify-content:space-between;align-items:center;background:#1a283f;padding:10px 15px;border-radius:10px;}
+        .control-label{font-size:0.85rem;color:#cbd5e1;font-family:Segoe UI, sans-serif;}
+        .switch {position: relative; display: inline-block; width: 44px; height: 24px;}
         .switch input {opacity: 0; width: 0; height: 0;}
-        .slider {position: absolute; cursor: pointer; inset: 0; background-color: #334155; transition: .3s; border-radius: 26px;}
-        .slider:before {position: absolute; content: ""; height: 20px; width: 20px; left: 3px; bottom: 3px; background-color: white; transition: .3s; border-radius: 50%;}
+        .slider {position: absolute; cursor: pointer; inset: 0; background-color: #334155; transition: .3s; border-radius: 24px;}
+        .slider:before {position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .3s; border-radius: 50%;}
         input:checked + .slider {background-color: var(--cyan);}
-        input:checked + .slider:before {transform: translateX(24px);}
+        input:checked + .slider:before {transform: translateX(20px);}
         
-        .sim-btn-group{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
-        .sim-btn{background:#22344f;color:#fff;border:1px solid var(--cyan);padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:bold;font-family:Segoe UI,sans-serif;transition:0.2s;}
+        .sim-btn-group{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:5px;}
+        .sim-btn{background:#22344f;color:#fff;border:1px solid var(--cyan);padding:7px 14px;border-radius:6px;cursor:pointer;font-weight:bold;font-family:Segoe UI,sans-serif;transition:0.2s;font-size:0.85rem;}
         .sim-btn:hover{background:var(--cyan);color:var(--navy);}
+
+        /* TANK & ONLINE EDITOR STYLES */
+        .tank-visual-container{
+            background:#111c2e;border:4px solid #22344f;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.6);
+            padding:20px;color:#fff;display:flex;flex-direction:column;gap:18px;
+        }
+        .tank-display-box{
+            display:flex;gap:20px;background:#081322;padding:15px;border-radius:12px;border:2px solid #22344f;align-items:center;
+        }
+        .tank-graphic{
+            width:90px;height:180px;border:3px solid #75e8fa;border-radius:0 0 12px 12px;position:relative;overflow:hidden;background:#030b14;
+        }
+        .tank-water{
+            position:absolute;bottom:0;width:100%;height:50%;background:linear-gradient(180deg,#13c6e8,#087ea4);transition:height 0.3s ease, background 0.3s ease;
+        }
+        .tank-info{flex-grow:1;display:flex;flex-direction:column;gap:8px;font-family:monospace;}
+        .valve-slider-group{background:#1a283f;padding:12px;border-radius:10px;display:flex;flex-direction:column;gap:8px;}
+        .valve-slider-group input[type=range]{width:100%;cursor:pointer;accent-color:var(--cyan);}
+        
+        .online-editor-box{
+            background:#081322;border:2px dashed var(--cyan);padding:15px;border-radius:10px;font-family:monospace;font-size:0.85rem;
+        }
+        .online-editor-box h4{color:var(--cyan2);margin-bottom:8px;font-family:Segoe UI, sans-serif;font-size:0.95rem;display:flex;justify-content:space-between;align-items:center;}
+        .editor-inputs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;}
+        .editor-field{background:#111c2e;padding:8px;border-radius:6px;display:flex;flex-direction:column;gap:4px;}
+        .editor-field label{font-size:0.75rem;color:#94a3b8;}
+        .editor-field input{background:#040e1b;border:1px solid #334155;color:#fff;padding:5px;border-radius:4px;font-family:monospace;font-weight:bold;width:100%;}
 
         /* GENERAL SECTIONS */
         .container{width:min(1150px,90%);margin:auto}
@@ -237,83 +268,131 @@
                 Εξειδικευμένοι αυτοματισμοί σκαφών, προγραμματισμός PLC Siemens LOGO!, συστήματα τηλεμετρίας, αντλιοστάσια και βιομηχανικός έλεγχος υψηλής αξιοπιστίας.
             </p>
             <div class="hero-actions">
-                <a href="#simulator" class="btn btn-primary">🖥️ Δοκιμή Siemens LOGO! Screen</a>
+                <a href="#simulator" class="btn btn-primary">🖥️ Δοκιμή Siemens LOGO! & Δεξαμενής</a>
                 <a href="#contact" class="btn btn-outline">📩 Επικοινωνία & Προσφορά</a>
             </div>
         </div>
     </section>
 
-    <!-- INTERACTIVE SIEMENS LOGO! MARINE ALARM SIMULATOR -->
+    <!-- INTERACTIVE SIEMENS LOGO! MARINE ALARM & TANK SIMULATOR -->
     <section id="simulator" class="simulator-section">
         <div class="container">
             <div class="section-head" style="margin-bottom: 30px;">
-                <div class="section-kicker">Live Interactive Demo</div>
-                <h2 class="section-title" style="color: #fff;">Siemens LOGO! 8.4 Marine Screen</h2>
-                <p class="section-subtitle" style="color: #94a3b8;">Δοκιμάστε ζωντανά την οθόνη του συστήματος. Ενεργοποιήστε τα αισθητήρια ή πληκτρολογήστε το password για να δείτε το κλείδωμα ασφαλείας.</p>
+                <div class="section-kicker">Live Interactive Process Simulators</div>
+                <h2 class="section-title" style="color: #fff;">Siemens LOGO! 8.4 Online Control Center</h2>
+                <p class="section-subtitle" style="color: #94a3b8;">Δοκιμάστε ζωντανά την οθόνη του συστήματος, τη δεξαμενή με αυτόματο έλεγχο κινητήρα/αντλίας και αλλάξτε παραμέτρους online στον Editor!</p>
             </div>
 
-            <div class="logo-device">
-                <div class="logo-screen-header">
-                    <span>SIEMENS LOGO! 12/24RCE</span>
-                    <span id="sys-status-text" style="color:var(--alarm-green);">SYSTEM SECURED</span>
+            <div class="simulations-grid">
+                <!-- LEFT: LOGO MARINE HMI -->
+                <div class="logo-device">
+                    <div class="logo-screen-header">
+                        <span>SIEMENS LOGO! 12/24RCE</span>
+                        <span id="sys-status-text" style="color:var(--alarm-green);">SYSTEM SECURED</span>
+                    </div>
+
+                    <div class="logo-lcd">
+                        <div class="lcd-title">
+                            <span>LAMPOU MARINE HMI</span>
+                            <span id="lcd-clock">16:51</span>
+                        </div>
+                        <div class="alarm-row">
+                            <span>1. ΣΕΝΤΙΝΑ (Bilge Water):</span>
+                            <span id="status-bilge" class="badge-ok">NORMAL</span>
+                        </div>
+                        <div class="alarm-row">
+                            <span>2. ΑΕΡΙΟ LPG (Gas Detector):</span>
+                            <span id="status-lpg" class="badge-ok">NORMAL</span>
+                        </div>
+                        <div class="alarm-row">
+                            <span>3. ΘΕΡΜΟΚΡΑΣΙΑ ΚΑΜΠΙΝΑΣ:</span>
+                            <span id="val-temp">24.5 °C</span>
+                        </div>
+                        <div class="alarm-row">
+                            <span>4. ΣΤΑΣΗ / FUEL LEVEL:</span>
+                            <span id="val-fuel">85%</span>
+                        </div>
+                        <div class="alarm-row" style="margin-top:10px; border-top:1px dashed #112211; padding-top:6px;">
+                            <span>STATUS LOCK:</span>
+                            <span id="status-lock" style="color:#002200; background:#75e8fa; padding:1px 6px; border-radius:3px;">PASSWORD ACTIVE</span>
+                        </div>
+                    </div>
+
+                    <div class="logo-controls">
+                        <div class="control-panel-row">
+                            <span class="control-label">🔐 Κλείδωμα Πληκτρολογίου & Προγράμματος</span>
+                            <label class="switch">
+                                <input type="checkbox" id="lockToggle" checked onchange="toggleLockState()">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="control-panel-row">
+                            <span class="control-label">💧 Εισροή Νερού Σεντίνας (Simulate Bilge)</span>
+                            <label class="switch">
+                                <input type="checkbox" id="bilgeToggle" onchange="updateSimState()">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="control-panel-row">
+                            <span class="control-label">⚠️ Διαρροή Αερίου LPG (Simulate Gas)</span>
+                            <label class="switch">
+                                <input type="checkbox" id="lpgToggle" onchange="updateSimState()">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="sim-btn-group">
+                            <button class="sim-btn" onclick="resetAlarms()">🔄 Reset Alarms</button>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- LCD DISPLAY -->
-                <div class="logo-lcd">
-                    <div class="lcd-title">
-                        <span>LAMPOU MARINE HMI</span>
-                        <span id="lcd-clock">16:51</span>
-                    </div>
-                    <div class="alarm-row">
-                        <span>1. ΣΕΝΤΙΝΑ (Bilge Water):</span>
-                        <span id="status-bilge" class="badge-ok">NORMAL</span>
-                    </div>
-                    <div class="alarm-row">
-                        <span>2. ΑΕΡΙΟ LPG (Gas Detector):</span>
-                        <span id="status-lpg" class="badge-ok">NORMAL</span>
-                    </div>
-                    <div class="alarm-row">
-                        <span>3. ΘΕΡΜΟΚΡΑΣΙΑ ΚΑΜΠΙΝΑΣ:</span>
-                        <span id="val-temp">24.5 °C</span>
-                    </div>
-                    <div class="alarm-row">
-                        <span>4. ΣΤΑΣΗ / FUEL LEVEL:</span>
-                        <span id="val-fuel">85%</span>
-                    </div>
-                    <div class="alarm-row" style="margin-top:10px; border-top:1px dashed #112211; padding-top:6px;">
-                        <span>STATUS LOCK:</span>
-                        <span id="status-lock" style="color:#002200; background:#75e8fa; padding:1px 6px; border-radius:3px;">PASSWORD ACTIVE</span>
-                    </div>
-                </div>
-
-                <!-- CONTROLS & SWITCHES -->
-                <div class="logo-controls">
-                    <div class="control-panel-row">
-                        <span class="control-label">🔐 Κλείδωμα Πληκτρολογίου & Προγράμματος (Password Lock)</span>
-                        <label class="switch">
-                            <input type="checkbox" id="lockToggle" checked onchange="toggleLockState()">
-                            <span class="slider"></span>
-                        </label>
+                <!-- RIGHT: TANK & MOTOR SIMULATOR + ONLINE EDITOR -->
+                <div class="tank-visual-container">
+                    <div style="font-size:1.1rem; font-weight:bold; color:var(--cyan2); border-bottom:1px solid #22344f; padding-bottom:8px; display:flex; justify-content:space-between; align-items:center;">
+                        <span>💧 Προσομοιωτής Δεξαμενής & Κινητήρα</span>
+                        <span id="motor-badge" class="badge-ok" style="font-size:0.8rem;">MOTOR OFF</span>
                     </div>
 
-                    <div class="control-panel-row">
-                        <span class="control-label">💧 Εισροή Νερού Σεντίνας (Simulate Bilge Alarm)</span>
-                        <label class="switch">
-                            <input type="checkbox" id="bilgeToggle" onchange="updateSimState()">
-                            <span class="slider"></span>
-                        </label>
+                    <!-- Tank Visual & Readings -->
+                    <div class="tank-display-box">
+                        <div class="tank-graphic">
+                            <div id="tankWaterFill" class="tank-water"></div>
+                        </div>
+                        <div class="tank-info">
+                            <div><strong>Στάθμη Δεξαμενής:</strong> <span id="tankLevelText" style="color:var(--cyan);">50%</span></div>
+                            <div><strong>Αναλογική Βαλβίδα (0-100%):</strong> <span id="valveFlowText">40%</span></div>
+                            <div><strong>Κατάσταση Κινητήρα:</strong> <span id="motorStateText" style="color:#94a3b8; font-weight:bold;">STOPPED</span></div>
+                            <div><strong>Χρωματική Ένδειξη:</strong> <span id="tankStatusColorText" style="color:var(--alarm-green);">NORMAL LEVEL</span></div>
+                        </div>
                     </div>
 
-                    <div class="control-panel-row">
-                        <span class="control-label">⚠️ Διαρροή Αερίου LPG (Simulate Gas Detector)</span>
-                        <label class="switch">
-                            <input type="checkbox" id="lpgToggle" onchange="updateSimState()">
-                            <span class="slider"></span>
-                        </label>
+                    <!-- Valve Control Slider -->
+                    <div class="valve-slider-group">
+                        <span style="font-size:0.85rem; color:#cbd5e1; font-weight:bold;">🚰 Ρύθμιση Αναλογικής Βαλβίδας Εισόδου Νερού (0 - 100%)</span>
+                        <input type="range" id="valveSlider" min="0" max="100" value="40" oninput="onValveSliderChange()">
                     </div>
 
-                    <div class="sim-btn-group">
-                        <button class="sim-btn" onclick="resetAlarms()">🔄 Reset Alarms</button>
+                    <!-- Online Siemens LOGO! Editor Panel -->
+                    <div class="online-editor-box">
+                        <h4>
+                            <span>⚡ Siemens LOGO! Online Editor</span>
+                            <span style="font-size:0.75rem; color:var(--alarm-green);">● ONLINE LIVE SYNC</span>
+                        </h4>
+                        <p style="font-size:0.78rem; color:#94a3b8; margin-bottom:6px;">Αλλάξτε τα όρια ενεργοποίησης του κινητήρα online στο πρόγραμμα του PLC:</p>
+                        
+                        <div class="editor-inputs">
+                            <div class="editor-field">
+                                <label for="startThreshold">Start Threshold (%)</label>
+                                <input type="number" id="startThreshold" value="80" min="10" max="95" onchange="updateEditorParams()">
+                            </div>
+                            <div class="editor-field">
+                                <label for="stopThreshold">Stop Threshold (%)</label>
+                                <input type="number" id="stopThreshold" value="20" min="5" max="90" onchange="updateEditorParams()">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -477,7 +556,7 @@ function closeMenu(){
     document.getElementById("nav-menu").classList.remove("active");
 }
 
-// Interactive LOGO! Simulator Logic
+// 1. LOGO! HMI Marine Simulator Logic
 function updateSimState() {
     const isLocked = document.getElementById("lockToggle").checked;
     const bilgeAlarm = document.getElementById("bilgeToggle").checked;
@@ -544,6 +623,91 @@ setInterval(() => {
     const clockEl = document.getElementById("lcd-clock");
     if(clockEl) clockEl.textContent = `${hours}:${minutes}:${seconds}`;
 }, 1000);
+
+// 2. Tank, Motor & Online Editor Simulation Engine
+let tankLevel = 50; // Initial level %
+let motorRunning = false;
+let startThreshold = 80;
+let stopThreshold = 20;
+
+function updateEditorParams() {
+    const sIn = parseInt(document.getElementById("startThreshold").value);
+    const pIn = parseInt(document.getElementById("stopThreshold").value);
+    if (!isNaN(sIn) && !isNaN(pIn) && sIn > pIn) {
+        startThreshold = sIn;
+        stopThreshold = pIn;
+    }
+}
+
+function onValveSliderChange() {
+    const val = parseInt(document.getElementById("valveSlider").value);
+    document.getElementById("valveFlowText").textContent = val + "%";
+}
+
+// Simulation loop running every 250ms
+setInterval(() => {
+    const valveFlow = parseInt(document.getElementById("valveSlider").value);
+    
+    // Motor logic: When tank reaches startThreshold -> Motor starts pumping water out (or drains). When it drops to stopThreshold -> Stops.
+    // Alternatively, let's make it intuitive: filling the tank via valve. When tank fills up to startThreshold, motor starts to empty/regulate, or vice versa. 
+    // User stated: "οταν γεμιζει περνει μπροστα ο κινητηρας, οταν αδειαζει σταματαει."
+    
+    // Net change based on valve input vs motor extraction
+    let netFlow = (valveFlow - (motorRunning ? 35 : 0)) * 0.08;
+    tankLevel += netFlow;
+
+    if (tankLevel > 100) tankLevel = 100;
+    if (tankLevel < 0) tankLevel = 0;
+
+    // Threshold triggers based on online editor settings
+    if (!motorRunning && tankLevel >= startThreshold) {
+        motorRunning = true;
+    } else if (motorRunning && tankLevel <= stopThreshold) {
+        motorRunning = false;
+    }
+
+    // Update UI elements & dynamic colors
+    const fillEl = document.getElementById("tankWaterFill");
+    const levelTextEl = document.getElementById("tankLevelText");
+    const motorStateText = document.getElementById("motorStateText");
+    const motorBadge = document.getElementById("motor-badge");
+    const colorStatusText = document.getElementById("tankStatusColorText");
+
+    fillEl.style.height = tankLevel + "%";
+    levelTextEl.textContent = Math.round(tankLevel) + "%";
+
+    // Dynamic color change based on tank level and thresholds
+    if (tankLevel >= 85) {
+        fillEl.style.background = "linear-gradient(180deg, #ff3b30, #c0392b)";
+        colorStatusText.textContent = "CRITICAL HIGH (ALERT)";
+        colorStatusText.style.color = "var(--alarm-red)";
+    } else if (tankLevel <= 15) {
+        fillEl.style.background = "linear-gradient(180deg, #f39c12, #d35400)";
+        colorStatusText.textContent = "CRITICAL LOW (EMPTY)";
+        colorStatusText.style.color = "var(--alarm-yellow)";
+    } else {
+        fillEl.style.background = "linear-gradient(180deg, #13c6e8, #087ea4)";
+        colorStatusText.textContent = "NORMAL LEVEL";
+        colorStatusText.style.color = "var(--alarm-green)";
+    }
+
+    if (motorRunning) {
+        motorStateText.textContent = "RUNNING (PUMPING)";
+        motorStateText.style.color = "var(--alarm-green)";
+        motorBadge.textContent = "MOTOR ON";
+        motorBadge.className = "badge-alert";
+    } else {
+        motorStateText.textContent = "STOPPED";
+        motorStateText.style.color = "#94a3b8";
+        motorBadge.textContent = "MOTOR OFF";
+        motorBadge.className = "badge-ok";
+    }
+
+    // Sync fuel display on LOGO HMI screen as well
+    const valFuel = document.getElementById("val-fuel");
+    if(valFuel) valFuel.textContent = Math.round(tankLevel) + "%";
+
+}, 250);
 </script>
 
 </body>
