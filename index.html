@@ -2,770 +2,635 @@
 <html lang="el">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="ERDjgu5VBOx29BsRBrbr2yrujkoxeuvVF32ezI2Rrjs" />
+    <meta name="google-site-verification" content="ERDjgu5VBOx29BsRBrbr2yrujkoxeuvVF32ezI2Rrjs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Lampou Marine Automation Systems | Αυτοματισμοί Σκαφών & Βιομηχανίας</title>
-    <meta name="description" content="Lampou Marine Automation Systems - Εξειδικευμένες λύσεις αυτοματισμού PLC (Siemens LOGO!), τηλεμετρίας, αντλιοστασίων και ηλεκτρονικών συστημάτων για σκάφη και τη βιομηχανία.">
-    <meta name="keywords" content="Lampou Marine, Lampou Marine Automation Systems, αυτοματισμοί σκαφών, PLC, Siemens LOGO, Siemens S7-1200, τηλεμετρία, ηλεκτρονικά σκαφών, αντλιοστάσια, βιολογικοί καθαρισμοί, αυτοματισμοί πηγάδια">
+
+    <title>Lampou Marine Automation Systems | Marine • Industrial • PLC • Telemetry</title>
+    <meta name="description" content="Lampou Marine Automation Systems — Marine και βιομηχανικοί αυτοματισμοί, PLC Siemens LOGO! και S7-1200, αντλιοστάσια, τηλεμετρία, πίνακες αυτοματισμού και ηλεκτρονικά συστήματα.">
+    <meta name="keywords" content="Lampou Marine, marine automation, αυτοματισμοί σκαφών, PLC, Siemens LOGO, S7-1200, τηλεμετρία, αντλιοστάσια, βιομηχανικοί αυτοματισμοί, ηλεκτρονικά σκαφών">
     <meta name="author" content="Lampou Marine Automation Systems">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#061426">
 
-    <!-- Open Graph / Facebook / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Lampou Marine Automation Systems">
-    <meta property="og:description" content="Υψηλής ποιότητας εξειδικευμένες λύσεις αυτοματισμού, τηλεμετρίας και ηλεκτρονικών συστημάτων.">
+    <meta property="og:description" content="Marine & Industrial Automation • PLC • Telemetry • Pumping Systems">
     <meta property="og:image" content="logo.jpg">
 
     <style>
-        :root {
-            --primary-color: #0a192f;
-            --secondary-color: #0077b6;
-            --accent-color: #00b4d8;
-            --light-bg: #f8f9fa;
-            --text-color: #333333;
-            --white: #ffffff;
-            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            --header-height: 70px;
+        :root{
+            --navy:#061426;
+            --navy2:#0b2038;
+            --blue:#087ea4;
+            --cyan:#13c6e8;
+            --cyan2:#75e8fa;
+            --white:#fff;
+            --text:#172433;
+            --muted:#607080;
+            --bg:#f4f8fb;
+            --card:#ffffff;
+            --line:#dce8ef;
+            --shadow:0 14px 40px rgba(6,20,38,.10);
+            --radius:18px;
+            --header:76px;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        *{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;scroll-padding-top:90px}
+        body{
+            font-family:Segoe UI,Tahoma,Arial,sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            line-height:1.6;
+            overflow-x:hidden;
         }
+        a{text-decoration:none;color:inherit}
+        img{max-width:100%}
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: var(--header-height);
+        /* TOP NAV */
+        .navbar{
+            position:sticky;
+            top:0;
+            z-index:1000;
+            min-height:var(--header);
+            background:rgba(6,20,38,.96);
+            backdrop-filter:blur(14px);
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:10px 5%;
+            box-shadow:0 4px 24px rgba(0,0,0,.22);
         }
-
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-color);
-            line-height: 1.6;
-            position: relative;
-            min-height: 100vh;
+        .brand{display:flex;align-items:center;gap:12px}
+        .brand img{height:52px;width:auto;object-fit:contain}
+        .brand-text strong{display:block;color:#fff;font-size:1.05rem;letter-spacing:.4px}
+        .brand-text span{display:block;color:var(--cyan2);font-size:.72rem;letter-spacing:1.3px;text-transform:uppercase}
+        .nav-menu{display:flex;align-items:center;gap:22px;list-style:none}
+        .nav-link{color:#fff;font-size:.9rem;font-weight:600;opacity:.9;transition:.25s}
+        .nav-link:hover{color:var(--cyan2);opacity:1}
+        .lang-switcher{display:flex;gap:4px;margin-left:4px}
+        .lang-btn{
+            background:transparent;border:1px solid rgba(117,232,250,.55);
+            color:#fff;padding:5px 7px;border-radius:7px;cursor:pointer;font-size:.72rem;
         }
+        .lang-btn.active,.lang-btn:hover{background:var(--cyan);color:var(--navy)}
+        .hamburger{display:none;cursor:pointer}
+        .hamburger span{display:block;width:28px;height:3px;background:#fff;margin:5px;border-radius:3px}
 
-        /* Ημιδιάφανο Υδατογράφημα Λογότυπου στο Background */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80vw;
-            max-width: 650px;
-            height: 80vw;
-            max-height: 650px;
-            background-image: url('logo.jpg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: contain;
-            opacity: 0.08;
-            z-index: -1;
-            pointer-events: none;
+        /* HERO */
+        .hero{
+            position:relative;
+            min-height:650px;
+            display:flex;
+            align-items:center;
+            overflow:hidden;
+            background:
+                linear-gradient(90deg,rgba(3,14,28,.97) 0%,rgba(5,25,45,.88) 48%,rgba(5,25,45,.45) 100%),
+                url("boat.png") center/cover no-repeat;
+            color:#fff;
         }
-
-        /* Sticky Navigation Bar */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: var(--primary-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            height: var(--header-height);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        .hero::after{
+            content:"";
+            position:absolute;inset:auto 0 0 0;height:100px;
+            background:linear-gradient(transparent,var(--bg));
+            pointer-events:none;
         }
-
-        .nav-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
+        .hero-inner{width:min(1150px,90%);margin:auto;position:relative;z-index:2;padding:80px 0}
+        .eyebrow{
+            display:inline-flex;align-items:center;gap:8px;
+            padding:7px 13px;border:1px solid rgba(117,232,250,.45);
+            border-radius:30px;color:var(--cyan2);font-size:.78rem;
+            font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
+            background:rgba(0,0,0,.16);margin-bottom:22px
         }
-
-        .nav-logo-img {
-            height: 48px;
-            width: auto;
-            max-width: 140px;
-            object-fit: contain;
-            display: block;
+        .eyebrow::before{content:"";width:8px;height:8px;background:var(--cyan);border-radius:50%;box-shadow:0 0 14px var(--cyan)}
+        .hero h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;max-width:900px;margin-bottom:22px;letter-spacing:-2px}
+        .hero h1 span{color:var(--cyan2)}
+        .hero-lead{font-size:clamp(1.05rem,2vw,1.35rem);max-width:760px;color:#dcecf4;margin-bottom:32px}
+        .hero-actions{display:flex;flex-wrap:wrap;gap:13px}
+        .btn{
+            display:inline-flex;align-items:center;justify-content:center;gap:9px;
+            min-height:50px;padding:13px 23px;border-radius:12px;font-weight:800;
+            transition:.25s;border:1px solid transparent;cursor:pointer
         }
-
-        .nav-logo-text {
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            font-weight: bold;
-            letter-spacing: 0.5px;
+        .btn-primary{background:var(--cyan);color:var(--navy);box-shadow:0 8px 25px rgba(19,198,232,.22)}
+        .btn-primary:hover{transform:translateY(-2px);background:#59dff4}
+        .btn-outline{border-color:rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.06)}
+        .btn-outline:hover{border-color:var(--cyan2);color:var(--cyan2);transform:translateY(-2px)}
+        .hero-stats{
+            margin-top:52px;display:flex;flex-wrap:wrap;gap:0;
+            border-top:1px solid rgba(255,255,255,.16);max-width:850px;padding-top:22px
         }
+        .stat{padding-right:32px;margin-right:32px;border-right:1px solid rgba(255,255,255,.16)}
+        .stat:last-child{border:0}
+        .stat strong{display:block;font-size:1.05rem;color:#fff}
+        .stat span{font-size:.78rem;color:#a9c2d0}
 
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            list-style: none;
+        /* GENERAL */
+        .container{width:min(1150px,90%);margin:auto}
+        section{padding:90px 0}
+        .section-head{text-align:center;max-width:760px;margin:0 auto 46px}
+        .section-kicker{color:var(--blue);font-size:.75rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+        .section-title{font-size:clamp(2rem,4vw,2.9rem);line-height:1.15;color:var(--navy);margin-bottom:13px}
+        .section-subtitle{color:var(--muted);font-size:1.03rem}
+
+        /* SERVICES */
+        .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+        .service-card{
+            background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+            overflow:hidden;box-shadow:var(--shadow);transition:.3s
         }
+        .service-card:hover{transform:translateY(-7px);box-shadow:0 22px 50px rgba(6,20,38,.14)}
+        .service-img{height:180px;width:100%;object-fit:cover}
+        .service-body{padding:23px}
+        .service-number{font-size:.7rem;font-weight:900;color:var(--cyan);letter-spacing:1px}
+        .service-card h3{color:var(--navy);font-size:1.18rem;margin:5px 0 10px}
+        .service-card p{font-size:.91rem;color:var(--muted)}
 
-        .nav-link {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        /* PROJECTS */
+        .projects{background:#eaf3f8}
+        .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+        .project{
+            background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+            border:1px solid var(--line);transition:.3s
         }
+        .project:hover{transform:translateY(-5px)}
+        .project img{height:220px;width:100%;object-fit:cover}
+        .project-content{padding:25px}
+        .tag{display:inline-block;font-size:.7rem;font-weight:800;color:var(--blue);background:#e7f8fc;border-radius:20px;padding:5px 9px;margin-bottom:10px}
+        .project h3{font-size:1.25rem;color:var(--navy);margin-bottom:9px}
+        .project p{font-size:.92rem;color:var(--muted)}
 
-        .nav-link:hover {
-            color: var(--accent-color);
+        /* WHY */
+        .why-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+        .why-image{
+            min-height:460px;border-radius:24px;
+            background:
+              linear-gradient(rgba(6,20,38,.25),rgba(6,20,38,.45)),
+              url("logo-plc.png") center/cover no-repeat;
+            box-shadow:var(--shadow)
         }
+        .check-list{list-style:none;margin-top:28px}
+        .check-list li{display:flex;gap:13px;margin:17px 0;color:#405261}
+        .check{flex:0 0 25px;height:25px;border-radius:50%;background:var(--cyan);color:var(--navy);display:grid;place-items:center;font-size:.78rem;font-weight:900}
 
-        /* Language Switcher */
-        .lang-switcher {
-            display: flex;
-            gap: 5px;
-            margin-left: 10px;
+        /* SOLUTIONS */
+        .solution-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+        .solution{
+            padding:30px;background:linear-gradient(145deg,#061426,#0c2944);
+            color:#fff;border-radius:var(--radius);box-shadow:var(--shadow)
         }
+        .solution-icon{font-size:2rem;margin-bottom:15px}
+        .solution h3{color:var(--cyan2);margin-bottom:8px}
+        .solution p{color:#c5d7e1;font-size:.91rem}
 
-        .lang-btn {
-            background: transparent;
-            border: 1px solid var(--accent-color);
-            color: var(--white);
-            padding: 3px 8px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: all 0.3s ease;
+        /* ABOUT */
+        .about-box{
+            background:#fff;border:1px solid var(--line);border-radius:24px;
+            padding:45px;box-shadow:var(--shadow)
         }
+        .about-box p{color:#4e6070;font-size:1rem;margin-bottom:17px}
+        .signature{margin-top:25px;padding-top:20px;border-top:1px solid var(--line)}
+        .signature strong{display:block;color:var(--navy);font-size:1.05rem}
+        .signature span{color:var(--blue);font-size:.85rem}
 
-        .lang-btn:hover, .lang-btn.active {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            font-weight: bold;
+        /* CONTACT */
+        .contact-wrap{
+            position:relative;overflow:hidden;background:linear-gradient(135deg,#061426,#0b3551);
+            color:#fff;border-radius:28px;padding:60px 45px;text-align:center;box-shadow:0 25px 60px rgba(6,20,38,.2)
         }
-
-        /* Hamburger Menu Icon */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
+        .contact-wrap::before{
+            content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(117,232,250,.2);
+            border-radius:50%;right:-100px;top:-130px
         }
+        .contact-wrap h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:10px}
+        .contact-wrap p{color:#c4d7e1;margin-bottom:28px}
+        .contact-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;position:relative;z-index:1}
+        .contact-btn{background:#fff;color:var(--navy)}
+        .contact-btn:hover{transform:translateY(-2px)}
+        .whatsapp{background:#25d366;color:#06251a}
+        .viber{background:#7360f2;color:#fff}
+        .email{background:var(--cyan);color:var(--navy)}
 
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--white);
-            border-radius: 2px;
-            transition: 0.3s;
+        /* FOOTER */
+        footer{background:#03101f;color:#fff;padding:30px 5%;text-align:center}
+        footer p{font-size:.82rem;color:#8fa6b5}
+        .footer-brand{font-weight:800;color:#fff;margin-bottom:5px}
+        .counter-box{display:inline-flex;align-items:center;gap:9px;margin-top:15px;padding:7px 14px;border:1px solid rgba(255,255,255,.1);border-radius:20px;background:rgba(255,255,255,.04)}
+        .counter-box span{font-size:.78rem;color:#a9bdc9}
+        .counter-box img{height:20px;width:auto}
+
+        /* FLOATING CONTACT */
+        .floating-phone{
+            position:fixed;right:18px;bottom:18px;z-index:999;
+            width:55px;height:55px;border-radius:50%;display:grid;place-items:center;
+            background:var(--cyan);color:var(--navy);font-size:1.4rem;
+            box-shadow:0 10px 30px rgba(0,0,0,.25);transition:.25s
         }
+        .floating-phone:hover{transform:scale(1.08)}
 
-        .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
+        /* MOBILE */
+        @media(max-width:1050px){
+            .nav-menu{gap:13px}
+            .nav-link{font-size:.82rem}
+            .service-grid{grid-template-columns:repeat(2,1fr)}
         }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(10, 25, 47, 0.88), rgba(10, 25, 47, 0.88)), url('boat.png') center/cover no-repeat;
-            color: var(--white);
-            padding: 80px 20px;
-            text-align: center;
-            border-radius: 12px;
-            margin-bottom: 40px;
-            box-shadow: var(--card-shadow);
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Sections Common */
-        section {
-            margin-bottom: 50px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary-color);
-            font-size: 1.8rem;
-        }
-
-        /* Grid Layouts */
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.93);
-            backdrop-filter: blur(4px);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-            border-top: 4px solid var(--secondary-color);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
-
-        .card-img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-            font-size: 1.25rem;
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            color: #555;
-            line-height: 1.5;
-        }
-
-        /* About Section */
-        .about-box {
-            background: rgba(255, 255, 255, 0.93);
-            backdrop-filter: blur(4px);
-            padding: 35px 25px;
-            border-radius: 10px;
-            box-shadow: var(--card-shadow);
-            border-left: 5px solid var(--accent-color);
-        }
-
-        .about-box p {
-            font-size: 1.05rem;
-            color: #444;
-            margin-bottom: 15px;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: rgba(255, 255, 255, 0.93);
-            backdrop-filter: blur(4px);
-            padding: 40px 20px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: var(--card-shadow);
-        }
-
-        .contact-section h2 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .contact-section p {
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        .contact-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            color: var(--white);
-            font-weight: bold;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-        }
-
-        .btn-phone { background-color: #0077b6; }
-        .btn-whatsapp { background-color: #25D366; }
-        .btn-viber { background-color: #7360f2; }
-        .btn-email { background-color: #0a192f; }
-
-        .btn:hover {
-            transform: scale(1.05);
-            opacity: 0.95;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 25px 20px;
-            margin-top: 50px;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 12px;
-        }
-
-        .counter-box {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 8px 18px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .counter-box span {
-            font-size: 0.88rem;
-            color: #ddd;
-        }
-
-        /* Responsive Mobile Styles */
-        @media (max-width: 900px) {
-            .hamburger {
-                display: flex;
+        @media(max-width:820px){
+            .navbar{padding:9px 5%}
+            .hamburger{display:block}
+            .nav-menu{
+                position:absolute;left:0;right:0;top:100%;display:none;
+                flex-direction:column;align-items:center;background:var(--navy);
+                padding:22px;box-shadow:0 15px 25px rgba(0,0,0,.25)
             }
-
-            .nav-menu {
-                position: absolute;
-                top: var(--header-height);
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-color);
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                gap: 20px;
-                display: none;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .lang-switcher {
-                margin-left: 0;
-            }
-
-            body::before {
-                width: 90vw;
-                height: 90vw;
-            }
+            .nav-menu.active{display:flex}
+            .nav-link{font-size:1rem}
+            .lang-switcher{margin-top:4px}
+            .hero{min-height:620px}
+            .hero h1{letter-spacing:-1px}
+            .hero-stats{gap:18px}
+            .stat{border:0;margin:0;padding:0}
+            .project-grid,.solution-grid{grid-template-columns:1fr}
+            .why-grid{grid-template-columns:1fr}
+            .why-image{min-height:300px;order:2}
+            section{padding:70px 0}
+        }
+        @media(max-width:560px){
+            .brand-text{display:none}
+            .brand img{height:48px}
+            .service-grid{grid-template-columns:1fr}
+            .service-img{height:210px}
+            .hero{min-height:650px}
+            .hero-actions .btn{width:100%}
+            .hero-stats{display:grid;grid-template-columns:1fr 1fr}
+            .about-box{padding:28px 22px}
+            .contact-wrap{padding:42px 20px}
+            .contact-buttons .btn{width:100%}
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Sticky Navigation Bar -->
-    <nav class="navbar">
-        <a href="#home" class="nav-logo-container">
-            <img src="logo.jpg" alt="Lampou Marine Logo" class="nav-logo-img">
-            <span class="nav-logo-text">Lampou Marine</span>
-        </a>
-        
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+<nav class="navbar">
+    <a href="#home" class="brand" aria-label="Lampou Marine Automation Systems">
+        <img src="logo.jpg" alt="Lampou Marine Automation Systems">
+        <div class="brand-text">
+            <strong>Lampou Marine</strong>
+            <span>Automation Systems</span>
         </div>
+    </a>
 
-        <ul class="nav-menu" id="nav-menu">
-            <li><a href="#home" class="nav-link" id="nav-home" onclick="closeMenu()">Αρχική</a></li>
-            <li><a href="#services" class="nav-link" id="nav-services" onclick="closeMenu()">Υπηρεσίες</a></li>
-            <li><a href="#projects" class="nav-link" id="nav-projects" onclick="closeMenu()">Εφαρμογές & Projects</a></li>
-            <li><a href="#products" class="nav-link" id="nav-products" onclick="closeMenu()">Προϊόντα & Λύσεις</a></li>
-            <li><a href="#about" class="nav-link" id="nav-about" onclick="closeMenu()">Σχετικά με εμάς</a></li>
-            <li><a href="#contact" class="nav-link" id="nav-contact" onclick="closeMenu()">Επικοινωνία</a></li>
-            
-            <li class="lang-switcher">
-                <button class="lang-btn active" onclick="setLanguage('el')">🇬🇷 EL</button>
-                <button class="lang-btn" onclick="setLanguage('en')">🇬🇧 EN</button>
-                <button class="lang-btn" onclick="setLanguage('de')">🇩🇪 DE</button>
-                <button class="lang-btn" onclick="setLanguage('it')">🇮🇹 IT</button>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <!-- Hero / Home Section -->
-        <section id="home" class="hero">
-            <h1 id="hero-title">Lampou Marine Automation Systems</h1>
-            <p id="hero-desc">Υψηλής ποιότητας εξειδικευμένες λύσεις αυτοματισμού, τηλεμετρίας και ηλεκτρονικών συστημάτων για τη ναυτιλία, τη βιομηχανία και εξειδικευμένες εφαρμογές.</p>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services">
-            <h2 class="section-title" id="services-title">Οι Υπηρεσίες Μας</h2>
-            <div class="grid-4">
-                <div class="card">
-                    <img src="boat.png" alt="Σκάφη & Ναυτιλία" class="card-img">
-                    <h3 id="srv1-title">Σκάφη & Ναυτιλία</h3>
-                    <p id="srv1-desc">Συστήματα παρακολούθησης, αυτοματισμοί PLC, διαχείριση αντλιών, ανιχνευτές αερίων/νερού και συστήματα ασφαλείας σκαφών.</p>
-                </div>
-                <div class="card">
-                    <img src="logo-plc.png" alt="Αυτοματισμοί PLC & LOGO!" class="card-img">
-                    <h3 id="srv2-title">Αυτοματισμοί PLC & LOGO!</h3>
-                    <p id="srv2-desc">Προγραμματισμός PLC (Siemens LOGO! & S7-1200), ρυθμιστές στροφών (Inverters), αυτοματισμοί γραμμών παραγωγής και βιολογικών καθαρισμών.</p>
-                </div>
-                <div class="card">
-                    <img src="pump.png" alt="Αντλιοστάσια & Πηγάδια" class="card-img">
-                    <h3 id="srv3-title">Αντλιοστάσια & Πηγάδια</h3>
-                    <p id="srv3-desc">Έλεγχος στάθμης, αυτοματισμοί πιεστικών συγκροτημάτων, προστασία αντλιών από ξηρή λειτουργία και τηλεμετρία.</p>
-                </div>
-                <div class="card">
-                    <img src="logo-plc.png" alt="Οικιακές Εφαρμογές" class="card-img">
-                    <h3 id="srv4-title">Οικιακές Εφαρμογές</h3>
-                    <p id="srv4-desc">Έξυπνοι αυτοματισμοί, απομακρυσμένος έλεγχος εξοπλισμού, αυτοματισμοί δεξαμενών και εξειδικευμένες ηλεκτρολογικές λύσεις.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Applications & Projects Section -->
-        <section id="projects">
-            <h2 class="section-title" id="projects-title">Εφαρμογές & Projects</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <img src="pump.png" alt="Τηλεμετρία & Απομακρυσμένος Έλεγχος" class="card-img">
-                    <h3 id="proj1-title">Τηλεμετρία & Απομακρυσμένος Έλεγχος</h3>
-                    <p id="proj1-desc">Παρακολούθηση κρίσιμων παραμέτρων (στάθμη καυσίμου/νερού, θερμοκρασίες, τάση μπαταριών) σε πραγματικό χρόνο.</p>
-                </div>
-                <div class="card">
-                    <img src="logo-plc.png" alt="Αυτοματισμοί PLC & LOGO!" class="card-img">
-                    <h3 id="proj2-title">Αυτοματισμοί PLC & LOGO!</h3>
-                    <p id="proj2-desc">Σχεδιασμός και προγραμματισμός πινάκων αυτοματισμού με προσαρμοσμένες οθόνες ελέγχου και κλειδώματα ασφαλείας.</p>
-                </div>
-                <div class="card">
-                    <img src="pump.png" alt="Βιολογικοί Καθαρισμοί & Αντλίες" class="card-img">
-                    <h3 id="proj3-title">Βιολογικοί Καθαρισμοί & Αντλίες</h3>
-                    <p id="proj3-desc">Αυτοματοποιημένος κύκλος λειτουργίας αντλιών, προστασία κινητήρων και ειδοποιήσεις βλαβών/συναγερμών.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Products & Solutions Section -->
-        <section id="products">
-            <h2 class="section-title" id="products-title">Προϊόντα & Λύσεις</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <img src="boat.png" alt="Συστήματα Συναγερμού Σκάφους" class="card-img">
-                    <h3 id="prod1-title">Συστήματα Συναγερμού Σκάφους</h3>
-                    <p id="prod1-desc">Ολοκληρωμένα πακέτα ανίχνευσης εισροής υδάτων, διαρροής υγραερίου (LPG), καπνού και παραβίασης.</p>
-                </div>
-                <div class="card">
-                    <img src="logo-plc.png" alt="Έξυπνοι Πίνακες Αυτοματισμού" class="card-img">
-                    <h3 id="prod2-title">Έξυπνοι Πίνακες Αυτοματισμού</h3>
-                    <p id="prod2-desc">Κατασκευή πινάκων υψηλής αντοχής για ναυτιλιακό και βιομηχανικό περιβάλλον με προστασίες υπέρτασης.</p>
-                </div>
-                <div class="card">
-                    <img src="boat.png" alt="Custom Oθόνες Ένδειξης" class="card-img">
-                    <h3 id="prod3-title">Custom Oθόνες Ένδειξης</h3>
-                    <p id="prod3-desc">Προσαρμοσμένα interfaces απεικόνισης δεδομένων για σκάφη και βιομηχανικούς αυτοματισμούς.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Us Section -->
-        <section id="about">
-            <h2 class="section-title" id="about-title">Σχετικά με εμάς</h2>
-            <div class="about-box">
-                <p id="about-desc1">Η <strong>Lampou Marine Automation Systems</strong> εξειδικεύεται στον σχεδιασμό, την εγκατάσταση και τον προγραμματισμό σύγχρονων συστημάτων αυτοματισμού και ηλεκτρονικών.</p>
-                <p id="about-desc2">Με πολυετή τεχνική εμπειρία στους αυτοματισμούς, στα συστήματα PLC, στις ναυτιλιακές εφαρμογές και στους βιομηχανικούς αυτοματισμούς, προσφέρουμε αξιόπιστες λύσεις προσαρμοσμένες στις ανάγκες κάθε έργου.</p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <h2 id="contact-title">Επικοινωνήστε μαζί μας</h2>
-            <p id="contact-subtitle">Εξυπηρέτηση Πανελλαδικά – Είμαστε στη διάθεσή σας για κάθε τεχνική απαίτηση</p>
-            <div class="contact-buttons">
-                <a href="tel:+306932942432" class="btn btn-phone" id="btn-phone">📞 +30 6932942432</a>
-                <a href="https://wa.me/306932942432" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
-                <a href="viber://chat?number=%2B306932942432" class="btn btn-viber">Viber</a>
-                <a href="mailto:peterlampou@hotmail.com" class="btn btn-email" id="btn-email">✉️ peterlampou@hotmail.com</a>
-            </div>
-        </section>
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Lampou Marine Automation Systems. All Rights Reserved.</p>
-        
-        <!-- Μετρητής Επισκεπτών -->
-        <div class="counter-box">
-            <span id="counter-label">👁️ Επισκέπτες:</span>
-            <img src="https://hitwebcounter.com/counter/counter.php?page=lampou_marine_pv_2026&style=0006&nbdigits=5&type=ip&initCount=0" title="Counter" alt="web counter" border="0" style="vertical-align: middle;">
+    <ul class="nav-menu" id="nav-menu">
+        <li><a class="nav-link" href="#home" onclick="closeMenu()" data-i18n="navHome">Αρχική</a></li>
+        <li><a class="nav-link" href="#services" onclick="closeMenu()" data-i18n="navServices">Υπηρεσίες</a></li>
+        <li><a class="nav-link" href="#projects" onclick="closeMenu()" data-i18n="navProjects">Projects</a></li>
+        <li><a class="nav-link" href="#solutions" onclick="closeMenu()" data-i18n="navSolutions">Λύσεις</a></li>
+        <li><a class="nav-link" href="#about" onclick="closeMenu()" data-i18n="navAbout">Σχετικά</a></li>
+        <li><a class="nav-link" href="#contact" onclick="closeMenu()" data-i18n="navContact">Επικοινωνία</a></li>
+        <li class="lang-switcher">
+            <button class="lang-btn active" data-lang="el" onclick="setLanguage('el')">🇬🇷 EL</button>
+            <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">🇬🇧 EN</button>
+            <button class="lang-btn" data-lang="de" onclick="setLanguage('de')">🇩🇪 DE</button>
+            <button class="lang-btn" data-lang="it" onclick="setLanguage('it')">🇮🇹 IT</button>
+        </li>
+    </ul>
+</nav>
+
+<main id="home">
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="eyebrow" data-i18n="heroKicker">Marine & Industrial Automation</div>
+            <h1><span>Lampou Marine</span><br>Automation Systems</h1>
+            <p class="hero-lead" data-i18n="heroLead">
+                Αυτοματισμοί, PLC, τηλεμετρία και ηλεκτρονικά συστήματα για σκάφη, βιομηχανία, αντλιοστάσια και εξειδικευμένες εφαρμογές.
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary" data-i18n="heroBtn">📩 Ζητήστε προσφορά</a>
+                <a href="#projects" class="btn btn-outline" data-i18n="heroBtn2">⚙️ Δείτε τις λύσεις μας</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat"><strong>PLC & LOGO!</strong><span>Siemens Automation</span></div>
+                <div class="stat"><strong>Marine Systems</strong><span>Monitoring & Safety</span></div>
+                <div class="stat"><strong>Telemetry</strong><span>Remote Monitoring</span></div>
+                <div class="stat"><strong>Nationwide</strong><span>Εξυπηρέτηση Ελλάδας</span></div>
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Multilingual & Interactive JS -->
-    <script>
-        const translations = {
-            el: {
-                navHome: "Αρχική",
-                navServices: "Υπηρεσίες",
-                navProjects: "Εφαρμογές & Projects",
-                navProducts: "Προϊόντα & Λύσεις",
-                navAbout: "Σχετικά με εμάς",
-                navContact: "Επικοινωνία",
-                heroTitle: "Lampou Marine Automation Systems",
-                heroDesc: "Υψηλής ποιότητας εξειδικευμένες λύσεις αυτοματισμού, τηλεμετρίας και ηλεκτρονικών συστημάτων για τη ναυτιλία, τη βιομηχανία και εξειδικευμένες εφαρμογές.",
-                servicesTitle: "Οι Υπηρεσίες Μας",
-                srv1Title: "Σκάφη & Ναυτιλία",
-                srv1Desc: "Συστήματα παρακολούθησης, αυτοματισμοί PLC, διαχείριση αντλιών, ανιχνευτές αερίων/νερού και συστήματα ασφαλείας σκαφών.",
-                srv2Title: "Αυτοματισμοί PLC & LOGO!",
-                srv2Desc: "Προγραμματισμός PLC (Siemens LOGO! & S7-1200), ρυθμιστές στροφών (Inverters), αυτοματισμοί γραμμών παραγωγής και βιολογικών καθαρισμών.",
-                srv3Title: "Αντλιοστάσια & Πηγάδια",
-                srv3Desc: "Έλεγχος στάθμης, αυτοματισμοί πιεστικών συγκροτημάτων, προστασία αντλιών από ξηρή λειτουργία και τηλεμετρία.",
-                srv4Title: "Οικιακές Εφαρμογές",
-                srv4Desc: "Έξυπνοι αυτοματισμοί, απομακρυσμένος έλεγχος εξοπλισμού, αυτοματισμοί δεξαμενών και εξειδικευμένες ηλεκτρολογικές λύσεις.",
-                projectsTitle: "Εφαρμογές & Projects",
-                proj1Title: "Τηλεμετρία & Απομακρυσμένος Έλεγχος",
-                proj1Desc: "Παρακολούθηση κρίσιμων παραμέτρων (στάθμη καυσίμου/νερού, θερμοκρασίες, τάση μπαταριών) σε πραγματικό χρόνο.",
-                proj2Title: "Αυτοματισμοί PLC & LOGO!",
-                proj2Desc: "Σχεδιασμός και προγραμματισμός πινάκων αυτοματισμού με προσαρμοσμένες οθόνες ελέγχου και κλειδώματα ασφαλείας.",
-                proj3Title: "Βιολογικοί Καθαρισμοί & Αντλίες",
-                proj3Desc: "Αυτοματοποιημένος κύκλος λειτουργίας αντλιών, προστασία κινητήρων και ειδοποιήσεις βλαβών/συναγερμών.",
-                productsTitle: "Προϊόντα & Λύσεις",
-                prod1Title: "Συστήματα Συναγερμού Σκάφους",
-                prod1Desc: "Ολοκληρωμένα πακέτα ανίχνευσης εισροής υδάτων, διαρροής υγραερίου (LPG), καπνού και παραβίασης.",
-                prod2Title: "Έξυπνοι Πίνακες Αυτοματισμού",
-                prod2Desc: "Κατασκευή πινάκων υψηλής αντοχής για ναυτιλιακό και βιομηχανικό περιβάλλον με προστασίες υπέρτασης.",
-                prod3Title: "Custom Oθόνες Ένδειξης",
-                prod3Desc: "Προσαρμοσμένα interfaces απεικόνισης δεδομένων για σκάφη και βιομηχανικούς αυτοματισμούς.",
-                aboutTitle: "Σχετικά με εμάς",
-                aboutDesc1: "Η Lampou Marine Automation Systems εξειδικεύεται στον σχεδιασμό, την εγκατάσταση και τον προγραμματισμό σύγχρονων συστημάτων αυτοματισμού και ηλεκτρονικών.",
-                aboutDesc2: "Με πολυετή τεχνική εμπειρία στους αυτοματισμούς, στα συστήματα PLC, στις ναυτιλιακές εφαρμογές και στους βιομηχανικούς αυτοματισμούς, προσφέρουμε αξιόπιστες λύσεις προσαρμοσμένες στις ανάγκες κάθε έργου.",
-                contactTitle: "Επικοινωνήστε μαζί μας",
-                contactSubtitle: "Εξυπηρέτηση Πανελλαδικά – Είμαστε στη διάθεσή σας για κάθε τεχνική απαίτηση",
-                btnPhone: "📞 +30 6932942432",
-                btnEmail: "✉️ peterlampou@hotmail.com",
-                counterLabel: "👁️ Επισκέπτες:"
-            },
-            en: {
-                navHome: "Home",
-                navServices: "Services",
-                navProjects: "Applications & Projects",
-                navProducts: "Products & Solutions",
-                navAbout: "About Us",
-                navContact: "Contact",
-                heroTitle: "Lampou Marine Automation Systems",
-                heroDesc: "High-quality specialized automation, telemetry, and electronic system solutions for marine, industrial, and specialized applications.",
-                servicesTitle: "Our Services",
-                srv1Title: "Marine & Boating",
-                srv1Desc: "Monitoring systems, PLC automation, pump management, gas/water sensors, and vessel security systems.",
-                srv2Title: "PLC & LOGO! Automations",
-                srv2Desc: "PLC Programming (Siemens LOGO! & S7-1200), Frequency Inverters, production line automation, and wastewater treatment controls.",
-                srv3Title: "Pumping Stations & Wells",
-                srv3Desc: "Level control, pressure booster automation, dry-run pump protection, and telemetry.",
-                srv4Title: "Residential Applications",
-                srv4Desc: "Smart automation, remote equipment control, water tank controls, and specialized electrical solutions.",
-                projectsTitle: "Applications & Projects",
-                proj1Title: "Telemetry & Remote Control",
-                proj1Desc: "Real-time monitoring of critical parameters (fuel/water levels, temperatures, battery voltages).",
-                proj2Title: "PLC & LOGO! Automations",
-                proj2Desc: "Design and programming of automation panels with custom control displays and security locks.",
-                proj3Title: "Wastewater & Pumps",
-                proj3Desc: "Automated pump operation cycles, motor protection, and fault/alarm notifications.",
-                productsTitle: "Products & Solutions",
-                prod1Title: "Vessel Alarm Systems",
-                prod1Desc: "Comprehensive detection packages for water ingress, LPG leaks, smoke, and security breaches.",
-                prod2Title: "Smart Automation Panels",
-                prod2Desc: "High-durability panel construction for marine and industrial environments with surge protection.",
-                prod3Title: "Custom Display Screens",
-                prod3Desc: "Customized data visualization interfaces for marine and industrial automations.",
-                aboutTitle: "About Us",
-                aboutDesc1: "Lampou Marine Automation Systems specializes in the design, installation, and programming of modern automation and electronic systems.",
-                aboutDesc2: "With years of technical experience in automation, PLC systems, marine applications, and industrial automation, we offer reliable solutions tailored to your project's needs.",
-                contactTitle: "Contact Us",
-                contactSubtitle: "Nationwide Service – We are at your disposal for any technical requirement",
-                btnPhone: "📞 +30 6932942432",
-                btnEmail: "✉️ peterlampou@hotmail.com",
-                counterLabel: "👁️ Visitors:"
-            },
-            de: {
-                navHome: "Startseite",
-                navServices: "Dienstleistungen",
-                navProjects: "Anwendungen & Projekte",
-                navProducts: "Produkte & Lösungen",
-                navAbout: "Über uns",
-                navContact: "Kontakt",
-                heroTitle: "Lampou Marine Automation Systems",
-                heroDesc: "Hochwertige, spezialisierte Automatisierungs-, Telemetrie- und Elektroniklösungen für Schifffahrt, Industrie und Sonderanwendungen.",
-                servicesTitle: "Unsere Dienstleistungen",
-                srv1Title: "Marine & Schifffahrt",
-                srv1Desc: "Überwachungssysteme, SPS-Automatisierung, Pumpensteuerung, Gas-/Wassersensoren und Bootssicherheitssysteme.",
-                srv2Title: "SPS & LOGO! Automatisierung",
-                srv2Desc: "SPS-Programmierung (Siemens LOGO! & S7-1200), Frequenzumrichter, Produktionslinienautomatisierung und Kläranlagensteuerung.",
-                srv3Title: "Pumpstationen & Brunnen",
-                srv3Desc: "Füllstandsregelung, Druckerhöhungsanlagen, Trockenlaufschutz für Pumpen und Telemetrie.",
-                srv4Title: "Heim-Anwendungen",
-                srv4Desc: "Smart-Home-Automatisierung, Fernsteuerung von Geräten, Wassertanksteuerungen und spezialisierte Elektroarbeiten.",
-                projectsTitle: "Anwendungen & Projekte",
-                proj1Title: "Telemetrie & Fernsteuerung",
-                proj1Desc: "Echtzeitüberwachung kritischer Parameter (Kraftstoff-/Wasserstand, Temperaturen, Batteriespannung).",
-                proj2Title: "SPS & LOGO! Automatisierung",
-                proj2Desc: "Entwicklung und Programmierung von Schaltschränken mit benutzerdefinierten Displays und Sicherheitssperren.",
-                proj3Title: "Abwasser & Pumpen",
-                proj3Desc: "Automatisierter Pumpenbetrieb, Motorschutz und Störmeldungen/Alarme.",
-                productsTitle: "Produkte & Lösungen",
-                prod1Title: "Bootssicherheitssysteme",
-                prod1Desc: "Komplettpakete zur Erkennung von Wassereinbruch, LPG-Leckagen, Rauch und Einbruch.",
-                prod2Title: "Intelligente Schaltschränke",
-                prod2Desc: "Robuste Schaltschrankmontage für marine und industrielle Umgebungen mit Überspannungsschutz.",
-                prod3Title: "Benutzerdefinierte Displays",
-                prod3Desc: "Maßgeschneiderte Schnittstellen zur Datenvisualisierung für Marine und Industrie.",
-                aboutTitle: "Über uns",
-                aboutDesc1: "Lampou Marine Automation Systems ist auf die Entwicklung, Installation und Programmierung moderner Automatisierungs- und Elektroniksysteme spezialisiert.",
-                aboutDesc2: "Mit jahrelanger technischer Erfahrung in der Automatisierung, in SPS-Systemen, maritimen Anwendungen und der Industrie bieten wir zuverlässige und maßgeschneiderte Lösungen.",
-                contactTitle: "Kontaktieren Sie uns",
-                contactSubtitle: "Landesweiter Service – Wir stehen Ihnen für alle technischen Anforderungen zur Verfügung",
-                btnPhone: "📞 +30 6932942432",
-                btnEmail: "✉️ peterlampou@hotmail.com",
-                counterLabel: "👁️ Besucher:"
-            },
-            it: {
-                navHome: "Home",
-                navServices: "Servizi",
-                navProjects: "Applicazioni e Progetti",
-                navProducts: "Prodotti e Soluzioni",
-                navAbout: "Chi Siamo",
-                navContact: "Contatti",
-                heroTitle: "Lampou Marine Automation Systems",
-                heroDesc: "Soluzioni specializzate di alta qualità in automazione, telemetria e sistemi elettronici per la nautica, l'industria e applicazioni speciali.",
-                servicesTitle: "I Nostri Servizi",
-                srv1Title: "Nautica e Marina",
-                srv1Desc: "Sistemi di monitoraggio, automazione PLC, gestione pompe, sensori gas/acqua e sistemi di sicurezza per imbarcazioni.",
-                srv2Title: "Automazione PLC e LOGO!",
-                srv2Desc: "Programmazione PLC (Siemens LOGO! & S7-1200), Inverter di frequenza, automazione linee di produzione e impianti di depurazione.",
-                srv3Title: "Stazioni di Pompaggio e Pozzi",
-                srv3Desc: "Controllo di livello, automazione gruppi di pressione, protezione contro la marcia a secco e telemetria.",
-                srv4Title: "Applicazioni Residenziali",
-                srv4Desc: "Domotica intelligente, controllo remoto delle apparecchiature, controllo serbatoi e soluzioni elettriche specializzate.",
-                projectsTitle: "Applicazioni e Progetti",
-                proj1Title: "Telemetria e Controllo Remoto",
-                proj1Desc: "Monitoraggio in tempo reale dei parametri critici (livello carburante/acqua, temperature, tensione batterie).",
-                proj2Title: "Automazione PLC e LOGO!",
-                proj2Desc: "Progettazione e programmazione di quadri di automazione con display di controllo personalizzati e blocchi di sicurezza.",
-                proj3Title: "Depurazione e Pompe",
-                proj3Desc: "Ciclo di funzionamento automatizzato delle pompe, protezione motori e notifiche di guasto/allarme.",
-                productsTitle: "Prodotti e Soluzioni",
-                prod1Title: "Sistemi di Allarme per Imbarcazioni",
-                prod1Desc: "Pacchetti completi per il rilevamento di infiltrazioni d'acqua, fughe di GPL, fumo e intrusioni.",
-                prod2Title: "Quadri di Automazione Intelligenti",
-                prod2Desc: "Costruzione di quadri ad alta resistenza per ambienti marini e industriali con protezioni da sovratensione.",
-                prod3Title: "Display Personalizzati",
-                prod3Desc: "Interfacce di visualizzazione dati personalizzate per automazioni marine e industriali.",
-                aboutTitle: "Chi Siamo",
-                aboutDesc1: "Lampou Marine Automation Systems è specializzata nella progettazione, installazione e programmazione di moderni sistemi di automazione ed elettronica.",
-                aboutDesc2: "Con anni di esperienza tecnica nell'automazione, nei sistemi PLC, nelle applicazioni marine e industriali, offriamo soluzioni affidabili e personalizzate.",
-                contactTitle: "Contattaci",
-                contactSubtitle: "Servizio in tutta la Grecia – Siamo a vostra disposizione per qualsiasi esigenza tecnica",
-                btnPhone: "📞 +30 6932942432",
-                btnEmail: "✉️ peterlampou@hotmail.com",
-                counterLabel: "👁️ Visitatori:"
-            }
-        };
+    <section id="services">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-kicker" data-i18n="servicesKicker">Τι κάνουμε</div>
+                <h2 class="section-title" data-i18n="servicesTitle">Εξειδικευμένοι Αυτοματισμοί</h2>
+                <p class="section-subtitle" data-i18n="servicesSubtitle">Πρακτικές και αξιόπιστες λύσεις σχεδιασμένες γύρω από τις πραγματικές ανάγκες κάθε εγκατάστασης.</p>
+            </div>
 
-        function setLanguage(lang) {
-            const t = translations[lang];
-            if (!t) return;
+            <div class="service-grid">
+                <article class="service-card">
+                    <img src="boat.png" class="service-img" alt="Marine automation">
+                    <div class="service-body">
+                        <span class="service-number">01 / MARINE</span>
+                        <h3 data-i18n="srv1Title">Σκάφη & Ναυτιλία</h3>
+                        <p data-i18n="srv1Desc">Monitoring, alarms, αντλίες, στάθμες, αισθητήρες νερού/αερίων, μπαταρίες και custom συστήματα ασφαλείας.</p>
+                    </div>
+                </article>
 
-            document.getElementById('nav-home').innerText = t.navHome;
-            document.getElementById('nav-services').innerText = t.navServices;
-            document.getElementById('nav-projects').innerText = t.navProjects;
-            document.getElementById('nav-products').innerText = t.navProducts;
-            document.getElementById('nav-about').innerText = t.navAbout;
-            document.getElementById('nav-contact').innerText = t.navContact;
+                <article class="service-card">
+                    <img src="logo-plc.png" class="service-img" alt="Siemens PLC and LOGO automation">
+                    <div class="service-body">
+                        <span class="service-number">02 / PLC</span>
+                        <h3 data-i18n="srv2Title">PLC & LOGO!</h3>
+                        <p data-i18n="srv2Desc">Προγραμματισμός Siemens LOGO! και S7-1200, inverters, πίνακες αυτοματισμού και έλεγχος μηχανών.</p>
+                    </div>
+                </article>
 
-            document.getElementById('hero-title').innerText = t.heroTitle;
-            document.getElementById('hero-desc').innerText = t.heroDesc;
+                <article class="service-card">
+                    <img src="pump.png" class="service-img" alt="Pumping stations and wells">
+                    <div class="service-body">
+                        <span class="service-number">03 / PUMPING</span>
+                        <h3 data-i18n="srv3Title">Αντλιοστάσια & Πηγάδια</h3>
+                        <p data-i18n="srv3Desc">Έλεγχος στάθμης, πιεστικά, εναλλαγή αντλιών, προστασία ξηράς λειτουργίας, alarms και τηλεμετρία.</p>
+                    </div>
+                </article>
 
-            document.getElementById('services-title').innerText = t.servicesTitle;
-            document.getElementById('srv1-title').innerText = t.srv1Title;
-            document.getElementById('srv1-desc').innerText = t.srv1Desc;
-            document.getElementById('srv2-title').innerText = t.srv2Title;
-            document.getElementById('srv2-desc').innerText = t.srv2Desc;
-            document.getElementById('srv3-title').innerText = t.srv3Title;
-            document.getElementById('srv3-desc').innerText = t.srv3Desc;
-            document.getElementById('srv4-title').innerText = t.srv4Title;
-            document.getElementById('srv4-desc').innerText = t.srv4Desc;
+                <article class="service-card">
+                    <img src="logo-plc.png" class="service-img" alt="Industrial automation">
+                    <div class="service-body">
+                        <span class="service-number">04 / INDUSTRIAL</span>
+                        <h3 data-i18n="srv4Title">Βιομηχανικοί Αυτοματισμοί</h3>
+                        <p data-i18n="srv4Desc">Αυτοματισμοί παραγωγής, αισθητήρες, κινητήρες, inverters, fault diagnosis και αναβάθμιση υφιστάμενων εγκαταστάσεων.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-            document.getElementById('projects-title').innerText = t.projectsTitle;
-            document.getElementById('proj1-title').innerText = t.proj1Title;
-            document.getElementById('proj1-desc').innerText = t.proj1Desc;
-            document.getElementById('proj2-title').innerText = t.proj2Title;
-            document.getElementById('proj2-desc').innerText = t.proj2Desc;
-            document.getElementById('proj3-title').innerText = t.proj3Title;
-            document.getElementById('proj3-desc').innerText = t.proj3Desc;
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-kicker" data-i18n="projectsKicker">Applications</div>
+                <h2 class="section-title" data-i18n="projectsTitle">Projects που λύνουν πραγματικά προβλήματα</h2>
+                <p class="section-subtitle" data-i18n="projectsSubtitle">Από ένα απλό αυτοματισμό αντλίας μέχρι ολοκληρωμένο σύστημα παρακολούθησης.</p>
+            </div>
 
-            document.getElementById('products-title').innerText = t.productsTitle;
-            document.getElementById('prod1-title').innerText = t.prod1Title;
-            document.getElementById('prod1-desc').innerText = t.prod1Desc;
-            document.getElementById('prod2-title').innerText = t.prod2Title;
-            document.getElementById('prod2-desc').innerText = t.prod2Desc;
-            document.getElementById('prod3-title').innerText = t.prod3Title;
-            document.getElementById('prod3-desc').innerText = t.prod3Desc;
+            <div class="project-grid">
+                <article class="project">
+                    <img src="pump.png" alt="Telemetry and remote monitoring">
+                    <div class="project-content">
+                        <span class="tag">TELEMETRY</span>
+                        <h3 data-i18n="proj1Title">Τηλεμετρία & Remote Monitoring</h3>
+                        <p data-i18n="proj1Desc">Παρακολούθηση στάθμης, θερμοκρασίας, τάσης μπαταριών και κρίσιμων alarms με δυνατότητα απομακρυσμένου ελέγχου.</p>
+                    </div>
+                </article>
 
-            document.getElementById('about-title').innerText = t.aboutTitle;
-            document.getElementById('about-desc1').innerText = t.aboutDesc1;
-            document.getElementById('about-desc2').innerText = t.aboutDesc2;
+                <article class="project">
+                    <img src="logo-plc.png" alt="Siemens LOGO automation panel">
+                    <div class="project-content">
+                        <span class="tag">SIEMENS</span>
+                        <h3 data-i18n="proj2Title">Custom PLC / LOGO! Automation</h3>
+                        <p data-i18n="proj2Desc">Σχεδιασμός λογικής ελέγχου, interlocks, timers, alarms, αναλογικά σήματα και custom λειτουργίες.</p>
+                    </div>
+                </article>
 
-            document.getElementById('contact-title').innerText = t.contactTitle;
-            document.getElementById('contact-subtitle').innerText = t.contactSubtitle;
-            document.getElementById('btn-phone').innerText = t.btnPhone;
-            document.getElementById('btn-email').innerText = t.btnEmail;
-            document.getElementById('counter-label').innerText = t.counterLabel;
+                <article class="project">
+                    <img src="boat.png" alt="Marine safety system">
+                    <div class="project-content">
+                        <span class="tag">MARINE SAFETY</span>
+                        <h3 data-i18n="proj3Title">Marine Safety & Alarm Systems</h3>
+                        <p data-i18n="proj3Desc">Ανίχνευση εισροής νερού, καπνού, αερίων και άλλων κρίσιμων καταστάσεων με οπτική και ηχητική ειδοποίηση.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-            const btns = document.querySelectorAll('.lang-btn');
-            btns.forEach(btn => btn.classList.remove('active'));
-            if (event && event.target) {
-                event.target.classList.add('active');
-            }
-        }
+    <section>
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-image" aria-label="Automation control"></div>
+                <div>
+                    <div class="section-kicker" data-i18n="whyKicker">Γιατί Lampou Marine</div>
+                    <h2 class="section-title" data-i18n="whyTitle">Τεχνική λύση, όχι απλώς ένα προϊόν.</h2>
+                    <p class="section-subtitle" data-i18n="whySubtitle">Κάθε εφαρμογή σχεδιάζεται με βάση τον εξοπλισμό, το περιβάλλον και τον τρόπο λειτουργίας της εγκατάστασης.</p>
 
-        function toggleMenu() {
-            const menu = document.getElementById('nav-menu');
-            menu.classList.toggle('active');
-        }
+                    <ul class="check-list">
+                        <li><span class="check">✓</span><span data-i18n="why1">Custom σχεδιασμός και προγραμματισμός</span></li>
+                        <li><span class="check">✓</span><span data-i18n="why2">PLC, LOGO!, inverters και αισθητήρες</span></li>
+                        <li><span class="check">✓</span><span data-i18n="why3">Marine και industrial εφαρμογές</span></li>
+                        <li><span class="check">✓</span><span data-i18n="why4">Τηλεμετρία και απομακρυσμένη παρακολούθηση</span></li>
+                        <li><span class="check">✓</span><span data-i18n="why5">Αναβάθμιση και troubleshooting υφιστάμενων συστημάτων</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        function closeMenu() {
-            const menu = document.getElementById('nav-menu');
-            menu.classList.remove('active');
-        }
-    </script>
+    <section id="solutions" class="projects">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-kicker" data-i18n="solutionsKicker">Solutions</div>
+                <h2 class="section-title" data-i18n="solutionsTitle">Λύσεις στα μέτρα της εφαρμογής</h2>
+            </div>
+
+            <div class="solution-grid">
+                <article class="solution">
+                    <div class="solution-icon">🚤</div>
+                    <h3 data-i18n="sol1Title">Marine Monitoring</h3>
+                    <p data-i18n="sol1Desc">Έλεγχος και παρακολούθηση κρίσιμων λειτουργιών σκάφους με έμφαση στην ασφάλεια και την αξιοπιστία.</p>
+                </article>
+                <article class="solution">
+                    <div class="solution-icon">⚙️</div>
+                    <h3 data-i18n="sol2Title">Industrial Control</h3>
+                    <p data-i18n="sol2Desc">PLC, κινητήρες, inverters, αισθητήρες και αυτοματοποιημένες διαδικασίες για βιομηχανικές εγκαταστάσεις.</p>
+                </article>
+                <article class="solution">
+                    <div class="solution-icon">💧</div>
+                    <h3 data-i18n="sol3Title">Pumping & Water</h3>
+                    <p data-i18n="sol3Desc">Αντλιοστάσια, πηγάδια, δεξαμενές και συστήματα προστασίας με δυνατότητα τηλεμετρίας.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-kicker" data-i18n="aboutKicker">About</div>
+                <h2 class="section-title" data-i18n="aboutTitle">Lampou Marine Automation Systems</h2>
+            </div>
+
+            <div class="about-box">
+                <p data-i18n="about1">Η Lampou Marine Automation Systems δραστηριοποιείται στον σχεδιασμό, τον προγραμματισμό και την υλοποίηση λύσεων αυτοματισμού, τηλεμετρίας και ηλεκτρονικών συστημάτων.</p>
+                <p data-i18n="about2">Με τεχνική εμπειρία σε PLC, Siemens LOGO!, βιομηχανικούς αυτοματισμούς, αντλιοστάσια και ναυτιλιακές εφαρμογές, στόχος είναι κάθε λύση να είναι αξιόπιστη, πρακτική και προσαρμοσμένη στις πραγματικές συνθήκες λειτουργίας.</p>
+                <p data-i18n="about3">Από τον σχεδιασμό της λογικής ελέγχου και την κατασκευή του πίνακα μέχρι την εγκατάσταση, τον προγραμματισμό και το troubleshooting, η προσέγγιση είναι ολοκληρωμένη.</p>
+
+                <div class="signature">
+                    <strong>Petros Lampou</strong>
+                    <span>Automation & Marine Systems</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-wrap">
+                <h2 data-i18n="contactTitle">Έχετε μια τεχνική εφαρμογή;</h2>
+                <p data-i18n="contactSubtitle">Περιγράψτε μας τι θέλετε να αυτοματοποιήσετε και θα εξετάσουμε μαζί την κατάλληλη λύση.</p>
+
+                <div class="contact-buttons">
+                    <a href="tel:+306932942432" class="btn contact-btn">📞 +30 693 294 2432</a>
+                    <a href="https://wa.me/306932942432" target="_blank" rel="noopener" class="btn whatsapp">WhatsApp</a>
+                    <a href="viber://chat?number=%2B306932942432" class="btn viber">Viber</a>
+                    <a href="mailto:peterlampou@hotmail.com" class="btn email">✉️ peterlampou@hotmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-brand">Lampou Marine Automation Systems</div>
+    <p>© 2026 Lampou Marine Automation Systems. All Rights Reserved.</p>
+    <div class="counter-box">
+        <span id="counter-label">👁️ Επισκέπτες:</span>
+        <img src="https://hitwebcounter.com/counter/counter.php?page=lampou_marine_pv_2026&style=0006&nbdigits=5&type=ip&initCount=0" alt="Visitor counter">
+    </div>
+</footer>
+
+<a class="floating-phone" href="tel:+306932942432" aria-label="Call Lampou Marine">📞</a>
+
+<script>
+const translations = {
+el:{
+navHome:"Αρχική",navServices:"Υπηρεσίες",navProjects:"Projects",navSolutions:"Λύσεις",navAbout:"Σχετικά",navContact:"Επικοινωνία",
+heroKicker:"Marine & Industrial Automation",
+heroLead:"Αυτοματισμοί, PLC, τηλεμετρία και ηλεκτρονικά συστήματα για σκάφη, βιομηχανία, αντλιοστάσια και εξειδικευμένες εφαρμογές.",
+heroBtn:"📩 Ζητήστε προσφορά",heroBtn2:"⚙️ Δείτε τις λύσεις μας",
+servicesKicker:"Τι κάνουμε",servicesTitle:"Εξειδικευμένοι Αυτοματισμοί",servicesSubtitle:"Πρακτικές και αξιόπιστες λύσεις σχεδιασμένες γύρω από τις πραγματικές ανάγκες κάθε εγκατάστασης.",
+srv1Title:"Σκάφη & Ναυτιλία",srv1Desc:"Monitoring, alarms, αντλίες, στάθμες, αισθητήρες νερού/αερίων, μπαταρίες και custom συστήματα ασφαλείας.",
+srv2Title:"PLC & LOGO!",srv2Desc:"Προγραμματισμός Siemens LOGO! και S7-1200, inverters, πίνακες αυτοματισμού και έλεγχος μηχανών.",
+srv3Title:"Αντλιοστάσια & Πηγάδια",srv3Desc:"Έλεγχος στάθμης, πιεστικά, εναλλαγή αντλιών, προστασία ξηράς λειτουργίας, alarms και τηλεμετρία.",
+srv4Title:"Βιομηχανικοί Αυτοματισμοί",srv4Desc:"Αυτοματισμοί παραγωγής, αισθητήρες, κινητήρες, inverters, fault diagnosis και αναβάθμιση υφιστάμενων εγκαταστάσεων.",
+projectsKicker:"Applications",projectsTitle:"Projects που λύνουν πραγματικά προβλήματα",projectsSubtitle:"Από ένα απλό αυτοματισμό αντλίας μέχρι ολοκληρωμένο σύστημα παρακολούθησης.",
+proj1Title:"Τηλεμετρία & Remote Monitoring",proj1Desc:"Παρακολούθηση στάθμης, θερμοκρασίας, τάσης μπαταριών και κρίσιμων alarms με δυνατότητα απομακρυσμένου ελέγχου.",
+proj2Title:"Custom PLC / LOGO! Automation",proj2Desc:"Σχεδιασμός λογικής ελέγχου, interlocks, timers, alarms, αναλογικά σήματα και custom λειτουργίες.",
+proj3Title:"Marine Safety & Alarm Systems",proj3Desc:"Ανίχνευση εισροής νερού, καπνού, αερίων και άλλων κρίσιμων καταστάσεων με οπτική και ηχητική ειδοποίηση.",
+whyKicker:"Γιατί Lampou Marine",whyTitle:"Τεχνική λύση, όχι απλώς ένα προϊόν.",whySubtitle:"Κάθε εφαρμογή σχεδιάζεται με βάση τον εξοπλισμό, το περιβάλλον και τον τρόπο λειτουργίας της εγκατάστασης.",
+why1:"Custom σχεδιασμός και προγραμματισμός",why2:"PLC, LOGO!, inverters και αισθητήρες",why3:"Marine και industrial εφαρμογές",why4:"Τηλεμετρία και απομακρυσμένη παρακολούθηση",why5:"Αναβάθμιση και troubleshooting υφιστάμενων συστημάτων",
+solutionsKicker:"Solutions",solutionsTitle:"Λύσεις στα μέτρα της εφαρμογής",
+sol1Title:"Marine Monitoring",sol1Desc:"Έλεγχος και παρακολούθηση κρίσιμων λειτουργιών σκάφους με έμφαση στην ασφάλεια και την αξιοπιστία.",
+sol2Title:"Industrial Control",sol2Desc:"PLC, κινητήρες, inverters, αισθητήρες και αυτοματοποιημένες διαδικασίες για βιομηχανικές εγκαταστάσεις.",
+sol3Title:"Pumping & Water",sol3Desc:"Αντλιοστάσια, πηγάδια, δεξαμενές και συστήματα προστασίας με δυνατότητα τηλεμετρίας.",
+aboutKicker:"About",aboutTitle:"Lampou Marine Automation Systems",
+about1:"Η Lampou Marine Automation Systems δραστηριοποιείται στον σχεδιασμό, τον προγραμματισμό και την υλοποίηση λύσεων αυτοματισμού, τηλεμετρίας και ηλεκτρονικών συστημάτων.",
+about2:"Με τεχνική εμπειρία σε PLC, Siemens LOGO!, βιομηχανικούς αυτοματισμούς, αντλιοστάσια και ναυτιλιακές εφαρμογές, στόχος είναι κάθε λύση να είναι αξιόπιστη, πρακτική και προσαρμοσμένη στις πραγματικές συνθήκες λειτουργίας.",
+about3:"Από τον σχεδιασμό της λογικής ελέγχου και την κατασκευή του πίνακα μέχρι την εγκατάσταση, τον προγραμματισμό και το troubleshooting, η προσέγγιση είναι ολοκληρωμένη.",
+contactTitle:"Έχετε μια τεχνική εφαρμογή;",contactSubtitle:"Περιγράψτε μας τι θέλετε να αυτοματοποιήσετε και θα εξετάσουμε μαζί την κατάλληλη λύση.",
+counter:"👁️ Επισκέπτες:"
+},
+en:{
+navHome:"Home",navServices:"Services",navProjects:"Projects",navSolutions:"Solutions",navAbout:"About",navContact:"Contact",
+heroKicker:"Marine & Industrial Automation",heroLead:"Automation, PLC, telemetry and electronic systems for marine, industrial, pumping and specialized applications.",heroBtn:"📩 Request a quote",heroBtn2:"⚙️ Explore our solutions",
+servicesKicker:"What we do",servicesTitle:"Specialized Automation",servicesSubtitle:"Practical and reliable solutions designed around the real needs of every installation.",
+srv1Title:"Marine & Boating",srv1Desc:"Monitoring, alarms, pumps, levels, water/gas sensors, batteries and custom vessel safety systems.",
+srv2Title:"PLC & LOGO!",srv2Desc:"Siemens LOGO! and S7-1200 programming, inverters, automation panels and machine control.",
+srv3Title:"Pumping Stations & Wells",srv3Desc:"Level control, booster systems, pump alternation, dry-run protection, alarms and telemetry.",
+srv4Title:"Industrial Automation",srv4Desc:"Production automation, sensors, motors, inverters, fault diagnosis and upgrades of existing systems.",
+projectsKicker:"Applications",projectsTitle:"Projects that solve real problems",projectsSubtitle:"From a simple pump controller to a complete monitoring system.",
+proj1Title:"Telemetry & Remote Monitoring",proj1Desc:"Monitoring levels, temperatures, battery voltage and critical alarms with remote control capability.",
+proj2Title:"Custom PLC / LOGO! Automation",proj2Desc:"Control logic, interlocks, timers, alarms, analog signals and custom functions.",
+proj3Title:"Marine Safety & Alarm Systems",proj3Desc:"Detection of water ingress, smoke, gases and other critical conditions with visual and audible alarms.",
+whyKicker:"Why Lampou Marine",whyTitle:"A technical solution, not just a product.",whySubtitle:"Every application is designed around the equipment, environment and actual operating conditions.",
+why1:"Custom design and programming",why2:"PLC, LOGO!, inverters and sensors",why3:"Marine and industrial applications",why4:"Telemetry and remote monitoring",why5:"Upgrades and troubleshooting of existing systems",
+solutionsKicker:"Solutions",solutionsTitle:"Solutions tailored to the application",
+sol1Title:"Marine Monitoring",sol1Desc:"Monitoring critical vessel functions with a focus on safety and reliability.",
+sol2Title:"Industrial Control",sol2Desc:"PLC, motors, inverters, sensors and automated processes for industrial installations.",
+sol3Title:"Pumping & Water",sol3Desc:"Pumping stations, wells, tanks and protection systems with telemetry capability.",
+aboutKicker:"About",aboutTitle:"Lampou Marine Automation Systems",
+about1:"Lampou Marine Automation Systems specializes in the design, programming and implementation of automation, telemetry and electronic systems.",
+about2:"With technical experience in PLC, Siemens LOGO!, industrial automation, pumping systems and marine applications, the goal is to deliver reliable, practical solutions tailored to real operating conditions.",
+about3:"From control logic and panel design to installation, programming and troubleshooting, our approach is complete.",
+contactTitle:"Have a technical application?",contactSubtitle:"Tell us what you want to automate and we will examine the right solution with you.",counter:"👁️ Visitors:"
+},
+de:{
+navHome:"Startseite",navServices:"Dienstleistungen",navProjects:"Projekte",navSolutions:"Lösungen",navAbout:"Über uns",navContact:"Kontakt",
+heroKicker:"Marine & Industrial Automation",heroLead:"Automatisierung, SPS, Telemetrie und elektronische Systeme für Boote, Industrie, Pumpstationen und Sonderanwendungen.",heroBtn:"📩 Angebot anfordern",heroBtn2:"⚙️ Lösungen ansehen",
+servicesKicker:"Leistungen",servicesTitle:"Spezialisierte Automatisierung",servicesSubtitle:"Praktische und zuverlässige Lösungen für die tatsächlichen Anforderungen jeder Anlage.",
+srv1Title:"Boote & Marine",srv1Desc:"Monitoring, Alarme, Pumpen, Füllstände, Wasser-/Gassensoren, Batterien und individuelle Sicherheitssysteme.",
+srv2Title:"SPS & LOGO!",srv2Desc:"Programmierung von Siemens LOGO! und S7-1200, Frequenzumrichter, Automatisierungsschaltschränke und Maschinensteuerung.",
+srv3Title:"Pumpstationen & Brunnen",srv3Desc:"Füllstandssteuerung, Druckerhöhungsanlagen, Pumpenwechsel, Trockenlaufschutz, Alarme und Telemetrie.",
+srv4Title:"Industrieautomation",srv4Desc:"Produktionsautomation, Sensoren, Motoren, Frequenzumrichter, Fehlerdiagnose und Modernisierung bestehender Anlagen.",
+projectsKicker:"Anwendungen",projectsTitle:"Projekte für reale technische Probleme",projectsSubtitle:"Von einer einfachen Pumpensteuerung bis zu einem kompletten Überwachungssystem.",
+proj1Title:"Telemetrie & Fernüberwachung",proj1Desc:"Überwachung von Füllständen, Temperaturen, Batteriespannung und kritischen Alarmen mit Fernsteuerungsmöglichkeit.",
+proj2Title:"Individuelle SPS / LOGO! Automation",proj2Desc:"Steuerungslogik, Verriegelungen, Timer, Alarme, Analogsignale und kundenspezifische Funktionen.",
+proj3Title:"Marine Sicherheits- & Alarmsysteme",proj3Desc:"Erkennung von Wassereinbruch, Rauch, Gasen und anderen kritischen Zuständen mit optischen und akustischen Alarmen.",
+whyKicker:"Warum Lampou Marine",whyTitle:"Eine technische Lösung, nicht nur ein Produkt.",whySubtitle:"Jede Anwendung wird auf Geräte, Umgebung und tatsächliche Betriebsbedingungen abgestimmt.",
+why1:"Individuelle Planung und Programmierung",why2:"SPS, LOGO!, Frequenzumrichter und Sensoren",why3:"Marine- und Industrieanwendungen",why4:"Telemetrie und Fernüberwachung",why5:"Modernisierung und Fehlersuche bestehender Systeme",
+solutionsKicker:"Lösungen",solutionsTitle:"Lösungen passend zur Anwendung",
+sol1Title:"Marine Monitoring",sol1Desc:"Überwachung wichtiger Boots- und Schiffsfunktionen mit Fokus auf Sicherheit und Zuverlässigkeit.",
+sol2Title:"Industrial Control",sol2Desc:"SPS, Motoren, Frequenzumrichter, Sensoren und automatisierte Prozesse für Industrieanlagen.",
+sol3Title:"Pumping & Water",sol3Desc:"Pumpstationen, Brunnen, Tanks und Schutzsysteme mit Telemetrieoption.",
+aboutKicker:"Über uns",aboutTitle:"Lampou Marine Automation Systems",
+about1:"Lampou Marine Automation Systems entwickelt, programmiert und realisiert Automatisierungs-, Telemetrie- und elektronische Systeme.",
+about2:"Mit technischer Erfahrung in SPS, Siemens LOGO!, Industrieautomation, Pumpensystemen und Marineanwendungen entstehen zuverlässige und praxisorientierte Lösungen.",
+about3:"Von der Steuerungslogik und Schaltschrankplanung bis zu Installation, Programmierung und Fehlersuche bieten wir einen umfassenden Ansatz.",
+contactTitle:"Haben Sie eine technische Anwendung?",contactSubtitle:"Beschreiben Sie uns, was Sie automatisieren möchten, und wir prüfen gemeinsam die passende Lösung.",counter:"👁️ Besucher:"
+},
+it:{
+navHome:"Home",navServices:"Servizi",navProjects:"Progetti",navSolutions:"Soluzioni",navAbout:"Chi siamo",navContact:"Contatti",
+heroKicker:"Marine & Industrial Automation",heroLead:"Automazione, PLC, telemetria e sistemi elettronici per nautica, industria, stazioni di pompaggio e applicazioni speciali.",heroBtn:"📩 Richiedi un preventivo",heroBtn2:"⚙️ Scopri le soluzioni",
+servicesKicker:"Cosa facciamo",servicesTitle:"Automazione specializzata",servicesSubtitle:"Soluzioni pratiche e affidabili progettate sulle reali esigenze di ogni impianto.",
+srv1Title:"Nautica e Marine",srv1Desc:"Monitoraggio, allarmi, pompe, livelli, sensori acqua/gas, batterie e sistemi di sicurezza personalizzati.",
+srv2Title:"PLC e LOGO!",srv2Desc:"Programmazione Siemens LOGO! e S7-1200, inverter, quadri di automazione e controllo macchine.",
+srv3Title:"Stazioni di pompaggio e pozzi",srv3Desc:"Controllo livello, gruppi di pressione, alternanza pompe, protezione contro il funzionamento a secco, allarmi e telemetria.",
+srv4Title:"Automazione industriale",srv4Desc:"Automazione della produzione, sensori, motori, inverter, diagnosi guasti e aggiornamento di sistemi esistenti.",
+projectsKicker:"Applicazioni",projectsTitle:"Progetti per problemi reali",projectsSubtitle:"Da un semplice controllo pompa a un sistema completo di monitoraggio.",
+proj1Title:"Telemetria e monitoraggio remoto",proj1Desc:"Monitoraggio di livelli, temperature, tensione batterie e allarmi critici con possibilità di controllo remoto.",
+proj2Title:"Automazione PLC / LOGO! personalizzata",proj2Desc:"Logiche di controllo, interblocchi, timer, allarmi, segnali analogici e funzioni personalizzate.",
+proj3Title:"Sistemi di sicurezza e allarme Marine",proj3Desc:"Rilevamento di ingresso acqua, fumo, gas e altre condizioni critiche con allarmi visivi e acustici.",
+whyKicker:"Perché Lampou Marine",whyTitle:"Una soluzione tecnica, non solo un prodotto.",whySubtitle:"Ogni applicazione viene progettata considerando apparecchiature, ambiente e condizioni operative reali.",
+why1:"Progettazione e programmazione personalizzata",why2:"PLC, LOGO!, inverter e sensori",why3:"Applicazioni marine e industriali",why4:"Telemetria e monitoraggio remoto",why5:"Aggiornamento e troubleshooting di sistemi esistenti",
+solutionsKicker:"Soluzioni",solutionsTitle:"Soluzioni su misura per l'applicazione",
+sol1Title:"Marine Monitoring",sol1Desc:"Monitoraggio delle funzioni critiche dell'imbarcazione con attenzione a sicurezza e affidabilità.",
+sol2Title:"Industrial Control",sol2Desc:"PLC, motori, inverter, sensori e processi automatizzati per impianti industriali.",
+sol3Title:"Pumping & Water",sol3Desc:"Stazioni di pompaggio, pozzi, serbatoi e sistemi di protezione con possibilità di telemetria.",
+aboutKicker:"Chi siamo",aboutTitle:"Lampou Marine Automation Systems",
+about1:"Lampou Marine Automation Systems progetta, programma e realizza sistemi di automazione, telemetria ed elettronica.",
+about2:"Con esperienza tecnica in PLC, Siemens LOGO!, automazione industriale, sistemi di pompaggio e applicazioni marine, sviluppiamo soluzioni affidabili e pratiche.",
+about3:"Dalla logica di controllo e progettazione del quadro all'installazione, programmazione e troubleshooting, offriamo un approccio completo.",
+contactTitle:"Hai un'applicazione tecnica?",contactSubtitle:"Descrivici cosa vuoi automatizzare e valuteremo insieme la soluzione più adatta.",counter:"👁️ Visitatori:"
+}
+};
+
+function setLanguage(lang){
+    const t=translations[lang];
+    if(!t)return;
+    document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key=el.getAttribute("data-i18n");
+        if(t[key]!==undefined)el.textContent=t[key];
+    });
+    document.querySelectorAll(".lang-btn").forEach(btn=>{
+        btn.classList.toggle("active",btn.dataset.lang===lang);
+    });
+    document.documentElement.lang=lang;
+    localStorage.setItem("lampouLanguage",lang);
+}
+function toggleMenu(){document.getElementById("nav-menu").classList.toggle("active")}
+function closeMenu(){document.getElementById("nav-menu").classList.remove("active")}
+
+document.addEventListener("DOMContentLoaded",()=>{
+    const saved=localStorage.getItem("lampouLanguage");
+    if(saved && translations[saved]) setLanguage(saved);
+});
+</script>
+
 </body>
 </html>
