@@ -46,10 +46,16 @@
         .brand-text strong { display: block; color: #fff; font-size: 1rem; letter-spacing: 0.5px; }
         .brand-text span { display: block; color: var(--cyan); font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; }
 
+        .nav-right-group { display: flex; align-items: center; gap: 20px; }
         .nav-list { display: flex; align-items: center; gap: 24px; list-style: none; }
         .nav-link { color: #cfdedf; font-size: 0.9rem; font-weight: 600; transition: color 0.2s; }
         .nav-link:hover { color: var(--cyan); }
         
+        /* LANGUAGE SWITCHER */
+        .lang-switch { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .lang-btn { background: none; border: none; cursor: pointer; font-size: 1.1rem; opacity: 0.5; transition: opacity 0.2s, transform 0.2s; padding: 0; }
+        .lang-btn.active, .lang-btn:hover { opacity: 1; transform: scale(1.1); }
+
         .menu-toggle {
             display: none; background: none; border: none; cursor: pointer;
             flex-direction: column; justify-content: space-between; width: 30px; height: 22px; padding: 0;
@@ -124,7 +130,7 @@
         .project-card h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: 8px; }
         .project-card p { font-size: 0.92rem; color: var(--text-muted); }
 
-        /* FAQ SECTION (SCROLLABLE 40 ITEMS) */
+        /* FAQ SECTION */
         .faq-section { background: #fff; }
         .faq-container {
             background: #f7fbfe; border: 1px solid var(--border-color); border-radius: 24px;
@@ -202,18 +208,25 @@
             </div>
         </a>
 
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+        <div class="nav-right-group">
+            <ul class="nav-list" id="nav-list">
+                <li><a class="nav-link" href="#home" onclick="closeMenu()">Αρχική</a></li>
+                <li><a class="nav-link" href="#services" onclick="closeMenu()">Υπηρεσίες</a></li>
+                <li><a class="nav-link" href="#projects" onclick="closeMenu()">Projects</a></li>
+                <li><a class="nav-link" href="#faq" onclick="closeMenu()">FAQ (40)</a></li>
+                <li><a class="nav-link" href="#about" onclick="closeMenu()">Σχετικά</a></li>
+                <li><a class="nav-link" href="#contact" onclick="closeMenu()">Επικοινωνία</a></li>
+            </ul>
 
-        <ul class="nav-list" id="nav-list">
-            <li><a class="nav-link" href="#home" onclick="closeMenu()">Αρχική</a></li>
-            <li><a class="nav-link" href="#services" onclick="closeMenu()">Υπηρεσίες</a></li>
-            <li><a class="nav-link" href="#projects" onclick="closeMenu()">Projects</a></li>
-            <li><a class="nav-link" href="#faq" onclick="closeMenu()">FAQ (40)</a></li>
-            <li><a class="nav-link" href="#about" onclick="closeMenu()">Σχετικά</a></li>
-            <li><a class="nav-link" href="#contact" onclick="closeMenu()">Επικοινωνία</a></li>
-        </ul>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLanguage('el')" title="Ελληνικά">🇬🇷</button>
+                <button class="lang-btn" onclick="setLanguage('en')" title="English">🇬🇧</button>
+            </div>
+
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
     <main id="home">
@@ -545,6 +558,16 @@
     }
     function closeMenu() {
         document.getElementById("nav-list").classList.remove("active");
+    }
+    function setLanguage(lang) {
+        const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        if(lang === 'el') {
+            document.querySelector('[onclick="setLanguage(\'el\')"]').classList.add('active');
+            // Εδώ μπορείς να προσθέσεις μελλοντικά μετάφραση κειμένων αν χρειαστεί
+        } else {
+            document.querySelector('[onclick="setLanguage(\'en\')"]').classList.add('active');
+        }
     }
     </script>
 
