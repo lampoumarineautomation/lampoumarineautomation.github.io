@@ -38,7 +38,6 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
-            /* ΠΡΟΣΘΗΚΗ: Κενό στην κορυφή για να μην κρύβει το fixed header περιεχόμενο */
             padding-top: 85px; 
         }
 
@@ -78,25 +77,6 @@
             color: var(--accent);
         }
 
-        .nav-list {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-list a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        .nav-list a:hover {
-            color: var(--accent);
-        }
-
         .nav-actions {
             display: flex;
             align-items: center;
@@ -127,15 +107,6 @@
             background: var(--accent);
             color: var(--primary);
             font-weight: 700;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-size: 1.5rem;
-            cursor: pointer;
         }
 
         /* Hero Section */
@@ -548,28 +519,6 @@
             font-size: 0.9rem;
             background: var(--primary);
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-list {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--primary);
-                padding: 2rem;
-                border-bottom: 1px solid var(--border-color);
-                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            }
-            .nav-list.active {
-                display: flex;
-            }
-            .menu-toggle {
-                display: block;
-            }
-        }
     </style>
 </head>
 <body>
@@ -578,13 +527,6 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo">⚡ <span id="logo-text">Lampou Marine</span></a>
-            <ul class="nav-list" id="nav-list">
-                <li><a href="#services" id="nav-serv" onclick="closeMenu()">Υπηρεσίες</a></li>
-                <li><a href="#projects" id="nav-proj" onclick="closeMenu()">Projects</a></li>
-                <li><a href="#about" id="nav-about" onclick="closeMenu()">Σχετικά</a></li>
-                <li><a href="#faq" id="nav-faq" onclick="closeMenu()">FAQ</a></li>
-                <li><a href="#contact" id="nav-cont" onclick="closeMenu()">Επικοινωνία</a></li>
-            </ul>
             <div class="nav-actions">
                 <div class="lang-switch">
                     <button class="lang-btn active" onclick="setLanguage('el')" title="Ελληνικά">🇬🇷</button>
@@ -593,7 +535,6 @@
                     <button class="lang-btn" onclick="setLanguage('it')" title="Italiano">🇮🇹</button>
                     <button class="lang-btn" onclick="setLanguage('fr')" title="Français">🇫🇷</button>
                 </div>
-                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             </div>
         </div>
     </header>
@@ -796,25 +737,12 @@
     </footer>
 
     <script>
-    function toggleMenu() {
-        document.getElementById("nav-list").classList.toggle("active");
-    }
-    function closeMenu() {
-        document.getElementById("nav-list").classList.remove("active");
-    }
-
     function setLanguage(lang) {
         const buttons = document.querySelectorAll('.lang-btn');
         buttons.forEach(btn => btn.classList.remove('active'));
         event.currentTarget.classList.add('active');
 
         if(lang === 'el') {
-            document.getElementById('nav-serv').innerText = 'Υπηρεσίες';
-            document.getElementById('nav-proj').innerText = 'Projects';
-            document.getElementById('nav-about').innerText = 'Σχετικά';
-            document.getElementById('nav-faq').innerText = 'FAQ';
-            document.getElementById('nav-cont').innerText = 'Επικοινωνία';
-            
             document.getElementById('hero-badge').innerText = '⚡ Marine & Industrial Automation • Πέτρος Λάμπου';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
@@ -880,12 +808,6 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Με επιφύλαξη παντός δικαιώματος. • Πέτρος Λάμπου';
 
         } else if(lang === 'en') {
-            document.getElementById('nav-serv').innerText = 'Services';
-            document.getElementById('nav-proj').innerText = 'Projects';
-            document.getElementById('nav-about').innerText = 'About';
-            document.getElementById('nav-faq').innerText = 'FAQ';
-            document.getElementById('nav-cont').innerText = 'Contact';
-            
             document.getElementById('hero-badge').innerText = '⚡ Marine & Industrial Automation • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
@@ -951,12 +873,6 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. All rights reserved. • Petros Lampou';
 
         } else if(lang === 'de') {
-            document.getElementById('nav-serv').innerText = 'Dienstleistungen';
-            document.getElementById('nav-proj').innerText = 'Projekte';
-            document.getElementById('nav-about').innerText = 'Über uns';
-            document.getElementById('nav-faq').innerText = 'FAQ';
-            document.getElementById('nav-cont').innerText = 'Kontakt';
-            
             document.getElementById('hero-badge').innerText = '⚡ Marine- & Industrieautomation • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
@@ -1022,12 +938,6 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Alle Rechte vorbehalten. • Petros Lampou';
 
         } else if(lang === 'it') {
-            document.getElementById('nav-serv').innerText = 'Servizi';
-            document.getElementById('nav-proj').innerText = 'Progetti';
-            document.getElementById('nav-about').innerText = 'Chi siamo';
-            document.getElementById('nav-faq').innerText = 'FAQ';
-            document.getElementById('nav-cont').innerText = 'Contatti';
-            
             document.getElementById('hero-badge').innerText = '⚡ Automazione Navale e Industriale • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
@@ -1093,12 +1003,6 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Tutti i diritti riservati. • Petros Lampou';
 
         } else if(lang === 'fr') {
-            document.getElementById('nav-serv').innerText = 'Services';
-            document.getElementById('nav-proj').innerText = 'Projets';
-            document.getElementById('nav-about').innerText = 'À propos';
-            document.getElementById('nav-faq').innerText = 'FAQ';
-            document.getElementById('nav-cont').innerText = 'Contact';
-            
             document.getElementById('hero-badge').innerText = '⚡ Automatisation Marine et Industrielle • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
