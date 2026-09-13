@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lampou Marine Automation Systems | Προηγμένοι Αυτοματισμοί & Συστήματα Σκαφών</title>
-    <meta name="description" content="Εξειδικευμένοι αυτοματισμοί σκαφών και βιομηχανικές λύσεις, προγραμματισμός Siemens LOGO! PLC, συστήματα τηλεμετρίας, αντλιοστάσια και έλεγχος υψηλής αξιοπιστίας από τον Πέτρο Λάμπου στη Λαμία.">
+    <meta name="description" content="Εξειδικευμένοι αυτοματισμοί σκαφών και βιομηχανικές λύσεις, προγραμματισμός Siemens LOGO!, συστήματα τηλεμετρίας και έλεγχος υψηλής αξιοπιστίας από τον Πέτρο Λάμπου στη Λαμία.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -38,6 +38,8 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
+            /* ΠΡΟΣΘΗΚΗ: Κενό στην κορυφή για να μην κρύβει το fixed header περιεχόμενο */
+            padding-top: 85px; 
         }
 
         /* Header & Navigation */
@@ -47,7 +49,7 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(2, 6, 23, 0.9);
+            background: rgba(2, 6, 23, 0.95);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
         }
@@ -58,7 +60,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 0.8rem 2rem;
         }
 
         .logo {
@@ -139,12 +141,12 @@
         /* Hero Section */
         .hero {
             position: relative;
-            min-height: 100vh;
+            min-height: calc(100vh - 85px);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 8rem 2rem 4rem;
+            padding: 4rem 2rem;
             background: radial-gradient(circle at 50% 30%, rgba(0, 240, 255, 0.08) 0%, transparent 60%);
         }
 
@@ -233,7 +235,7 @@
 
         /* Sections General */
         section {
-            padding: 6rem 2rem;
+            padding: 5rem 2rem;
             max-width: 1280px;
             margin: 0 auto;
         }
@@ -861,11 +863,11 @@
             document.getElementById('faq-title').innerText = 'Τεχνικές Ερωτήσεις & Απαντήσεις (FAQ)';
             document.getElementById('faq-desc').innerText = 'Αναλυτικός οδηγός για ναυτιλιακούς και βιομηχανικούς αυτοματισμούς.';
             document.getElementById('f1-q').innerText = 'Τι περιλαμβάνει ένα σύστημα αυτοματισμού σκάφους Lampou Marine?';
-            document.getElementById('f1-a').innerText = 'Περιλαμβάνει επιτήρηση σεντίνας, έλεγχο μπαταριών, ανίχνευση αερίων LPG, συναγερμούς ασφαλείας και κεντρική απεικόνιση στην οθόνη LOGO! screen (η οποία εμφανίζει αποκλειστικά την ώρα και την ημερομηνία, προβάλλοντας παράλληλα όλους τους συναγερμούς).';
+            document.getElementById('f1-a').innerText = 'Περιλαμβάνει επιτήρηση σεντίνας, έλεγχο μπαταριών, ανίχνευση αερίων LPG, συναγερμούς ασφαλείας και κεντρική απεικόνιση στην οθόνη LOGO! screen (η οποία εμφανίζει αποκλειστικά την ώρα και την ημερομηνία, προβάλλοντας ταυτόχρονα όλους τους ενεργούς συναγερμούς).';
             document.getElementById('f2-q').innerText = 'Πώς επιτυγχάνεται η προστασία πρόσβασης στους πίνακες;';
-            document.getElementById('f2-a').innerText = 'Χρησιμοποιείται password-locking σε συνδυασμό με προγραμματισμένη λογική στο Siemens LOGO! ώστε να αποτρέπεται οποιαδήποτε μη εξουσιοδοτημένη αλλαγή στις ρυθμίσεις.';
+            document.getElementById('f2-a').innerText = 'Χρησιμοποιείται password-locking σε συνδυασμό με προγραμματισμένη λογική στο Siemens LOGO! ώστε να αποτρέπεται οποιαδήποτε μη εξουσιοδοτημένη αλλαγή στις ρυθμίσεις και στα πλήκτρα.';
             document.getElementById('f3-q').innerText = 'Μπορούν τα συστήματα να συνδεθούν με κινητό τηλέφωνο;';
-            document.getElementById('f3-a').innerText = 'Ναι, υποστηρίζονται μονάδες τηλεμετρίας και Web HMI για απομακρυσμένη παρακολούθηση μετρήσεων, ειδοποιήσεις συναγερμού και προβολή τα πάντα απευθείας στο κινητό.';
+            document.getElementById('f3-a').innerText = 'Ναι, υποστηρίζονται μονάδες τηλεμετρίας και Web HMI για απομακρυσμένη παρακολούθηση μετρήσεων και ειδοποιήσεις συναγερμού, προβάλλοντας τα πάντα απευθείας στην κινητή συσκευή.';
 
             document.getElementById('cont-title').innerText = 'Επικοινωνία';
             document.getElementById('cont-desc').innerText = 'Είμαστε στη διάθεσή σας για οποιαδήποτε τεχνική εφαρμογή, μελέτη ή υποστήριξη.';
