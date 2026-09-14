@@ -420,19 +420,15 @@
         /* Contact Section */
         .contact-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 3rem;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 30px;
             padding: 3rem;
             box-shadow: 0 0 50px rgba(0, 240, 255, 0.05);
-        }
-
-        @media (max-width: 968px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .contact-info h3 {
@@ -468,46 +464,6 @@
 
         .contact-item:hover {
             color: var(--accent);
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .form-group label {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-muted);
-        }
-
-        .form-control {
-            background: var(--primary);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 0.85rem 1rem;
-            color: var(--text-main);
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
         }
 
         /* Footer */
@@ -712,22 +668,6 @@
                     </a>
                 </div>
             </div>
-            <div class="contact-form">
-                <h3 id="form-title" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Άμεση Αποστολή Μηνύματος</h3>
-                <div class="form-group">
-                    <label id="lbl-name" for="name">Ονοματεπώνυμο</label>
-                    <input type="text" id="name" class="form-control" placeholder="Το όνομα σας...">
-                </div>
-                <div class="form-group">
-                    <label id="lbl-email" for="email">Email</label>
-                    <input type="email" id="email" class="form-control" placeholder="Το email σας...">
-                </div>
-                <div class="form-group">
-                    <label id="lbl-msg" for="message">Μήνυμα</label>
-                    <textarea id="message" class="form-control" placeholder="Περιγράψτε την ανάγκη σας..."></textarea>
-                </div>
-                <button type="button" class="btn btn-cyan" id="btn-send" onclick="alert('Το μήνυμα ελήφθη! Θα επικοινωνήσουμε σύντομα.')">📩 Αποστολή Μηνύματος</button>
-            </div>
         </div>
     </section>
 
@@ -799,11 +739,6 @@
 
             document.getElementById('cont-title').innerText = 'Επικοινωνία';
             document.getElementById('cont-desc').innerText = 'Είμαστε στη διάθεσή σας για οποιαδήποτε τεχνική εφαρμογή, μελέτη ή υποστήριξη.';
-            document.getElementById('form-title').innerText = 'Άμεση Αποστολή Μηνύματος';
-            document.getElementById('lbl-name').innerText = 'Ονοματεπώνυμο';
-            document.getElementById('lbl-email').innerText = 'Email';
-            document.getElementById('lbl-msg').innerText = 'Μήνυμα';
-            document.getElementById('btn-send').innerText = '📩 Αποστολή Μηνύματος';
 
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Με επιφύλαξη παντός δικαιώματος. • Πέτρος Λάμπου';
 
@@ -864,11 +799,6 @@
 
             document.getElementById('cont-title').innerText = 'Contact Us';
             document.getElementById('cont-desc').innerText = 'We are at your disposal for any technical application, study, or support.';
-            document.getElementById('form-title').innerText = 'Send a Message';
-            document.getElementById('lbl-name').innerText = 'Full Name';
-            document.getElementById('lbl-email').innerText = 'Email Address';
-            document.getElementById('lbl-msg').innerText = 'Message';
-            document.getElementById('btn-send').innerText = '📩 Send Message';
 
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. All rights reserved. • Petros Lampou';
 
@@ -929,11 +859,6 @@
 
             document.getElementById('cont-title').innerText = 'Kontakt';
             document.getElementById('cont-desc').innerText = 'Wir stehen Ihnen für technische Anwendungen, Studien oder Support gerne zur Verfügung.';
-            document.getElementById('form-title').innerText = 'Nachricht senden';
-            document.getElementById('lbl-name').innerText = 'Vollständiger Name';
-            document.getElementById('lbl-email').innerText = 'E-Mail-Adresse';
-            document.getElementById('lbl-msg').innerText = 'Nachricht';
-            document.getElementById('btn-send').innerText = '📩 Nachricht senden';
 
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Alle Rechte vorbehalten. • Petros Lampou';
 
@@ -994,11 +919,6 @@
 
             document.getElementById('cont-title').innerText = 'Contatti';
             document.getElementById('cont-desc').innerText = 'Siamo a vostra disposizione per qualsiasi applicazione tecnica, studio o supporto.';
-            document.getElementById('form-title').innerText = 'Invia un messaggio';
-            document.getElementById('lbl-name').innerText = 'Nome e Cognome';
-            document.getElementById('lbl-email').innerText = 'Indirizzo Email';
-            document.getElementById('lbl-msg').innerText = 'Messaggio';
-            document.getElementById('btn-send').innerText = '📩 Invia Messaggio';
 
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Tutti i diritti riservati. • Petros Lampou';
 
@@ -1059,11 +979,8 @@
 
             document.getElementById('cont-title').innerText = 'Contactez-nous';
             document.getElementById('cont-desc').innerText = 'Nous sommes à votre disposition pour toute application technique, étude ou support.';
-            document.getElementById('form-title').innerText = 'Envoyer un message';
-            document.getElementById('lbl-name').innerText = 'Nom complet';
-            document.getElementById('lbl-email').innerText = 'Adresse e-mail';
-            document.getElementById('lbl-msg').innerText = 'Message';
-            document.getElementById('btn-send').innerText = '📩 Envoyer le message';
+
+            document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Tous droits réservés. • Petros Lampou';
         }
     }
     </script>
