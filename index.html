@@ -482,6 +482,83 @@
             color: var(--accent);
         }
 
+        /* Floating Action Button (FAB) Menu Styles */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .fab-main {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .fab-main:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 25px rgba(0, 240, 255, 0.6);
+        }
+
+        .fab-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: var(--transition);
+        }
+
+        .fab-container.active .fab-options {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .fab-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary-light);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .fab-option:hover {
+            background: var(--accent);
+            color: var(--primary);
+            border-color: var(--accent);
+            transform: translateX(-5px);
+        }
+
+        .fab-option span {
+            font-size: 1.1rem;
+        }
+
         /* Footer */
         footer {
             border-top: 1px solid var(--border-color);
@@ -688,12 +765,49 @@
         </div>
     </section>
 
+    <!-- Floating Action Button (FAB) Menu -->
+    <div class="fab-container" id="fabContainer">
+        <div class="fab-options">
+            <a href="tel:+306932942432" class="fab-option" title="Call">
+                <span>📞</span> Κλήση
+            </a>
+            <a href="mailto:peterlampou@hotmail.com" class="fab-option" title="Email">
+                <span>📧</span> Email
+            </a>
+            <a href="viber://chat?number=%2B306932942432" class="fab-option" title="Viber">
+                <span>📱</span> Viber
+            </a>
+            <a href="https://wa.me/306932942432" target="_blank" class="fab-option" title="WhatsApp">
+                <span>💬</span> WhatsApp
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="fab-option" title="LinkedIn">
+                <span>💼</span> LinkedIn
+            </a>
+        </div>
+        <button class="fab-main" onclick="toggleFab()" title="Επικοινωνία">
+            💬
+        </button>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p id="footer-text">&copy; 2026 Lampou Marine Automation Systems. Με επιφύλαξη παντός δικαιώματος. • Πέτρος Λάμπου</p>
     </footer>
 
     <script>
+    function toggleFab() {
+        const container = document.getElementById('fabContainer');
+        container.classList.toggle('active');
+    }
+
+    // Κλείσιμο του μενού αν ο χρήστης κάνει κλικ εκτός αυτού
+    document.addEventListener('click', function(event) {
+        const container = document.getElementById('fabContainer');
+        if (!container.contains(event.target)) {
+            container.classList.remove('active');
+        }
+    });
+
     function setLanguage(lang) {
         const buttons = document.querySelectorAll('.lang-btn');
         buttons.forEach(btn => btn.classList.remove('active'));
