@@ -224,7 +224,10 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 0.75rem;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
         }
 
         .section-title {
@@ -339,6 +342,9 @@
             font-size: 0.75rem;
             font-weight: 600;
             border: 1px solid rgba(59, 130, 246, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
         }
 
         /* About Section */
@@ -366,6 +372,9 @@
             font-size: 1.75rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .checklist {
@@ -410,11 +419,15 @@
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .faq-item p {
             color: var(--text-muted);
             font-size: 0.95rem;
+            padding-left: 1.7rem;
         }
 
         /* Contact Section */
@@ -435,6 +448,9 @@
             font-size: 1.75rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .contact-info p {
@@ -499,13 +515,14 @@
     <section class="hero">
         <div class="hero-content">
             <div class="badge">
-                <span id="hero-badge">⚡ Marine & Industrial Automation • Πέτρος Λάμπου</span>
+                <span>🚀</span>
+                <span id="hero-badge">Marine & Industrial Automation • Πέτρος Λάμπου</span>
             </div>
             <h1><span id="hero-title-main">Lampou Marine</span><br><span id="hero-title-sub">Automation Systems</span></h1>
             <p id="hero-desc">Προηγμένοι αυτοματισμοί σκαφών, προγραμματισμός PLC Siemens LOGO!, συστήματα τηλεμετρίας, αντλιοστάσια και βιομηχανικός έλεγχος υψηλής αξιοπιστίας.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-cyan" id="btn-contact-hero">📩 Επικοινωνία & Τεχνική Υποστήριξη</a>
-                <a href="#services" class="btn btn-outline" id="btn-serv-hero">Ανακαλύψτε τις Υπηρεσίες</a>
+                <a href="#services" class="btn btn-outline" id="btn-serv-hero">🧭 Ανακαλύψτε τις Υπηρεσίες</a>
             </div>
         </div>
     </section>
@@ -513,7 +530,7 @@
     <!-- Services Section -->
     <section id="services">
         <div class="section-header">
-            <span class="section-tag" id="serv-tag">Τι προσφέρουμε</span>
+            <span class="section-tag" id="serv-tag">💡 Τι προσφέρουμε</span>
             <h2 class="section-title" id="serv-title">Εξειδικευμένες Υπηρεσίες Αυτοματισμού</h2>
             <p class="section-desc" id="serv-desc">Λύσεις υψηλής τεχνολογίας προσαρμοσμένες στις απαιτήσεις της θάλασσας και της βιομηχανίας.</p>
         </div>
@@ -552,7 +569,7 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="section-header">
-            <span class="section-tag" id="proj-tag">Applications</span>
+            <span class="section-tag" id="proj-tag">🛠️ Applications</span>
             <h2 class="section-title" id="proj-title">Ολοκληρωμένα Projects</h2>
             <p class="section-desc" id="proj-desc">Εφαρμογές πεδίου με έμφαση στην ασφάλεια, την οπτικοποίηση και την αποτροπή σφαλμάτων.</p>
         </div>
@@ -563,8 +580,8 @@
                     <h3 id="p1-title">Απομακρυσμένη Τηλεμετρία</h3>
                     <p id="p1-desc">Παρακολούθηση κρίσιμων μετρήσεων σε πραγματικό χρόνο μέσω επικοινωνιακών modules και φιλικού περιεχομένου Web HMI.</p>
                     <div class="tag-list">
-                        <span class="tag">Telemetry</span>
-                        <span class="tag">GSM / Web</span>
+                        <span class="tag">🌐 Telemetry</span>
+                        <span class="tag">📶 GSM / Web</span>
                     </div>
                 </div>
             </div>
@@ -574,8 +591,8 @@
                     <h3 id="p2-title">Password-Locked Panels</h3>
                     <p id="p2-desc">Αποτροπή μη εξουσιοδοτημένης πρόσβασης σε προγράμματα και ρυθμίσεις πινάκων με αυστηρό κλείδωμα πλήκτρων και οθόνης.</p>
                     <div class="tag-list">
-                        <span class="tag">Security</span>
-                        <span class="tag">LOGO! HMI</span>
+                        <span class="tag">🛡️ Security</span>
+                        <span class="tag">📺 LOGO! HMI</span>
                     </div>
                 </div>
             </div>
@@ -585,8 +602,8 @@
                     <h3 id="p3-title">Lampou Marine System</h3>
                     <p id="p3-desc">Κεντρική μονάδα ελέγχου σκάφους με οθόνη LOGO!, αυτόματα alarms και άμεση οπτικοποίηση συμβάντων έκτακτης ανάγκης. Η οθόνη LOGO! εμφανίζει αποκλειστικά την ώρα και την ημερομηνία κατά την κανονική λειτουργία, ενώ όλοι οι συναγερμοί προβάλλονται απευθείας στην οθόνη.</p>
                     <div class="tag-list">
-                        <span class="tag">Marine</span>
-                        <span class="tag">Automation</span>
+                        <span class="tag">⚓ Marine</span>
+                        <span class="tag">⚡ Automation</span>
                     </div>
                 </div>
             </div>
@@ -597,21 +614,21 @@
     <section id="about">
         <div class="about-grid">
             <div>
-                <span class="section-tag" id="about-tag">Γιατί Lampou Marine</span>
+                <span class="section-tag" id="about-tag">⭐ Γιατί Lampou Marine</span>
                 <h2 class="section-title" id="about-title">Τεχνική αρτιότητα και απόλυτος έλεγχος.</h2>
                 <p class="section-desc" id="about-desc">Κάθε έργο μελετάται εξατομικευμένα με βάση τις συνθήκες λειτουργίας και τις ανάγκες σας.</p>
                 <ul class="checklist">
-                    <li id="chk-1"><span class="check-icon">✓</span> Custom σχεδιασμός και προγραμματισμός Siemens LOGO!</li>
-                    <li id="chk-2"><span class="check-icon">✓</span> Πλήρης προστασία με password locking σε κουμπιά και προγράμματα</li>
-                    <li id="chk-3"><span class="check-icon">✓</span> Εξειδίκευση σε σκάφη αναψυχής και επαγγελματικά σκάφη</li>
-                    <li id="chk-4"><span class="check-icon">✓</span> Συστήματα τηλεμετρίας, αισθητήρων στάθμης και αερίων</li>
-                    <li id="chk-5"><span class="check-icon">✓</span> Άμεση τεχνική υποστήριξη και troubleshooting</li>
+                    <li id="chk-1"><span class="check-icon">🔹</span> Custom σχεδιασμός και προγραμματισμός Siemens LOGO!</li>
+                    <li id="chk-2"><span class="check-icon">🔹</span> Πλήρης προστασία με password locking σε κουμπιά και προγράμματα</li>
+                    <li id="chk-3"><span class="check-icon">🔹</span> Εξειδίκευση σε σκάφη αναψυχής και επαγγελματικά σκάφη</li>
+                    <li id="chk-4"><span class="check-icon">🔹</span> Συστήματα τηλεμετρίας, αισθητήρων στάθμης και αερίων</li>
+                    <li id="chk-5"><span class="check-icon">🔹</span> Άμεση τεχνική υποστήριξη και troubleshooting</li>
                 </ul>
             </div>
             <div>
                 <div class="why-card-box">
-                    <h3 id="profile-name">Πέτρος Λάμπου</h3>
-                    <p><strong id="profile-role">Automation & Maintenance Engineer</strong></p>
+                    <h3 id="profile-name">👨‍🔧 Πέτρος Λάμπου</h3>
+                    <p><strong id="profile-role">⚙️ Automation & Maintenance Engineer</strong></p>
                     <p id="profile-desc" style="color: var(--text-muted); margin-top: 1rem;">Εξειδίκευση σε συστήματα PLC, ηλεκτρονικά σκαφών, βιομηχανική αυτοματοποίηση και ναυτιλιακές εφαρμογές υψηλών απαιτήσεων.</p>
                 </div>
             </div>
@@ -621,21 +638,21 @@
     <!-- FAQ Section -->
     <section id="faq">
         <div class="section-header">
-            <span class="section-tag" id="faq-tag">Knowledge Base</span>
+            <span class="section-tag" id="faq-tag">📚 Knowledge Base</span>
             <h2 class="section-title" id="faq-title">Τεχνικές Ερωτήσεις & Απαντήσεις (FAQ)</h2>
             <p class="section-desc" id="faq-desc">Αναλυτικός οδηγός για ναυτιλιακούς και βιομηχανικούς αυτοματισμούς.</p>
         </div>
         <div class="faq-container">
             <div class="faq-item">
-                <h4 id="f1-q">Τι περιλαμβάνει ένα σύστημα αυτοματισμού σκάφους Lampou Marine?</h4>
+                <h4 id="f1-q">❓ Τι περιλαμβάνει ένα σύστημα αυτοματισμού σκάφους Lampou Marine?</h4>
                 <p id="f1-a">Περιλαμβάνει επιτήρηση σεντίνας, έλεγχο μπαταριών, ανίχνευση αερίων LPG, συναγερμούς ασφαλείας και κεντρική απεικόνιση στην οθόνη LOGO! screen (η οποία εμφανίζει αποκλειστικά την ώρα και την ημερομηνία, προβάλλοντας ταυτόχρονα όλους τους ενεργούς συναγερμούς).</p>
             </div>
             <div class="faq-item">
-                <h4 id="f2-q">Πώς επιτυγχάνεται η προστασία πρόσβασης στους πίνακες;</h4>
+                <h4 id="f2-q">❓ Πώς επιτυγχάνεται η προστασία πρόσβασης στους πίνακες;</h4>
                 <p id="f2-a">Χρησιμοποιείται password-locking σε συνδυασμό με προγραμματισμένη λογική στο Siemens LOGO! ώστε να αποτρέπεται οποιαδήποτε μη εξουσιοδοτημένη αλλαγή στις ρυθμίσεις και στα πλήκτρα.</p>
             </div>
             <div class="faq-item">
-                <h4 id="f3-q">Μπορούν τα συστήματα να συνδεθούν με κινητό τηλέφωνο;</h4>
+                <h4 id="f3-q">❓ Μπορούν τα συστήματα να συνδεθούν με κινητό τηλέφωνο;</h4>
                 <p id="f3-a">Ναι, υποστηρίζονται μονάδες τηλεμετρίας και Web HMI για απομακρυσμένη παρακολούθηση μετρήσεων και ειδοποιήσεις συναγερμού, προβάλλοντας τα πάντα απευθείας στην κινητή συσκευή.</p>
             </div>
         </div>
@@ -645,7 +662,7 @@
     <section id="contact">
         <div class="contact-container">
             <div class="contact-info">
-                <h3 id="cont-title">Επικοινωνία</h3>
+                <h3 id="cont-title">📬 Επικοινωνία</h3>
                 <p id="cont-desc">Είμαστε στη διάθεσή σας για οποιαδήποτε τεχνική εφαρμογή, μελέτη ή υποστήριξη.</p>
                 <div class="contact-details">
                     <a href="tel:+306932942432" class="contact-item">
@@ -683,14 +700,14 @@
         event.currentTarget.classList.add('active');
 
         if(lang === 'el') {
-            document.getElementById('hero-badge').innerText = '⚡ Marine & Industrial Automation • Πέτρος Λάμπου';
+            document.getElementById('hero-badge').innerText = 'Marine & Industrial Automation • Πέτρος Λάμπου';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
             document.getElementById('hero-desc').innerText = 'Προηγμένοι αυτοματισμοί σκαφών, προγραμματισμός PLC Siemens LOGO!, συστήματα τηλεμετρίας, αντλιοστάσια και βιομηχανικός έλεγχος υψηλής αξιοπιστίας.';
             document.getElementById('btn-contact-hero').innerText = '📩 Επικοινωνία & Τεχνική Υποστήριξη';
-            document.getElementById('btn-serv-hero').innerText = 'Ανακαλύψτε τις Υπηρεσίες';
+            document.getElementById('btn-serv-hero').innerText = '🧭 Ανακαλύψτε τις Υπηρεσίες';
 
-            document.getElementById('serv-tag').innerText = 'Τι προσφέρουμε';
+            document.getElementById('serv-tag').innerText = '💡 Τι προσφέρουμε';
             document.getElementById('serv-title').innerText = 'Εξειδικευμένες Υπηρεσίες Αυτοματισμού';
             document.getElementById('serv-desc').innerText = 'Λύσεις υψηλής τεχνολογίας προσαρμοσμένες στις απαιτήσεις της θάλασσας και της βιομηχανίας.';
 
@@ -703,7 +720,7 @@
             document.getElementById('s4-title').innerText = 'Βιομηχανικός Έλεγχος';
             document.getElementById('s4-desc').innerText = 'Inverters SINAMICS/ABB, safety mats, ρελέ interlocking, βαλβίδες ελέγχου και γενικό troubleshooting αυτοματισμών.';
 
-            document.getElementById('proj-tag').innerText = 'Applications';
+            document.getElementById('proj-tag').innerText = '🛠️ Applications';
             document.getElementById('proj-title').innerText = 'Ολοκληρωμένα Projects';
             document.getElementById('proj-desc').innerText = 'Εφαρμογές πεδίου με έμφαση στην ασφάλεια, την οπτικοποίηση και την αποτροπή σφαλμάτων.';
 
@@ -714,43 +731,43 @@
             document.getElementById('p3-title').innerText = 'Lampou Marine System';
             document.getElementById('p3-desc').innerText = 'Κεντρική μονάδα ελέγχου σκάφους με οθόνη LOGO!, αυτόματα alarms και άμεση οπτικοποίηση συμβάντων έκτακτης ανάγκης. Η οθόνη LOGO! εμφανίζει αποκλειστικά την ώρα και την ημερομηνία, προβάλλοντας ταυτόχρονα όλους τους συναγερμούς.';
 
-            document.getElementById('about-tag').innerText = 'Γιατί Lampou Marine';
+            document.getElementById('about-tag').innerText = '⭐ Γιατί Lampou Marine';
             document.getElementById('about-title').innerText = 'Τεχνική αρτιότητα και απόλυτος έλεγχος.';
             document.getElementById('about-desc').innerText = 'Κάθε έργο μελετάται εξατομικευμένα με βάση τις συνθήκες λειτουργίας και τις ανάγκες σας.';
-            document.getElementById('chk-1').innerHTML = '<span class="check-icon">✓</span> Custom σχεδιασμός και προγραμματισμός Siemens LOGO!';
-            document.getElementById('chk-2').innerHTML = '<span class="check-icon">✓</span> Πλήρης προστασία με password locking σε κουμπιά και προγράμματα';
-            document.getElementById('chk-3').innerHTML = '<span class="check-icon">✓</span> Εξειδίκευση σε σκάφη αναψυχής και επαγγελματικά σκάφη';
-            document.getElementById('chk-4').innerHTML = '<span class="check-icon">✓</span> Συστήματα τηλεμετρίας, αισθητήρων στάθμης και αερίων';
-            document.getElementById('chk-5').innerHTML = '<span class="check-icon">✓</span> Άμεση τεχνική υποστήριξη και troubleshooting';
+            document.getElementById('chk-1').innerHTML = '<span class="check-icon">🔹</span> Custom σχεδιασμός και προγραμματισμός Siemens LOGO!';
+            document.getElementById('chk-2').innerHTML = '<span class="check-icon">🔹</span> Πλήρης προστασία με password locking σε κουμπιά και προγράμματα';
+            document.getElementById('chk-3').innerHTML = '<span class="check-icon">🔹</span> Εξειδίκευση σε σκάφη αναψυχής και επαγγελματικά σκάφη';
+            document.getElementById('chk-4').innerHTML = '<span class="check-icon">🔹</span> Συστήματα τηλεμετρίας, αισθητήρων στάθμης και αερίων';
+            document.getElementById('chk-5').innerHTML = '<span class="check-icon">🔹</span> Άμεση τεχνική υποστήριξη και troubleshooting';
 
-            document.getElementById('profile-name').innerText = 'Πέτρος Λάμπου';
-            document.getElementById('profile-role').innerText = 'Automation & Maintenance Engineer';
+            document.getElementById('profile-name').innerText = '👨‍🔧 Πέτρος Λάμπου';
+            document.getElementById('profile-role').innerText = '⚙️ Automation & Maintenance Engineer';
             document.getElementById('profile-desc').innerText = 'Εξειδίκευση σε συστήματα PLC, ηλεκτρονικά σκαφών, βιομηχανική αυτοματοποίηση και ναυτιλιακές εφαρμογές υψηλών απαιτήσεων.';
 
-            document.getElementById('faq-tag').innerText = 'Knowledge Base';
+            document.getElementById('faq-tag').innerText = '📚 Knowledge Base';
             document.getElementById('faq-title').innerText = 'Τεχνικές Ερωτήσεις & Απαντήσεις (FAQ)';
             document.getElementById('faq-desc').innerText = 'Αναλυτικός οδηγός για ναυτιλιακούς και βιομηχανικούς αυτοματισμούς.';
-            document.getElementById('f1-q').innerText = 'Τι περιλαμβάνει ένα σύστημα αυτοματισμού σκάφους Lampou Marine?';
+            document.getElementById('f1-q').innerText = '❓ Τι περιλαμβάνει ένα σύστημα αυτοματισμού σκάφους Lampou Marine?';
             document.getElementById('f1-a').innerText = 'Περιλαμβάνει επιτήρηση σεντίνας, έλεγχο μπαταριών, ανίχνευση αερίων LPG, συναγερμούς ασφαλείας και κεντρική απεικόνιση στην οθόνη LOGO! screen (η οποία εμφανίζει αποκλειστικά την ώρα και την ημερομηνία, προβάλλοντας ταυτόχρονα όλους τους ενεργούς συναγερμούς).';
-            document.getElementById('f2-q').innerText = 'Πώς επιτυγχάνεται η προστασία πρόσβασης στους πίνακες;';
+            document.getElementById('f2-q').innerText = '❓ Πώς επιτυγχάνεται η προστασία πρόσβασης στους πίνακες;';
             document.getElementById('f2-a').innerText = 'Χρησιμοποιείται password-locking σε συνδυασμό με προγραμματισμένη λογική στο Siemens LOGO! ώστε να αποτρέπεται οποιαδήποτε μη εξουσιοδοτημένη αλλαγή στις ρυθμίσεις και στα πλήκτρα.';
-            document.getElementById('f3-q').innerText = 'Μπορούν τα συστήματα να συνδεθούν με κινητό τηλέφωνο;';
+            document.getElementById('f3-q').innerText = '❓ Μπορούν τα συστήματα να συνδεθούν με κινητό τηλέφωνο;';
             document.getElementById('f3-a').innerText = 'Ναι, υποστηρίζονται μονάδες τηλεμετρίας και Web HMI για απομακρυσμένη παρακολούθηση μετρήσεων και ειδοποιήσεις συναγερμού, προβάλλοντας τα πάντα απευθείας στην κινητή συσκευή.';
 
-            document.getElementById('cont-title').innerText = 'Επικοινωνία';
+            document.getElementById('cont-title').innerText = '📬 Επικοινωνία';
             document.getElementById('cont-desc').innerText = 'Είμαστε στη διάθεσή σας για οποιαδήποτε τεχνική εφαρμογή, μελέτη ή υποστήριξη.';
 
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Με επιφύλαξη παντός δικαιώματος. • Πέτρος Λάμπου';
 
         } else if(lang === 'en') {
-            document.getElementById('hero-badge').innerText = '⚡ Marine & Industrial Automation • Petros Lampou';
+            document.getElementById('hero-badge').innerText = 'Marine & Industrial Automation • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
             document.getElementById('hero-desc').innerText = 'Advanced marine automation, Siemens LOGO! PLC programming, telemetry systems, pumping stations, and high-reliability industrial control.';
             document.getElementById('btn-contact-hero').innerText = '📩 Contact & Technical Support';
-            document.getElementById('btn-serv-hero').innerText = 'Discover Services';
+            document.getElementById('btn-serv-hero').innerText = '🧭 Discover Services';
 
-            document.getElementById('serv-tag').innerText = 'What We Offer';
+            document.getElementById('serv-tag').innerText = '💡 What We Offer';
             document.getElementById('serv-title').innerText = 'Specialized Automation Services';
             document.getElementById('serv-desc').innerText = 'High-tech solutions tailored to the demanding environments of sea and industry.';
 
@@ -763,7 +780,7 @@
             document.getElementById('s4-title').innerText = 'Industrial Control';
             document.getElementById('s4-desc').innerText = 'SINAMICS/ABB inverters, safety mats, interlocking relays, control valves, and general automation troubleshooting.';
 
-            document.getElementById('proj-tag').innerText = 'Applications';
+            document.getElementById('proj-tag').innerText = '🛠️ Applications';
             document.getElementById('proj-title').innerText = 'Integrated Projects';
             document.getElementById('proj-desc').innerText = 'Field applications focusing on safety, visualization, and error prevention.';
 
@@ -774,43 +791,43 @@
             document.getElementById('p3-title').innerText = 'Lampou Marine System';
             document.getElementById('p3-desc').innerText = 'Central boat control unit featuring a LOGO! display, automated alarms, and immediate emergency event visualization. The LOGO! screen exclusively displays time and date, with all alarms visibly displayed on screen.';
 
-            document.getElementById('about-tag').innerText = 'Why Lampou Marine';
+            document.getElementById('about-tag').innerText = '⭐ Why Lampou Marine';
             document.getElementById('about-title').innerText = 'Technical excellence and absolute control.';
             document.getElementById('about-desc').innerText = 'Every project is custom-engineered based on operating conditions and your specific needs.';
-            document.getElementById('chk-1').innerHTML = '<span class="check-icon">✓</span> Custom Siemens LOGO! design and programming';
-            document.getElementById('chk-2').innerHTML = '<span class="check-icon">✓</span> Complete protection with keypad and program password locking';
-            document.getElementById('chk-3').innerHTML = '<span class="check-icon">✓</span> Specialization in leisure and commercial vessels';
-            document.getElementById('chk-4').innerHTML = '<span class="check-icon">✓</span> Telemetry systems, level sensors, and gas detection';
-            document.getElementById('chk-5').innerHTML = '<span class="check-icon">✓</span> Prompt technical support and troubleshooting';
+            document.getElementById('chk-1').innerHTML = '<span class="check-icon">🔹</span> Custom Siemens LOGO! design and programming';
+            document.getElementById('chk-2').innerHTML = '<span class="check-icon">🔹</span> Complete protection with keypad and program password locking';
+            document.getElementById('chk-3').innerHTML = '<span class="check-icon">🔹</span> Specialization in leisure and commercial vessels';
+            document.getElementById('chk-4').innerHTML = '<span class="check-icon">🔹</span> Telemetry systems, level sensors, and gas detection';
+            document.getElementById('chk-5').innerHTML = '<span class="check-icon">🔹</span> Prompt technical support and troubleshooting';
 
-            document.getElementById('profile-name').innerText = 'Petros Lampou';
-            document.getElementById('profile-role').innerText = 'Automation & Maintenance Engineer';
+            document.getElementById('profile-name').innerText = '👨‍🔧 Petros Lampou';
+            document.getElementById('profile-role').innerText = '⚙️ Automation & Maintenance Engineer';
             document.getElementById('profile-desc').innerText = 'Specialized in PLC systems, marine electronics, industrial automation, and high-demand maritime applications.';
 
-            document.getElementById('faq-tag').innerText = 'Knowledge Base';
+            document.getElementById('faq-tag').innerText = '📚 Knowledge Base';
             document.getElementById('faq-title').innerText = 'Technical Q&A (FAQ)';
             document.getElementById('faq-desc').innerText = 'Comprehensive guide for marine and industrial automation.';
-            document.getElementById('f1-q').innerText = 'What does a Lampou Marine automation system include?';
+            document.getElementById('f1-q').innerText = '❓ What does a Lampou Marine automation system include?';
             document.getElementById('f1-a').innerText = 'It includes bilge monitoring, battery control, LPG gas detection, safety alarms, and central visualization on the LOGO! screen (displaying only time and date, while showing all active alarms).';
-            document.getElementById('f2-q').innerText = 'How is panel access security achieved?';
+            document.getElementById('f2-q').innerText = '❓ How is panel access security achieved?';
             document.getElementById('f2-a').innerText = 'Password-locking is applied in combination with programmed logic inside the Siemens LOGO! to prevent unauthorized parameter changes.';
-            document.getElementById('f3-q').innerText = 'Can the systems integrate with mobile devices?';
+            document.getElementById('f3-q').innerText = '❓ Can the systems integrate with mobile devices?';
             document.getElementById('f3-a').innerText = 'Yes, telemetry modules and Web HMI environments are supported for remote data monitoring, alarm notifications, and mobile viewing.';
 
-            document.getElementById('cont-title').innerText = 'Contact Us';
+            document.getElementById('cont-title').innerText = '📬 Contact Us';
             document.getElementById('cont-desc').innerText = 'We are at your disposal for any technical application, study, or support.';
 
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. All rights reserved. • Petros Lampou';
 
         } else if(lang === 'de') {
-            document.getElementById('hero-badge').innerText = '⚡ Marine- & Industrieautomation • Petros Lampou';
+            document.getElementById('hero-badge').innerText = 'Marine- & Industrieautomation • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
             document.getElementById('hero-desc').innerText = 'Fortschrittliche Schiffsautomation, Siemens LOGO! PLC-Programmierung, Telemetriesysteme, Pumpstationen und zuverlässige Industriesteuerung.';
             document.getElementById('btn-contact-hero').innerText = '📩 Kontakt & technischer Support';
-            document.getElementById('btn-serv-hero').innerText = 'Dienstleistungen entdecken';
+            document.getElementById('btn-serv-hero').innerText = '🧭 Dienstleistungen entdecken';
 
-            document.getElementById('serv-tag').innerText = 'Was wir anbieten';
+            document.getElementById('serv-tag').innerText = '💡 Was wir anbieten';
             document.getElementById('serv-title').innerText = 'Spezialisierte Automatisierungsdienste';
             document.getElementById('serv-desc').innerText = 'Hochtechnologiolösungen, zugeschnitten auf die anspruchsvollen Bedingungen von See und Industrie.';
 
@@ -823,7 +840,7 @@
             document.getElementById('s4-title').innerText = 'Industrielle Steuerung';
             document.getElementById('s4-desc').innerText = 'SINAMICS/ABB Inverter, Sicherheitsmatten, Verriegelungsrelais, Regelventile und allgemeine Automatisierungs-Fehlersuche.';
 
-            document.getElementById('proj-tag').innerText = 'Anwendungen';
+            document.getElementById('proj-tag').innerText = '🛠️ Anwendungen';
             document.getElementById('proj-title').innerText = 'Integrierte Projekte';
             document.getElementById('proj-desc').innerText = 'Feldanwendungen mit Schwerpunkt auf Sicherheit, Visualisierung und Fehlervermeidung.';
 
@@ -834,43 +851,43 @@
             document.getElementById('p3-title').innerText = 'Lampou Marine System';
             document.getElementById('p3-desc').innerText = 'Zentrale Schiffssteuereinheit mit LOGO!-Display, automatischen Alarmen und sofortiger Notfallereignisvisualisierung. Der LOGO!-Bildschirm zeigt ausschließlich Uhrzeit und Datum an, während alle Alarme direkt auf dem Bildschirm sichtbar sind.';
 
-            document.getElementById('about-tag').innerText = 'Warum Lampou Marine';
+            document.getElementById('about-tag').innerText = '⭐ Warum Lampou Marine';
             document.getElementById('about-title').innerText = 'Technische Exzellenz und absolute Kontrolle.';
             document.getElementById('about-desc').innerText = 'Jedes Projekt wird maßgeschneidert nach Betriebsbedingungen und Ihren spezifischen Anforderungen entwickelt.';
-            document.getElementById('chk-1').innerHTML = '<span class="check-icon">✓</span> Kundenspezifisches Siemens LOGO! Design und Programmierung';
-            document.getElementById('chk-2').innerHTML = '<span class="check-icon">✓</span> Vollständiger Schutz durch Tasten- und Programm-Passwortsperre';
-            document.getElementById('chk-3').innerHTML = '<span class="check-icon">✓</span> Spezialisierung auf Sport- und Berufsschiffe';
-            document.getElementById('chk-4').innerHTML = '<span class="check-icon">✓</span> Telemetriesysteme, Füllstandsensoren und Gaserkennung';
-            document.getElementById('chk-5').innerHTML = '<span class="check-icon">✓</span> Schneller technischer Support und Fehlerbehebung';
+            document.getElementById('chk-1').innerHTML = '<span class="check-icon">🔹</span> Kundenspezifisches Siemens LOGO! Design und Programmierung';
+            document.getElementById('chk-2').innerHTML = '<span class="check-icon">🔹</span> Vollständiger Schutz durch Tasten- und Programm-Passwortsperre';
+            document.getElementById('chk-3').innerHTML = '<span class="check-icon">🔹</span> Spezialisierung auf Sport- und Berufsschiffe';
+            document.getElementById('chk-4').innerHTML = '<span class="check-icon">🔹</span> Telemetriesysteme, Füllstandsensoren und Gaserkennung';
+            document.getElementById('chk-5').innerHTML = '<span class="check-icon">🔹</span> Schneller technischer Support und Fehlerbehebung';
 
-            document.getElementById('profile-name').innerText = 'Petros Lampou';
-            document.getElementById('profile-role').innerText = 'Automation & Maintenance Engineer';
+            document.getElementById('profile-name').innerText = '👨‍🔧 Petros Lampou';
+            document.getElementById('profile-role').innerText = '⚙️ Automation & Maintenance Engineer';
             document.getElementById('profile-desc').innerText = 'Spezialisiert auf PLC-Systeme, Schiffs elektronik, industrielle Automatisierung und anspruchsvolle maritime Anwendungen.';
 
-            document.getElementById('faq-tag').innerText = 'Wissensdatenbank';
+            document.getElementById('faq-tag').innerText = '📚 Wissensdatenbank';
             document.getElementById('faq-title').innerText = 'Technische Fragen & Antworten (FAQ)';
             document.getElementById('faq-desc').innerText = 'Umfassender Leitfaden für Schiffs- und Industrieautomation.';
-            document.getElementById('f1-q').innerText = 'Was beinhaltet ein Lampou Marine Automatisierungssystem?';
+            document.getElementById('f1-q').innerText = '❓ Was beinhaltet ein Lampou Marine Automatisierungssystem?';
             document.getElementById('f1-a').innerText = 'Es umfasst Bilgenüberwachung, Batteriesteuerung, LPG-Gaserkennung, Sicherheitsalarme und zentrale Visualisierung auf dem LOGO!-Bildschirm (der nur Uhrzeit und Datum anzeigt und alle Alarme abbildet).';
-            document.getElementById('f2-q').innerText = 'Wie wird die Zugriffssicherheit des Panels erreicht?';
+            document.getElementById('f2-q').innerText = '❓ Wie wird die Zugriffssicherheit des Panels erreicht?';
             document.getElementById('f2-a').innerText = 'Passwortsperre wird in Kombination mit programmierter Logik innerhalb der Siemens LOGO! angewendet, um unbefugte Parameteränderungen zu verhindern.';
-            document.getElementById('f3-q').innerText = 'Können die Systeme mit Mobilgeräten verbunden werden?';
+            document.getElementById('f3-q').innerText = '❓ Können die Systeme mit Mobilgeräten verbunden werden?';
             document.getElementById('f3-a').innerText = 'Ja, Telemetriemodule und Web-HMI-Umgebungen werden für die Fernüberwachung von Messwerten und Alarmbenachrichtigungen unterstützt.';
 
-            document.getElementById('cont-title').innerText = 'Kontakt';
+            document.getElementById('cont-title').innerText = '📬 Kontakt';
             document.getElementById('cont-desc').innerText = 'Wir stehen Ihnen für technische Anwendungen, Studien oder Support gerne zur Verfügung.';
 
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Alle Rechte vorbehalten. • Petros Lampou';
 
         } else if(lang === 'it') {
-            document.getElementById('hero-badge').innerText = '⚡ Automazione Navale e Industriale • Petros Lampou';
+            document.getElementById('hero-badge').innerText = 'Automazione Navale e Industriale • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
             document.getElementById('hero-desc').innerText = 'Automazione navale avanzata, programmazione PLC Siemens LOGO!, sistemi di telemetria, stazioni di pompaggio e controllo industriale ad alta affidabilità.';
             document.getElementById('btn-contact-hero').innerText = '📩 Contatti e supporto tecnico';
-            document.getElementById('btn-serv-hero').innerText = 'Scopri i servizi';
+            document.getElementById('btn-serv-hero').innerText = '🧭 Scopri i servizi';
 
-            document.getElementById('serv-tag').innerText = 'Cosa offriamo';
+            document.getElementById('serv-tag').innerText = '💡 Cosa offriamo';
             document.getElementById('serv-title').innerText = 'Servizi di automazione specializzati';
             document.getElementById('serv-desc').innerText = 'Soluzioni high-tech su misura per gli ambienti esigenti del mare e dell’industria.';
 
@@ -883,7 +900,7 @@
             document.getElementById('s4-title').innerText = 'Controllo Industriale';
             document.getElementById('s4-desc').innerText = 'Inverter SINAMICS/ABB, tappeti di sicurezza, relè di interblocco, valvole di controllo e risoluzione problemi di automazione.';
 
-            document.getElementById('proj-tag').innerText = 'Applicazioni';
+            document.getElementById('proj-tag').innerText = '🛠️ Applicazioni';
             document.getElementById('proj-title').innerText = 'Progetti Integrati';
             document.getElementById('proj-desc').innerText = 'Applicazioni sul campo incentrate su sicurezza, visualizzazione e prevenzione degli errori.';
 
@@ -894,43 +911,43 @@
             document.getElementById('p3-title').innerText = 'Lampou Marine System';
             document.getElementById('p3-desc').innerText = 'Unità di controllo centrale della barca con display LOGO!, allarmi automatici e visualizzazione immediata di eventi di emergenza. Lo schermo LOGO! visualizza esclusivamente ora e data, mostrando tutti gli allarmi sullo schermo.';
 
-            document.getElementById('about-tag').innerText = 'Perché Lampou Marine';
+            document.getElementById('about-tag').innerText = '⭐ Perché Lampou Marine';
             document.getElementById('about-title').innerText = 'Eccellenza tecnica e controllo assoluto.';
             document.getElementById('about-desc').innerText = 'Ogni progetto è progettato su misura in base alle condizioni operative e alle vostre esigenze specifiche.';
-            document.getElementById('chk-1').innerHTML = '<span class="check-icon">✓</span> Design e programmazione personalizzati Siemens LOGO!';
-            document.getElementById('chk-2').innerHTML = '<span class="check-icon">✓</span> Protezione completa con blocco password di tastiera e programmi';
-            document.getElementById('chk-3').innerHTML = '<span class="check-icon">✓</span> Specializzazione in imbarcazioni da diporto e commerciali';
-            document.getElementById('chk-4').innerHTML = '<span class="check-icon">✓</span> Sistemi di telemetria, sensori di livello e rilevamento gas';
-            document.getElementById('chk-5').innerHTML = '<span class="check-icon">✓</span> Supporto tecnico tempestivo e risoluzione problemi';
+            document.getElementById('chk-1').innerHTML = '<span class="check-icon">🔹</span> Design e programmazione personalizzati Siemens LOGO!';
+            document.getElementById('chk-2').innerHTML = '<span class="check-icon">🔹</span> Protezione completa con blocco password di tastiera e programmi';
+            document.getElementById('chk-3').innerHTML = '<span class="check-icon">🔹</span> Specializzazione in imbarcazioni da diporto e commerciali';
+            document.getElementById('chk-4').innerHTML = '<span class="check-icon">🔹</span> Sistemi di telemetria, sensori di livello e rilevamento gas';
+            document.getElementById('chk-5').innerHTML = '<span class="check-icon">🔹</span> Supporto tecnico tempestivo e risoluzione problemi';
 
-            document.getElementById('profile-name').innerText = 'Petros Lampou';
-            document.getElementById('profile-role').innerText = 'Automation & Maintenance Engineer';
+            document.getElementById('profile-name').innerText = '👨‍🔧 Petros Lampou';
+            document.getElementById('profile-role').innerText = '⚙️ Automation & Maintenance Engineer';
             document.getElementById('profile-desc').innerText = 'Specializzato in sistemi PLC, elettronica navale, automazione industriale e applicazioni marittime ad alta richiesta.';
 
-            document.getElementById('faq-tag').innerText = 'Base di Conoscenza';
+            document.getElementById('faq-tag').innerText = '📚 Base di Conoscenza';
             document.getElementById('faq-title').innerText = 'Domande e Risposte Tecniche (FAQ)';
             document.getElementById('faq-desc').innerText = 'Guida completa per l’automazione navale e industriale.';
-            document.getElementById('f1-q').innerText = 'Cosa include un sistema di automazione Lampou Marine?';
+            document.getElementById('f1-q').innerText = '❓ Cosa include un sistema di automazione Lampou Marine?';
             document.getElementById('f1-a').innerText = 'Include monitoraggio sentina, controllo batterie, rilevamento gas LPG, allarmi di sicurezza e visualizzazione centrale sullo schermo LOGO! (che mostra solo ora e data, visualizzando tutti gli allarmi).';
-            document.getElementById('f2-q').innerText = 'Come viene ottenuta la sicurezza di accesso al pannello?';
+            document.getElementById('f2-q').innerText = '❓ Come viene ottenuta la sicurezza di accesso al pannello?';
             document.getElementById('f2-a').innerText = 'Il blocco con password viene applicato in combinazione con la logica programmata all’interno di Siemens LOGO! per prevenire modifiche non autorizzate.';
-            document.getElementById('f3-q').innerText = 'I sistemi possono connettersi ai dispositivi mobili?';
+            document.getElementById('f3-q').innerText = '❓ I sistemi possono connettersi ai dispositivi mobili?';
             document.getElementById('f3-a').innerText = 'Sì, i moduli di telemetria e gli ambienti Web HMI sono supportati per il monitoraggio remoto dei dati e le notifiche di allarme.';
 
-            document.getElementById('cont-title').innerText = 'Contatti';
+            document.getElementById('cont-title').innerText = '📬 Contatti';
             document.getElementById('cont-desc').innerText = 'Siamo a vostra disposizione per qualsiasi applicazione tecnica, studio o supporto.';
 
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Tutti i diritti riservati. • Petros Lampou';
 
         } else if(lang === 'fr') {
-            document.getElementById('hero-badge').innerText = '⚡ Automatisation Marine et Industrielle • Petros Lampou';
+            document.getElementById('hero-badge').innerText = 'Automatisation Marine et Industrielle • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
             document.getElementById('hero-desc').innerText = 'Automatisation marine avancée, programmation d’automates Siemens LOGO!, systèmes de télémétrie, stations de pompage et contrôle industriel haute fiabilité.';
             document.getElementById('btn-contact-hero').innerText = '📩 Contact & Support Technique';
-            document.getElementById('btn-serv-hero').innerText = 'Découvrir les services';
+            document.getElementById('btn-serv-hero').innerText = '🧭 Découvrir les services';
 
-            document.getElementById('serv-tag').innerText = 'Ce que nous offrons';
+            document.getElementById('serv-tag').innerText = '💡 Ce que nous offrons';
             document.getElementById('serv-title').innerText = 'Services d’automatisation spécialisés';
             document.getElementById('serv-desc').innerText = 'Solutions de haute technologie adaptées aux environnements exigeants de la mer et de l’industrie.';
 
@@ -943,7 +960,7 @@
             document.getElementById('s4-title').innerText = 'Contrôle Industriel';
             document.getElementById('s4-desc').innerText = 'Variateurs SINAMICS/ABB, tapis de sécurité, relais de verrouillage, vannes de régulation et dépannage général d’automatismes.';
 
-            document.getElementById('proj-tag').innerText = 'Applications';
+            document.getElementById('proj-tag').innerText = '🛠️ Applications';
             document.getElementById('proj-title').innerText = 'Projets Intégrés';
             document.getElementById('proj-desc').innerText = 'Applications de terrain axées sur la sécurité, la visualisation et la prévention des erreurs.';
 
@@ -954,30 +971,30 @@
             document.getElementById('p3-title').innerText = 'Lampou Marine System';
             document.getElementById('p3-desc').innerText = 'Unité de contrôle centrale de bateau dotée d’un écran LOGO!, d’alarmes automatiques et d’une visualisation immédiate des événements d’urgence. L’écran LOGO! affiche exclusivement l’heure et la date, tout en affichant les alarmes.';
 
-            document.getElementById('about-tag').innerText = 'Pourquoi Lampou Marine';
+            document.getElementById('about-tag').innerText = '⭐ Pourquoi Lampou Marine';
             document.getElementById('about-title').innerText = 'Excellence technique et contrôle absolu.';
             document.getElementById('about-desc').innerText = 'Chaque projet est conçu sur mesure en fonction des conditions d’exploitation et de vos besoins spécifiques.';
-            document.getElementById('chk-1').innerHTML = '<span class="check-icon">✓</span> Conception et programmation personnalisées Siemens LOGO!';
-            document.getElementById('chk-2').innerHTML = '<span class="check-icon">✓</span> Protection complète avec verrouillage par mot de passe du clavier et du programme';
-            document.getElementById('chk-3').innerHTML = '<span class="check-icon">✓</span> Spécialisation dans les navires de plaisance et professionnels';
-            document.getElementById('chk-4').innerHTML = '<span class="check-icon">✓</span> Systèmes de télémétrie, capteurs de niveau et détection de gaz';
-            document.getElementById('chk-5').innerHTML = '<span class="check-icon">✓</span> Support technique rapide et dépannage';
+            document.getElementById('chk-1').innerHTML = '<span class="check-icon">🔹</span> Conception et programmation personnalisées Siemens LOGO!';
+            document.getElementById('chk-2').innerHTML = '<span class="check-icon">🔹</span> Protection complète avec verrouillage par mot de passe du clavier et du programme';
+            document.getElementById('chk-3').innerHTML = '<span class="check-icon">🔹</span> Spécialisation dans les navires de plaisance et professionnels';
+            document.getElementById('chk-4').innerHTML = '<span class="check-icon">🔹</span> Systèmes de télémétrie, capteurs de niveau et détection de gaz';
+            document.getElementById('chk-5').innerHTML = '<span class="check-icon">🔹</span> Support technique rapide et dépannage';
 
-            document.getElementById('profile-name').innerText = 'Petros Lampou';
-            document.getElementById('profile-role').innerText = 'Automation & Maintenance Engineer';
+            document.getElementById('profile-name').innerText = '👨‍🔧 Petros Lampou';
+            document.getElementById('profile-role').innerText = '⚙️ Automation & Maintenance Engineer';
             document.getElementById('profile-desc').innerText = 'Spécialisé dans les systèmes PLC, l’électronique marine, l’automatisation industrielle et les applications maritimes exigeantes.';
 
-            document.getElementById('faq-tag').innerText = 'Base de Connaissances';
+            document.getElementById('faq-tag').innerText = '📚 Base de Connaissances';
             document.getElementById('faq-title').innerText = 'Questions & Réponses Techniques (FAQ)';
             document.getElementById('faq-desc').innerText = 'Guide complet pour l’automatisation marine et industrielle.';
-            document.getElementById('f1-q').innerText = 'Que comprend un système d’automatisation Lampou Marine ?';
+            document.getElementById('f1-q').innerText = '❓ Que comprend un système d’automatisation Lampou Marine ?';
             document.getElementById('f1-a').innerText = 'Il comprend la surveillance de cale, le contrôle des batteries, la détection de gaz LPG, les alarmes de sécurité et la visualisation centrale sur l’écran LOGO! (affichant uniquement l’heure et la date, ainsi que les alarmes).';
-            document.getElementById('f2-q').innerText = 'Comment la sécurité d’accès au panneau est-elle assurée ?';
+            document.getElementById('f2-q').innerText = '❓ Comment la sécurité d’accès au panneau est-elle assurée ?';
             document.getElementById('f2-a').innerText = 'Le verrouillage par mot de passe est appliqué en association avec une logique programmée dans le Siemens LOGO! pour empêcher toute modification non autorisée.';
-            document.getElementById('f3-q').innerText = 'Les systèmes peuvent-ils se connecter à un téléphone mobile ?';
+            document.getElementById('f3-q').innerText = '❓ Les systèmes peuvent-ils se connecter à un téléphone mobile ?';
             document.getElementById('f3-a').innerText = 'Oui, les modules de télémétrie et les environnements Web HMI sont pris en charge pour la surveillance des données à distance et les notifications d’alarme.';
 
-            document.getElementById('cont-title').innerText = 'Contactez-nous';
+            document.getElementById('cont-title').innerText = '📬 Contactez-nous';
             document.getElementById('cont-desc').innerText = 'Nous sommes à votre disposition pour toute application technique, étude ou support.';
 
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Tous droits réservés. • Petros Lampou';
