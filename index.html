@@ -14,6 +14,7 @@
             --primary-light: #172a45;
             --accent: #00f0ff;
             --accent-blue: #3b82f6;
+            --success-green: #10b981;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --bg-body: #020617;
@@ -109,6 +110,45 @@
             font-weight: 700;
         }
 
+        /* Status Badge (Available for Projects) */
+        .status-badge-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #34d399;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--success-green);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--success-green);
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+
         /* Hero Section */
         .hero {
             position: relative;
@@ -136,7 +176,7 @@
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             border: 1px solid rgba(0, 240, 255, 0.2);
         }
 
@@ -591,6 +631,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <div class="status-badge-container">
+                <div class="status-dot"></div>
+                <span id="status-badge-text">Διαθέσιμος για Custom Έργα & Αυτοματισμούς</span>
+            </div>
             <div class="badge">
                 <span>🚀</span>
                 <span id="hero-badge">Marine & Industrial Automation • Πέτρος Λάμπου</span>
@@ -777,7 +821,7 @@
             <a href="viber://chat?number=%2B306932942432" class="fab-option" title="Viber">
                 <span>📱</span> Viber
             </a>
-            <a href="https://wa.me/306932942432" target="_blank" class="fab-option" title="WhatsApp">
+            <a href="https://wa.me/306932942432" class="fab-option" title="WhatsApp">
                 <span>💬</span> WhatsApp
             </a>
             <a href="https://www.linkedin.com" target="_blank" class="fab-option" title="LinkedIn">
@@ -814,6 +858,7 @@
         event.currentTarget.classList.add('active');
 
         if(lang === 'el') {
+            document.getElementById('status-badge-text').innerText = 'Διαθέσιμος για Custom Έργα & Αυτοματισμούς';
             document.getElementById('hero-badge').innerText = 'Marine & Industrial Automation • Πέτρος Λάμπου';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
@@ -874,6 +919,7 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Με επιφύλαξη παντός δικαιώματος. • Πέτρος Λάμπου';
 
         } else if(lang === 'en') {
+            document.getElementById('status-badge-text').innerText = 'Available for Custom Projects & Automation';
             document.getElementById('hero-badge').innerText = 'Marine & Industrial Automation • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
@@ -934,6 +980,7 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. All rights reserved. • Petros Lampou';
 
         } else if(lang === 'de') {
+            document.getElementById('status-badge-text').innerText = 'Verfügbar für kundenspezifische Projekte & Automation';
             document.getElementById('hero-badge').innerText = 'Marine- & Industrieautomation • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
@@ -994,6 +1041,7 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Alle Rechte vorbehalten. • Petros Lampou';
 
         } else if(lang === 'it') {
+            document.getElementById('status-badge-text').innerText = 'Disponibile per Progetti Custom & Automazione';
             document.getElementById('hero-badge').innerText = 'Automazione Navale e Industriale • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
@@ -1054,6 +1102,7 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Tutti i diritti riservati. • Petros Lampou';
 
         } else if(lang === 'fr') {
+            document.getElementById('status-badge-text').innerText = 'Disponible pour Projets Custom & Automatisation';
             document.getElementById('hero-badge').innerText = 'Automatisation Marine et Industrielle • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
             document.getElementById('hero-title-sub').innerText = 'Automation Systems';
