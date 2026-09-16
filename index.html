@@ -208,6 +208,31 @@
             flex-wrap: wrap;
         }
 
+        /* --- HIGH-END CSS EFFECTS FOR BUTTONS --- */
+        @keyframes neonPulse {
+            0% {
+                box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), inset 0 0 10px rgba(0, 240, 255, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(0, 240, 255, 0.7), inset 0 0 15px rgba(0, 240, 255, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), inset 0 0 10px rgba(0, 240, 255, 0.1);
+            }
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
@@ -220,17 +245,43 @@
             text-decoration: none;
             transition: var(--transition);
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Glossy Shine Effect on Hover/Tap */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                transparent,
+                rgba(255, 255, 255, 0.15),
+                transparent
+            );
+            transform: rotate(30deg) translateX(-100%);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn:hover::after, .btn:active::after {
+            transform: rotate(30deg) translateX(100%);
         }
 
         .btn-cyan {
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+            background-size: 200% 200%;
             color: var(--primary);
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
+            animation: neonPulse 3s infinite ease-in-out, gradientShift 6s infinite ease;
+            border: 1px solid rgba(0, 240, 255, 0.4);
         }
 
         .btn-cyan:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 35px rgba(0, 240, 255, 0.5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.8);
         }
 
         .btn-outline {
@@ -241,7 +292,8 @@
 
         .btn-outline:hover {
             background: var(--primary-light);
-            border-color: var(--text-muted);
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
         }
 
         /* Sections General */
@@ -522,7 +574,7 @@
             color: var(--accent);
         }
 
-        /* Floating Action Button (FAB) Menu Styles */
+        /* Floating Action Button (FAB) Menu Styles with Effects */
         .fab-container {
             position: fixed;
             bottom: 30px;
@@ -538,21 +590,23 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+            background-size: 200% 200%;
             color: var(--primary);
-            border: none;
+            border: 1px solid rgba(0, 240, 255, 0.5);
             font-size: 1.5rem;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.4);
+            box-shadow: 0 4px 25px rgba(0, 240, 255, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: var(--transition);
+            animation: neonPulse 3s infinite ease-in-out, gradientShift 6s infinite ease;
         }
 
         .fab-main:hover {
-            transform: scale(1.08);
-            box-shadow: 0 6px 25px rgba(0, 240, 255, 0.6);
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 30px rgba(0, 240, 255, 0.8);
         }
 
         .fab-options {
@@ -586,6 +640,23 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             transition: var(--transition);
             white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fab-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .fab-option:hover::before {
+            left: 100%;
         }
 
         .fab-option:hover {
@@ -593,6 +664,7 @@
             color: var(--primary);
             border-color: var(--accent);
             transform: translateX(-5px);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
         }
 
         .fab-option span {
@@ -612,7 +684,6 @@
 </head>
 <body>
 
-    <!-- Header & Navigation -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">⚡ <span id="logo-text">Lampou Marine</span></a>
@@ -628,7 +699,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="status-badge-container">
@@ -648,7 +718,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services">
         <div class="section-header">
             <span class="section-tag" id="serv-tag">💡 Τι προσφέρουμε</span>
@@ -687,7 +756,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="section-header">
             <span class="section-tag" id="proj-tag">🛠️ Applications</span>
@@ -731,7 +799,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="about-grid">
             <div>
@@ -756,7 +823,6 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section id="faq">
         <div class="section-header">
             <span class="section-tag" id="faq-tag">📚 Knowledge Base</span>
@@ -779,7 +845,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="contact-container">
             <div class="contact-info">
@@ -809,7 +874,6 @@
         </div>
     </section>
 
-    <!-- Floating Action Button (FAB) Menu -->
     <div class="fab-container" id="fabContainer">
         <div class="fab-options">
             <a href="tel:+306932942432" class="fab-option" title="Call">
@@ -833,7 +897,6 @@
         </button>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p id="footer-text">&copy; 2026 Lampou Marine Automation Systems. Με επιφύλαξη παντός δικαιώματος. • Πέτρος Λάμπου</p>
     </footer>
@@ -888,7 +951,7 @@
             document.getElementById('p2-title').innerText = 'Password-Locked Panels';
             document.getElementById('p2-desc').innerText = 'Αποτροπή μη εξουσιοδοτημένης πρόσβασης σε προγράμματα και ρυθμίσεις πινάκων με αυστηρό κλείδωμα πλήκτρων και οθόνης.';
             document.getElementById('p3-title').innerText = 'Lampou Marine System';
-            document.getElementById('p3-desc').innerText = 'Κεντρική μονάδα ελέγχου σκάφους με οθόνη LOGO!, αυτόματα alarms και άμεση οπτικοποίηση συμβάντων έκτακτης ανάγκης. Η οθόνη LOGO! εμφανίζει αποκλειστικά την ώρα και την ημερομηνία, προβάλλοντας ταυτόχρονα όλους τους συναγερμούς.';
+            document.getElementById('p3-desc').innerText = 'Κεντρική μονάδα ελέγχου σκάφους με οθόνη LOGO!, αυτόματα alarms και άμεση οπτικοποίηση συμβάντων έκτακτης ανάγκης. Η οθόνη LOGO! εμφανίζει αποκλειστικά την ώρα και την ημερομηνία, προβάλλοντας ταυτόχρονα τους συναγερμούς.';
 
             document.getElementById('about-tag').innerText = '⭐ Γιατί Lampou Marine';
             document.getElementById('about-title').innerText = 'Τεχνική αρτιότητα και απόλυτος έλεγχος.';
