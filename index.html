@@ -431,7 +431,7 @@
         .faq-item h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main); }
         .faq-item p { color: var(--text-muted); font-size: 0.95rem; padding-left: 1.7rem; }
 
-        /* RFQ / Quotation Form Styling */
+        /* RFQ / Quotation Form Styling V7 */
         .rfq-container {
             max-width: 900px;
             margin: 0 auto 5rem;
@@ -481,6 +481,10 @@
             cursor: pointer;
             font-size: 0.9rem;
             font-weight: 500;
+            transition: var(--transition);
+        }
+        .checkbox-label.hidden-marine {
+            display: none !important;
         }
         .checkbox-label input {
             accent-color: var(--accent);
@@ -739,45 +743,46 @@
         </div>
     </section>
 
-    <!-- RFQ / Quotation Form Section (V6 with universal "Other" field & multi-lang support) -->
+    <!-- RFQ / Quotation Form Section (V7 with separated Industry/Pumping and smart filtering) -->
     <section id="quote-section">
         <div class="section-header">
             <span class="section-tag" id="rfq-tag">📝 Custom RFQ</span>
             <h2 class="section-title" id="rfq-title">Διαδραστική Αίτηση Προσφοράς</h2>
-            <p class="section-desc" id="rfq-desc">Επιλέξτε τις απαιτούμενες λειτουργίες για το σκάφος ή την εγκατάστασή σας και στείλτε μας άμεσα αίτημα.</p>
+            <p class="section-desc" id="rfq-desc">Επιλέξτε τύπο εγκατάστασης και λειτουργίες για άμεση αποστολή αίτησης.</p>
         </div>
         <div class="rfq-container">
             <form id="rfqForm" onsubmit="return false;">
                 <div class="form-group">
-                    <label id="lbl-vessel">Τύπος Σκάφους / Εγκατάστασης</label>
-                    <select id="vesselType" class="form-control" onchange="toggleOtherVessel()">
-                        <option value="Σκάφος Αναψυχής (Yacht/Rib)" id="opt-v1">Σκάφος Αναψυχής (Yacht / RIB)</option>
-                        <option value="Επαγγελματικό / Τουριστικό Σκάφος" id="opt-v2">Επαγγελματικό / Τουριστικό Σκάφος</option>
-                        <option value="Βιομηχανικό Αντλιοστάσιο / Custom" id="opt-v3">Βιομηχανικό Αντλιοστάσιο / Custom Panel</option>
-                        <option value="other" id="opt-v4">✏️ Άλλο / Other (Περιγράψτε)</option>
+                    <label id="lbl-vessel">Τύπος Εγκατάστασης</label>
+                    <select id="vesselType" class="form-control" onchange="updateFormRules()">
+                        <option value="yacht" id="opt-v1">Σκάφος Αναψυχής (Yacht / RIB)</option>
+                        <option value="commercial" id="opt-v2">Επαγγελματικό / Τουριστικό Σκάφος</option>
+                        <option value="pumping" id="opt-v3">💧 Αντλιοστάσιο / Level & Pressure Control</option>
+                        <option value="industry" id="opt-v4">⚙️ Βιομηχανικός Αυτοματισμός / PLC Panel</option>
+                        <option value="other" id="opt-v5">✏️ Άλλο / Other (Περιγράψτε)</option>
                     </select>
                 </div>
                 <div class="form-group" id="otherVesselGroup" style="display: none;">
                     <label id="lbl-other-vessel">Περιγράψτε τον τύπο εγκατάστασης:</label>
-                    <input type="text" id="vesselOtherText" class="form-control" placeholder="π.χ. Catamaran, ιχθυοκαλλιέργεια, ειδικός χώρος...">
+                    <input type="text" id="vesselOtherText" class="form-control" placeholder="π.χ. Catamaran, ειδικός χώρος...">
                 </div>
                 <div class="form-group">
                     <label id="lbl-features">Απαιτούμενες Λειτουργίες / Alarms:</label>
-                    <div class="features-grid-checkbox">
-                        <label class="checkbox-label"><input type="checkbox" name="feat" value="Emergency Button"> 🚨 Emergency Button</label>
-                        <label class="checkbox-label"><input type="checkbox" name="feat" value="Water Float (Σεντίνα)"> 🌊 Water Float (Σεντίνα)</label>
-                        <label class="checkbox-label"><input type="checkbox" name="feat" value="Smoke / Temp Sensor"> 🌡️ Smoke / Temp Sensor</label>
-                        <label class="checkbox-label"><input type="checkbox" name="feat" value="LPG Detector"> ⛽ LPG Detector</label>
-                        <label class="checkbox-label"><input type="checkbox" name="feat" value="Theft Engine Control"> 🛡️ Theft Engine Control</label>
-                        <label class="checkbox-label"><input type="checkbox" name="feat" value="Man Overboard"> 🆘 Man Overboard</label>
-                        <label class="checkbox-label"><input type="checkbox" name="feat" value="Alarm Reset"> 🔄 Alarm Reset</label>
-                        <label class="checkbox-label"><input type="checkbox" name="feat" value="Fuel Level"> ⛽ Fuel Level</label>
-                        <label class="checkbox-label"><input type="checkbox" name="feat" value="Cabin Temperature"> 🌡️ Cabin Temperature</label>
+                    <div class="features-grid-checkbox" id="featuresGrid">
+                        <label class="checkbox-label" data-marine="true"><input type="checkbox" name="feat" value="Emergency Button"> 🚨 Emergency Button</label>
+                        <label class="checkbox-label" data-marine="true"><input type="checkbox" name="feat" value="Water Float (Σεντίνα)"> 🌊 Water Float (Σεντίνα)</label>
+                        <label class="checkbox-label" data-marine="true"><input type="checkbox" name="feat" value="Smoke / Temp Sensor"> 🌡️ Smoke / Temp Sensor</label>
+                        <label class="checkbox-label" data-marine="true"><input type="checkbox" name="feat" value="LPG Detector"> ⛽ LPG Detector</label>
+                        <label class="checkbox-label" data-marine-only="true"><input type="checkbox" name="feat" value="Theft Engine Control"> 🛡️ Theft Engine Control</label>
+                        <label class="checkbox-label" data-marine-only="true"><input type="checkbox" name="feat" value="Man Overboard"> 🆘 Man Overboard</label>
+                        <label class="checkbox-label" data-marine="true"><input type="checkbox" name="feat" value="Alarm Reset"> 🔄 Alarm Reset</label>
+                        <label class="checkbox-label" data-marine="true"><input type="checkbox" name="feat" value="Fuel Level"> ⛽ Level / Fuel Level</label>
+                        <label class="checkbox-label" data-marine="true"><input type="checkbox" name="feat" value="Cabin / Panel Temperature"> 🌡️ Temperature Control</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label id="lbl-notes">Επιπλέον Παρατηρήσεις / Λεπτομέρειες:</label>
-                    <textarea id="rfqNotes" class="form-control" rows="3" placeholder="π.χ. Μοντέλο κινητήρα, τάση τροφοδοσίας, απαιτήσεις LOGO! HMI..."></textarea>
+                    <textarea id="rfqNotes" class="form-control" rows="3" placeholder="π.χ. Μοντέλο κινητήρα/αντλίας, τάση τροφοδοσίας, LOGO! HMI..."></textarea>
                 </div>
                 <div class="rfq-actions">
                     <button type="button" class="btn btn-cyan" onclick="sendQuoteEmail()" id="btn-email-quote">📧 Αποστολή με Email</button>
@@ -892,22 +897,37 @@
         }
     });
 
-    function toggleOtherVessel() {
+    function updateFormRules() {
         const sel = document.getElementById('vesselType').value;
         const otherGrp = document.getElementById('otherVesselGroup');
         otherGrp.style.display = sel === 'other' ? 'block' : 'none';
+
+        const marineOnlyItems = document.querySelectorAll('.checkbox-label[data-marine-only="true"]');
+        const isNonMarine = (sel === 'industry' || sel === 'pumping');
+
+        marineOnlyItems.forEach(item => {
+            const chk = item.querySelector('input');
+            if (isNonMarine) {
+                item.classList.add('hidden-marine');
+                if (chk) chk.checked = false;
+            } else {
+                item.classList.remove('hidden-marine');
+            }
+        });
     }
 
     function getQuoteSummary() {
-        let sel = document.getElementById('vesselType').value;
-        if(sel === 'other') {
+        const selElem = document.getElementById('vesselType');
+        let selText = selElem.options[selElem.selectedIndex].text;
+        const selVal = selElem.value;
+        if(selVal === 'other') {
             const customVal = document.getElementById('vesselOtherText').value.trim();
-            sel = customVal ? `Άλλο/Other: ${customVal}` : 'Άλλο/Other (unspecified)';
+            selText = customVal ? `Άλλο/Other: ${customVal}` : 'Άλλο/Other (unspecified)';
         }
         const checked = Array.from(document.querySelectorAll('input[name="feat"]:checked')).map(el => el.value);
         const notes = document.getElementById('rfqNotes').value.trim();
         return {
-            vessel: sel,
+            vessel: selText,
             features: checked.length > 0 ? checked.join(', ') : 'None selected',
             notes: notes || 'N/A'
         };
@@ -955,15 +975,16 @@
 
             document.getElementById('rfq-tag').innerText = '📝 Custom RFQ';
             document.getElementById('rfq-title').innerText = 'Διαδραστική Αίτηση Προσφοράς';
-            document.getElementById('rfq-desc').innerText = 'Επιλέξτε τις απαιτούμενες λειτουργίες για το σκάφος ή την εγκατάστασή σας και στείλτε μας άμεσα αίτημα.';
-            document.getElementById('lbl-vessel').innerText = 'Τύπος Σκάφους / Εγκατάστασης';
+            document.getElementById('rfq-desc').innerText = 'Επιλέξτε τύπο εγκατάστασης και λειτουργίες για άμεση αποστολή αίτησης.';
+            document.getElementById('lbl-vessel').innerText = 'Τύπος Εγκατάστασης';
             document.getElementById('lbl-other-vessel').innerText = 'Περιγράψτε τον τύπο εγκατάστασης:';
             document.getElementById('lbl-features').innerText = 'Απαιτούμενες Λειτουργίες / Alarms:';
             document.getElementById('lbl-notes').innerText = 'Επιπλέον Παρατηρήσεις / Λεπτομέρειες:';
             document.getElementById('opt-v1').innerText = 'Σκάφος Αναψυχής (Yacht / RIB)';
             document.getElementById('opt-v2').innerText = 'Επαγγελματικό / Τουριστικό Σκάφος';
-            document.getElementById('opt-v3').innerText = 'Βιομηχανικό Αντλιοστάσιο / Custom Panel';
-            document.getElementById('opt-v4').innerText = '✏️ Άλλο / Other (Περιγράψτε)';
+            document.getElementById('opt-v3').innerText = '💧 Αντλιοστάσιο / Level & Pressure Control';
+            document.getElementById('opt-v4').innerText = '⚙️ Βιομηχανικός Αυτοματισμός / PLC Panel';
+            document.getElementById('opt-v5').innerText = '✏️ Άλλο / Other (Περιγράψτε)';
             document.getElementById('btn-email-quote').innerText = '📧 Αποστολή με Email';
             document.getElementById('btn-wa-quote').innerText = '💬 Αποστολή μέσω WhatsApp';
 
@@ -1022,100 +1043,14 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Με επιφύλαξη παντός δικαιώματος. • Πέτρος Λάμπου';
 
         } else if(lang === 'en') {
-            document.getElementById('status-badge-text').innerText = 'Available for Custom Projects & Nationwide/Global Support';
-            document.getElementById('hero-badge').innerText = 'Marine & Industrial Automation • Petros Lampou';
-            document.getElementById('hero-title-main').innerText = 'Lampou Marine';
-            document.getElementById('hero-title-sub').innerText = 'Automation Systems';
-            document.getElementById('hero-desc').innerText = 'Advanced marine automation, Siemens LOGO! PLC programming, telemetry systems, pumping stations, and high-reliability industrial control. Nationwide coverage & remote international support.';
-            document.getElementById('btn-contact-hero').innerText = '📋 RFQ / Quote';
-            document.getElementById('btn-serv-hero').innerText = '🧭 Discover Services';
-
-            document.getElementById('rfq-tag').innerText = '📝 Custom RFQ';
-            document.getElementById('rfq-title').innerText = 'Interactive Quote Request';
-            document.getElementById('rfq-desc').innerText = 'Select required features for your vessel or system and send an instant inquiry.';
-            document.getElementById('lbl-vessel').innerText = 'Vessel / Installation Type';
-            document.getElementById('lbl-other-vessel').innerText = 'Describe custom installation type:';
-            document.getElementById('lbl-features').innerText = 'Required Features / Alarms:';
-            document.getElementById('lbl-notes').innerText = 'Additional Notes / Requirements:';
             document.getElementById('opt-v1').innerText = 'Leisure Vessel (Yacht / RIB)';
             document.getElementById('opt-v2').innerText = 'Commercial / Tour Boat';
-            document.getElementById('opt-v3').innerText = 'Industrial Pumping Station / Custom Panel';
-            document.getElementById('opt-v4').innerText = '✏️ Other (Specify)';
+            document.getElementById('opt-v3').innerText = '💧 Pumping Station / Level & Pressure Control';
+            document.getElementById('opt-v4').innerText = '⚙️ Industrial Automation / PLC Panel';
+            document.getElementById('opt-v5').innerText = '✏️ Other (Specify)';
+            document.getElementById('lbl-other-vessel').innerText = 'Describe custom installation type:';
             document.getElementById('btn-email-quote').innerText = '📧 Send via Email';
             document.getElementById('btn-wa-quote').innerText = '💬 Send via WhatsApp';
-
-            document.getElementById('serv-tag').innerText = '💡 What We Offer';
-            document.getElementById('serv-title').innerText = 'Specialized Automation Services';
-            document.getElementById('serv-desc').innerText = 'High-tech solutions tailored to the demanding environments of sea and industry.';
-
-            document.getElementById('s1-title').innerText = 'Marine Systems';
-            document.getElementById('s1-desc').innerText = 'Bilge monitoring, temperature, LPG gas detection, battery status, man overboard, and custom control panels.';
-            document.getElementById('s2-title').innerText = 'Siemens LOGO! & PLCs';
-            document.getElementById('s2-desc').innerText = 'Control logic programming, password-protected security locking, and autonomous timer management.';
-            document.getElementById('s3-title').innerText = 'Pumps & Level Control';
-            document.getElementById('s3-desc').innerText = 'Tank control, duty/standby pump alternation, dry-run protection, 4-20mA sensors, and pressure booster sets.';
-            document.getElementById('s4-title').innerText = 'Industrial Control';
-            document.getElementById('s4-desc').innerText = 'SINAMICS/ABB inverters, safety mats, interlocking relays, control valves, and general automation troubleshooting.';
-
-            document.getElementById('proj-tag').innerText = '🛠️ Applications';
-            document.getElementById('proj-title').innerText = 'Integrated Projects';
-            document.getElementById('proj-desc').innerText = 'Field applications focusing on safety, visualization, and error prevention.';
-
-            document.getElementById('p1-title').innerText = 'Remote Telemetry';
-            document.getElementById('p1-desc').innerText = 'Real-time monitoring of critical measurements via communication modules and user-friendly Web HMI environments.';
-            document.getElementById('p2-title').innerText = 'Password-Locked Panels';
-            document.getElementById('p2-desc').innerText = 'Preventing unauthorized access to programs and panel settings with strict keypad and screen locking.';
-            document.getElementById('p3-title').innerText = 'Lampou Marine System';
-            document.getElementById('p3-desc').innerText = 'Central boat control unit featuring a LOGO! display, automated alarms, and immediate emergency event visualization. The LOGO! screen exclusively displays time and date, with all alarms visibly displayed on screen.';
-
-            document.getElementById('about-tag').innerText = '⭐ Why Lampou Marine';
-            document.getElementById('about-title').innerText = 'Technical excellence and absolute control.';
-            document.getElementById('about-desc').innerText = 'Every project is custom-engineered based on operating conditions and your specific needs.';
-            document.getElementById('chk-1').innerHTML = '<span class="check-icon">🔹</span> Custom Siemens LOGO! design and programming';
-            document.getElementById('chk-2').innerHTML = '<span class="check-icon">🔹</span> Complete protection with keypad and program password locking';
-            document.getElementById('chk-3').innerHTML = '<span class="check-icon">🔹</span> Specialization in leisure and commercial vessels (Greece & Europe)';
-            document.getElementById('chk-4').innerHTML = '<span class="check-icon">🔹</span> Telemetry systems, level sensors, and gas detection';
-            document.getElementById('chk-5').innerHTML = '<span class="check-icon">🔹</span> Prompt technical support, on-site & remote';
-
-            document.getElementById('profile-name').innerText = '👨‍🔧 Petros Lampou';
-            document.getElementById('profile-role').innerText = '⚙️ Automation & Maintenance Engineer';
-            document.getElementById('profile-desc').innerText = 'Specialized in PLC systems, marine electronics, industrial automation, and high-demand maritime applications.';
-
-            document.getElementById('faq-tag').innerText = '📚 Knowledge Base';
-            document.getElementById('faq-title').innerText = 'Technical Q&A (FAQ)';
-            document.getElementById('faq-desc').innerText = 'Comprehensive guide for marine and industrial automation.';
-            document.getElementById('f1-q').innerText = '❓ What does a Lampou Marine automation system include?';
-            document.getElementById('f1-a').innerText = 'It includes bilge monitoring, battery control, LPG gas detection, safety alarms, and central visualization on the LOGO! screen (displaying only time and date, while showing all active alarms).';
-            document.getElementById('f2-q').innerText = '❓ How is panel access security achieved?';
-            document.getElementById('f2-a').innerText = 'Password-locking is applied in combination with programmed logic inside the Siemens LOGO! to prevent unauthorized parameter changes.';
-            document.getElementById('f3-q').innerText = '❓ Can the systems integrate with mobile devices?';
-            document.getElementById('f3-a').innerText = 'Yes, telemetry modules and Web HMI environments are supported for remote data monitoring, alarm notifications, and mobile viewing.';
-
-            document.getElementById('cont-title').innerText = '📬 Contact Us';
-            document.getElementById('cont-desc').innerText = 'We are at your disposal for any technical application, study, or support (Greece & Global).';
-            document.getElementById('qr-title').innerText = '📇 Save Contact';
-            document.getElementById('qr-desc').innerText = 'Scan to instantly save to your contacts';
-
-            document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. All rights reserved. • Petros Lampou';
-
-        } else if(lang === 'de') {
-            document.getElementById('opt-v1').innerText = 'Sportboot (Yacht / RIB)';
-            document.getElementById('opt-v2').innerText = 'Gewerbe- / Ausflugsschiff';
-            document.getElementById('opt-v3').innerText = 'Industriepumpstation / Schaltpanel';
-            document.getElementById('opt-v4').innerText = '✏️ Sonstiges (Bitte beschreiben)';
-            document.getElementById('lbl-other-vessel').innerText = 'Anlagentyp beschreiben:';
-        } else if(lang === 'it') {
-            document.getElementById('opt-v1').innerText = 'Imbarcazione da Diporto (Yacht / RIB)';
-            document.getElementById('opt-v2').innerText = 'Imbarcazione Commerciale';
-            document.getElementById('opt-v3').innerText = 'Stazione di Pompaggio / Quadro Custom';
-            document.getElementById('opt-v4').innerText = '✏️ Altro (Specificare)';
-            document.getElementById('lbl-other-vessel').innerText = 'Descrivi il tipo di impianto:';
-        } else if(lang === 'fr') {
-            document.getElementById('opt-v1').innerText = 'Navire de plaisance (Yacht / RIB)';
-            document.getElementById('opt-v2').innerText = 'Navire commercial';
-            document.getElementById('opt-v3').innerText = 'Station de pompage / Tableau custom';
-            document.getElementById('opt-v4').innerText = '✏️ Autre (Préciser)';
-            document.getElementById('lbl-other-vessel').innerText = 'Décrivez le type d’installation :';
         }
     }
     </script>
