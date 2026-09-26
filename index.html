@@ -762,15 +762,17 @@
         </div>
     </section>
 
-    <!-- Projects Gallery Section (ΝΕΑ ΕΝΟΤΗΤΑ ΦΩΤΟΓΡΑΦΙΩΝ) -->
+    <!-- Projects Gallery Section (ΝΕΑ ΕΝΟΤΗΤΑ ΦΩΤΟΓΡΑΦΙΩΝ ΜΕ LINK ΣΤΗΝ ΕΠΙΚΕΦΑΛΙΔΑ) -->
     <section id="gallery">
         <div class="section-header">
             <span class="section-tag" id="gallery-tag">📸 Gallery Έργων</span>
-            <h2 class="section-title" id="gallery-title">Φωτογραφικό Υλικό από Εφαρμογές</h2>
+            <h2 class="section-title" id="gallery-title">
+                <a href="#gallery" style="color: inherit; text-decoration: none;">Φωτογραφικό Υλικό από Εφαρμογές</a>
+            </h2>
             <p class="section-desc" id="gallery-desc">Εικόνες από πραγματικές εγκαταστάσεις πινάκων, προγραμματισμό PLC και ναυτιλιακούς αυτοματισμούς.</p>
         </div>
         <div class="gallery-grid" id="galleryGrid">
-            <!-- Φωτογραφία 1 (Παράδειγμα - Μπορείς να αλλάξεις το src και τα κείμενα εύκολα) -->
+            <!-- Φωτογραφία 1 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
                     <img src="images/project1.jpg" alt="Πίνακας Siemens LOGO! Σκάφους">
@@ -983,7 +985,7 @@
             <div class="vcard-qr-box">
                 <h4 id="qr-title">📇 Αποθήκευση Επαφής</h4>
                 <div class="qr-wrapper">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%CE%9B%CE%AC%CE%2C%CE%9B%CE%AC%CE%BC%CF%80%CE%BF%CF%85%3B%CE%A0%CE%َد%CF%8C%CF%81%CE%BF%CF%82%0AFN%3APetros%20Lampou%0AORG%3ALampou%20Marine%20Automation%20Systems%0ATITLE%3AAutomation%20%26%20Maintenance%20Engineer%0ATEL%3BTYPE%3DMOBILE%3A%2B306932942432%0AEMAIL%3Apeterlampou%40hotmail.com%0AEND%3AVCARD" alt="vCard QR Code" width="140" height="140">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%CE%9B%CE%AC%CE%2C%CE%9B%CE%AC%CE%BC%CF%80%CE%BF%CF%85%3B%CE%A0%CE%َد%CF%8C%CF%81%CE%BF%CF%8$0AFN%3APetros%20Lampou%0AORG%3ALampou%20Marine%20Automation%20Systems%0ATITLE%3AAutomation%20%26%20Maintenance%20Engineer%0ATEL%3BTYPE%3DMOBILE%3A%2B306932942432%0AEMAIL%3Apeterlampou%40hotmail.com%0AEND%3AVCARD" alt="vCard QR Code" width="140" height="140">
                 </div>
                 <p id="qr-desc">Σκανάρετε για άμεση αποθήκευση στις επαφές σας</p>
             </div>
@@ -1124,7 +1126,7 @@
             document.getElementById('s4-desc').innerText = 'Inverters SINAMICS/ABB, safety mats, ρελέ interlocking, βαλβίδες ελέγχου και γενικό troubleshooting αυτοματισμών.';
 
             document.getElementById('gallery-tag').innerText = '📸 Gallery Έργων';
-            document.getElementById('gallery-title').innerText = 'Φωτογραφικό Υλικό από Εφαρμογές';
+            document.getElementById('gallery-title').innerHTML = '<a href="#gallery" style="color: inherit; text-decoration: none;">Φωτογραφικό Υλικό από Εφαρμογές</a>';
             document.getElementById('gallery-desc').innerText = 'Εικόνες από πραγματικές εγκαταστάσεις πινάκων, προγραμματισμό PLC και ναυτιλιακούς αυτοματισμούς.';
 
             document.getElementById('proj-tag').innerText = '🛠️ Applications';
