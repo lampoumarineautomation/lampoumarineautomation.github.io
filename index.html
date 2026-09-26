@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Structured Data SEO (JSON-LD) - Nationwide & International Coverage -->
+    <!-- Structured Data SEO (JSON-LD) - Διορθωμένο με το επίσημο URL -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -23,7 +23,7 @@
           "name": "Lampou Marine Automation Systems",
           "alternateName": "Λάμπου Αυτοματισμοί Σκαφών",
           "description": "Προηγμένοι αυτοματισμοί σκαφών, προγραμματισμός Siemens LOGO!, συστήματα τηλεμετρίας και βιομηχανικός έλεγχος.",
-          "url": "https://lampoumarine.example.com",
+          "url": "https://lampoumarineautomation.gr",
           "telephone": "+306932942432",
           "email": "peterlampou@hotmail.com",
           "founder": {
@@ -158,7 +158,7 @@
             font-weight: 700;
         }
 
-        /* Status Badge (Available for Projects) */
+        /* Status Badge */
         .status-badge-container {
             display: inline-flex;
             align-items: center;
@@ -361,6 +361,69 @@
         .service-body h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
         .service-body p { color: var(--text-muted); font-size: 0.95rem; }
 
+        /* Gallery / Photo Projects Section (ΝΕΑ ΕΝΟΤΗΤΑ ΦΩΤΟΓΡΑΦΙΩΝ) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 240, 255, 0.15);
+        }
+
+        .gallery-img-container {
+            width: 100%;
+            height: 220px;
+            background: var(--primary-light);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-card:hover .gallery-img-container img {
+            transform: scale(1.05);
+        }
+
+        .gallery-content {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .gallery-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .gallery-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -431,7 +494,7 @@
         .faq-item h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main); }
         .faq-item p { color: var(--text-muted); font-size: 0.95rem; padding-left: 1.7rem; }
 
-        /* RFQ / Quotation Form Styling V7 */
+        /* RFQ Form Styling */
         .rfq-container {
             max-width: 900px;
             margin: 0 auto 5rem;
@@ -699,11 +762,72 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Gallery Section (ΝΕΑ ΕΝΟΤΗΤΑ ΦΩΤΟΓΡΑΦΙΩΝ) -->
+    <section id="gallery">
+        <div class="section-header">
+            <span class="section-tag" id="gallery-tag">📸 Gallery Έργων</span>
+            <h2 class="section-title" id="gallery-title">Φωτογραφικό Υλικό από Εφαρμογές</h2>
+            <p class="section-desc" id="gallery-desc">Εικόνες από πραγματικές εγκαταστάσεις πινάκων, προγραμματισμό PLC και ναυτιλιακούς αυτοματισμούς.</p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Φωτογραφία 1 (Παράδειγμα - Μπορείς να αλλάξεις το src και τα κείμενα εύκολα) -->
+            <div class="gallery-card">
+                <div class="gallery-img-container">
+                    <img src="images/project1.jpg" alt="Πίνακας Siemens LOGO! Σκάφους">
+                </div>
+                <div class="gallery-content">
+                    <div>
+                        <h3>Πίνακας Ελέγχου Siemens LOGO!</h3>
+                        <p>Custom κατασκευή και καλωδίωση πίνακα αυτοματισμού σκάφους με οθόνη και password locking.</p>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">⚓ Marine</span>
+                        <span class="tag">📟 Siemens LOGO!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Φωτογραφία 2 -->
+            <div class="gallery-card">
+                <div class="gallery-img-container">
+                    <img src="images/project2.jpg" alt="Σύστημα Τηλεμετρίας & Σεντίνας">
+                </div>
+                <div class="gallery-content">
+                    <div>
+                        <h3>Μονάδα Επιτήρησης Σεντίνας & Alarms</h3>
+                        <p>Αυτόματος έλεγχος αντλιών και οπτικοποίηση συμβάντων έκτακτης ανάγκης.</p>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">🌊 Bilge Pump</span>
+                        <span class="tag">🚨 Alarms</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Φωτογραφία 3 -->
+            <div class="gallery-card">
+                <div class="gallery-img-container">
+                    <img src="images/project3.jpg" alt="Βιομηχανικός Αυτοματισμός / Inverter">
+                </div>
+                <div class="gallery-content">
+                    <div>
+                        <h3>Βιομηχανικός Έλεγχος & Inverters</h3>
+                        <p>Ρυθμίσεις παραμέτρων και προστασία κινητήρων υψηλής ισχύος.</p>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">⚙️ Industrial</span>
+                        <span class="tag">⚡ Drives</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / Applications Overview Section -->
     <section id="projects">
         <div class="section-header">
             <span class="section-tag" id="proj-tag">🛠️ Applications</span>
-            <h2 class="section-title" id="proj-title">Ολοκληρωμένα Projects</h2>
+            <h2 class="section-title" id="proj-title">Αρχιτεκτονική Συστημάτων</h2>
             <p class="section-desc" id="proj-desc">Εφαρμογές πεδίου με έμφαση στην ασφάλεια, την οπτικοποίηση και την αποτροπή σφαλμάτων.</p>
         </div>
         <div class="projects-grid">
@@ -840,7 +964,7 @@
         </div>
     </section>
 
-    <!-- Contact Section with vCard QR Code -->
+    <!-- Contact Section -->
     <section id="contact">
         <div class="contact-container">
             <div class="contact-info">
@@ -852,7 +976,6 @@
                     <a href="viber://chat?number=%2B306932942432" class="contact-item"><span>📱</span> Viber: +30 6932942432</a>
                     <a href="mailto:peterlampou@hotmail.com" class="contact-item"><span>📧</span> peterlampou@hotmail.com</a>
                     <div class="contact-item"><span>📍</span> Λαμία, Ελλάδα (Pan-Hellenic / Global Remote Support)</div>
-                    <a href="https://www.linkedin.com" target="_blank" class="contact-item"><span>💼</span> Lampou Marine Automation Systems on LinkedIn</a>
                 </div>
             </div>
 
@@ -860,7 +983,7 @@
             <div class="vcard-qr-box">
                 <h4 id="qr-title">📇 Αποθήκευση Επαφής</h4>
                 <div class="qr-wrapper">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%CE%9B%CE%AC%CE%BC%CF%80%CE%BF%CF%85%3B%CE%A0%CE%AD%CF%84%CF%81%CE%BF%CF%82%0AFN%3APetros%20Lampou%0AORG%3ALampou%20Marine%20Automation%20Systems%0ATITLE%3AAutomation%20%26%20Maintenance%20Engineer%0ATEL%3BTYPE%3DMOBILE%3A%2B306932942432%0AEMAIL%3Apeterlampou%40hotmail.com%0AEND%3AVCARD" alt="vCard QR Code" width="140" height="140">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%CE%9B%CE%AC%CE%2C%CE%9B%CE%AC%CE%BC%CF%80%CE%BF%CF%85%3B%CE%A0%CE%َد%CF%8C%CF%81%CE%BF%CF%82%0AFN%3APetros%20Lampou%0AORG%3ALampou%20Marine%20Automation%20Systems%0ATITLE%3AAutomation%20%26%20Maintenance%20Engineer%0ATEL%3BTYPE%3DMOBILE%3A%2B306932942432%0AEMAIL%3Apeterlampou%40hotmail.com%0AEND%3AVCARD" alt="vCard QR Code" width="140" height="140">
                 </div>
                 <p id="qr-desc">Σκανάρετε για άμεση αποθήκευση στις επαφές σας</p>
             </div>
@@ -874,7 +997,6 @@
             <a href="mailto:peterlampou@hotmail.com" class="fab-option"><span>📧</span> Email</a>
             <a href="viber://chat?number=%2B306932942432" class="fab-option"><span>📱</span> Viber</a>
             <a href="https://wa.me/306932942432" class="fab-option"><span>💬</span> WhatsApp</a>
-            <a href="https://www.linkedin.com" target="_blank" class="fab-option"><span>💼</span> LinkedIn</a>
         </div>
         <button class="fab-main" onclick="toggleFab()">💬</button>
     </div>
@@ -1001,8 +1123,12 @@
             document.getElementById('s4-title').innerText = 'Βιομηχανικός Έλεγχος';
             document.getElementById('s4-desc').innerText = 'Inverters SINAMICS/ABB, safety mats, ρελέ interlocking, βαλβίδες ελέγχου και γενικό troubleshooting αυτοματισμών.';
 
+            document.getElementById('gallery-tag').innerText = '📸 Gallery Έργων';
+            document.getElementById('gallery-title').innerText = 'Φωτογραφικό Υλικό από Εφαρμογές';
+            document.getElementById('gallery-desc').innerText = 'Εικόνες από πραγματικές εγκαταστάσεις πινάκων, προγραμματισμό PLC και ναυτιλιακούς αυτοματισμούς.';
+
             document.getElementById('proj-tag').innerText = '🛠️ Applications';
-            document.getElementById('proj-title').innerText = 'Ολοκληρωμένα Projects';
+            document.getElementById('proj-title').innerText = 'Αρχιτεκτονική Συστημάτων';
             document.getElementById('proj-desc').innerText = 'Εφαρμογές πεδίου με έμφαση στην ασφάλεια, την οπτικοποίηση και την αποτροπή σφαλμάτων.';
 
             document.getElementById('p1-title').innerText = 'Απομακρυσμένη Τηλεμετρία';
