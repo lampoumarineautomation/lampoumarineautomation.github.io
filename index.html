@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Structured Data SEO (JSON-LD) - Διορθωμένο με το επίσημο URL -->
+    <!-- Structured Data SEO (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -90,7 +90,6 @@
             padding-top: 85px; 
         }
 
-        /* Header & Navigation */
         header {
             position: fixed;
             top: 0;
@@ -158,7 +157,6 @@
             font-weight: 700;
         }
 
-        /* Status Badge */
         .status-badge-container {
             display: inline-flex;
             align-items: center;
@@ -188,7 +186,6 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
 
-        /* Hero Section */
         .hero {
             position: relative;
             min-height: calc(100vh - 85px);
@@ -361,7 +358,7 @@
         .service-body h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
         .service-body p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Gallery / Photo Projects Section (ΝΕΑ ΕΝΟΤΗΤΑ ΦΩΤΟΓΡΑΦΙΩΝ) */
+        /* Gallery / Photo Projects Section */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -387,9 +384,12 @@
         .gallery-img-container {
             width: 100%;
             height: 220px;
-            background: var(--primary-light);
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
             overflow: hidden;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .gallery-img-container img {
@@ -401,6 +401,16 @@
 
         .gallery-card:hover .gallery-img-container img {
             transform: scale(1.05);
+        }
+
+        .gallery-placeholder-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
         }
 
         .gallery-content {
@@ -494,7 +504,6 @@
         .faq-item h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main); }
         .faq-item p { color: var(--text-muted); font-size: 0.95rem; padding-left: 1.7rem; }
 
-        /* RFQ Form Styling */
         .rfq-container {
             max-width: 900px;
             margin: 0 auto 5rem;
@@ -762,7 +771,7 @@
         </div>
     </section>
 
-    <!-- Projects Gallery Section (ΝΕΑ ΕΝΟΤΗΤΑ ΦΩΤΟΓΡΑΦΙΩΝ ΜΕ LINK ΣΤΗΝ ΕΠΙΚΕΦΑΛΙΔΑ) -->
+    <!-- Projects Gallery Section (Με σύνδεσμο στην επικεφαλίδα και αυτόματο Fallback) -->
     <section id="gallery">
         <div class="section-header">
             <span class="section-tag" id="gallery-tag">📸 Gallery Έργων</span>
@@ -775,7 +784,7 @@
             <!-- Φωτογραφία 1 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="images/project1.jpg" alt="Πίνακας Siemens LOGO! Σκάφους">
+                    <img src="images/project1.jpg" alt="Πίνακας Siemens LOGO! Σκάφους" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>⚓</div>';">
                 </div>
                 <div class="gallery-content">
                     <div>
@@ -792,7 +801,7 @@
             <!-- Φωτογραφία 2 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="images/project2.jpg" alt="Σύστημα Τηλεμετρίας & Σεντίνας">
+                    <img src="images/project2.jpg" alt="Σύστημα Τηλεμετρίας & Σεντίνας" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>🌊</div>';">
                 </div>
                 <div class="gallery-content">
                     <div>
@@ -809,7 +818,7 @@
             <!-- Φωτογραφία 3 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="images/project3.jpg" alt="Βιομηχανικός Αυτοματισμός / Inverter">
+                    <img src="images/project3.jpg" alt="Βιομηχανικός Αυτοματισμός / Inverter" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>⚙️</div>';">
                 </div>
                 <div class="gallery-content">
                     <div>
@@ -985,7 +994,7 @@
             <div class="vcard-qr-box">
                 <h4 id="qr-title">📇 Αποθήκευση Επαφής</h4>
                 <div class="qr-wrapper">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%CE%9B%CE%AC%CE%2C%CE%9B%CE%AC%CE%BC%CF%80%CE%BF%CF%85%3B%CE%A0%CE%َد%CF%8C%CF%81%CE%BF%CF%8$0AFN%3APetros%20Lampou%0AORG%3ALampou%20Marine%20Automation%20Systems%0ATITLE%3AAutomation%20%26%20Maintenance%20Engineer%0ATEL%3BTYPE%3DMOBILE%3A%2B306932942432%0AEMAIL%3Apeterlampou%40hotmail.com%0AEND%3AVCARD" alt="vCard QR Code" width="140" height="140">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A%CE%9B%CE%AC%CE%2C%CE%9B%CE%AC%CE%BC%CF%80%CE%BF%CF%85%3B%CE%A0%CE%َد%CF%8C%CF%81%CE%BF%CF%82%0AFN%3APetros%20Lampou%0AORG%3ALampou%20Marine%20Automation%20Systems%0ATITLE%3AAutomation%20%26%20Maintenance%20Engineer%0ATEL%3BTYPE%3DMOBILE%3A%2B306932942432%0AEMAIL%3Apeterlampou%40hotmail.com%0AEND%3AVCARD" alt="vCard QR Code" width="140" height="140">
                 </div>
                 <p id="qr-desc">Σκανάρετε για άμεση αποθήκευση στις επαφές σας</p>
             </div>
