@@ -358,7 +358,7 @@
         .service-body h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
         .service-body p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Gallery / Photo Projects Section */
+        /* Gallery / Photo Projects Section με contain για ομοιόμορφη προσαρμογή κάθετων/οριζόντιων */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -383,8 +383,8 @@
 
         .gallery-img-container {
             width: 100%;
-            height: 220px;
-            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            height: 240px;
+            background: #000;
             overflow: hidden;
             position: relative;
             display: flex;
@@ -395,12 +395,13 @@
         .gallery-img-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            background-color: #050b14;
             transition: var(--transition);
         }
 
         .gallery-card:hover .gallery-img-container img {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
         .gallery-placeholder-icon {
@@ -689,7 +690,7 @@
             padding: 3rem 2rem;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             background: var(--primary);
         }
     </style>
@@ -771,7 +772,7 @@
         </div>
     </section>
 
-    <!-- Projects Gallery Section (Διορθωμένες αντιστοιχίες & περιγραφές βάσει των φωτογραφιών σου) -->
+    <!-- Projects Gallery Section -->
     <section id="gallery">
         <div class="section-header">
             <span class="section-tag" id="gallery-tag">📸 Gallery Έργων</span>
@@ -924,7 +925,7 @@
                 </div>
                 <div class="gallery-content">
                     <div>
-                        <h3>Πάγκος Δ δοκιμών & Εξοπλισμός (Tank 5)</h3>
+                        <h3>Πάγκος Δοκιμών & Εξοπλισμός (Tank 5)</h3>
                         <p>Δοκιμή εν λειτουργία με PLC, αισθητήρα VEGABAR, ανεμιστήρα και πολυμέτρο στον πάγκο εργασίας.</p>
                     </div>
                     <div class="tag-list">
