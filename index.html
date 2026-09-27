@@ -358,7 +358,7 @@
         .service-body h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
         .service-body p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Gallery / Photo Projects Section με contain για ομοιόμορφη προσαρμογή κάθετων/οριζόντιων */
+        /* Gallery / Photo Projects Section */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -400,7 +400,16 @@
             transition: var(--transition);
         }
 
-        .gallery-card:hover .gallery-img-container img {
+        /* Περιστροφή 90 μοίρες αριστερά για τις 6 συγκεκριμένες εικόνες (Photocell 1, 2 και Tank 1, 2, 3, 4) */
+        .gallery-img-container img.rotate-left {
+            transform: rotate(-90deg) scale(0.85); /* scale για να χωρέσει τέλεια στο πλαίσιο */
+        }
+
+        .gallery-card:hover .gallery-img-container img.rotate-left {
+            transform: rotate(-90deg) scale(0.9);
+        }
+
+        .gallery-card:hover .gallery-img-container img:not(.rotate-left) {
             transform: scale(1.03);
         }
 
@@ -772,7 +781,7 @@
         </div>
     </section>
 
-    <!-- Projects Gallery Section -->
+    <!-- Projects Gallery Section (Με τις 6 πρώτες εικόνες περιστρεφόμενες κατά -90deg) -->
     <section id="gallery">
         <div class="section-header">
             <span class="section-tag" id="gallery-tag">📸 Gallery Έργων</span>
@@ -785,7 +794,7 @@
             <!-- Photocell 1 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="Photocell1.jpg" alt="Photocell 1" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>🎛️</div>';">
+                    <img src="Photocell1.jpg" alt="Photocell 1" class="rotate-left" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>🎛️</div>';">
                 </div>
                 <div class="gallery-content">
                     <div>
@@ -802,7 +811,7 @@
             <!-- Photocell 2 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="Photocell2.jpg" alt="Photocell 2" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>⚡</div>';">
+                    <img src="Photocell2.jpg" alt="Photocell 2" class="rotate-left" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>⚡</div>';">
                 </div>
                 <div class="gallery-content">
                     <div>
@@ -853,7 +862,7 @@
             <!-- Tank 1 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="Tank1.jpg" alt="Tank 1" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>📦</div>';">
+                    <img src="Tank1.jpg" alt="Tank 1" class="rotate-left" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>📦</div>';">
                 </div>
                 <div class="gallery-content">
                     <div>
@@ -870,7 +879,7 @@
             <!-- Tank 2 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="Tank2.jpg" alt="Tank 2" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>📟</div>';">
+                    <img src="Tank2.jpg" alt="Tank 2" class="rotate-left" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>📟</div>';">
                 </div>
                 <div class="gallery-content">
                     <div>
@@ -887,7 +896,7 @@
             <!-- Tank 3 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="Tank3.jpg" alt="Tank 3" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>📊</div>';">
+                    <img src="Tank3.jpg" alt="Tank 3" class="rotate-left" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>📊</div>';">
                 </div>
                 <div class="gallery-content">
                     <div>
@@ -904,7 +913,7 @@
             <!-- Tank 4 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="Tank4.jpg" alt="Tank 4" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>🖥️</div>';">
+                    <img src="Tank4.jpg" alt="Tank 4" class="rotate-left" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>🖥️</div>';">
                 </div>
                 <div class="gallery-content">
                     <div>
