@@ -400,9 +400,9 @@
             transition: var(--transition);
         }
 
-        /* Περιστροφή 90 μοίρες αριστερά για τις 6 συγκεκριμένες εικόνες (Photocell 1, 2 και Tank 1, 2, 3, 4) */
+        /* Περιστροφή 90 μοίρες αριστερά όπου απαιτείται */
         .gallery-img-container img.rotate-left {
-            transform: rotate(-90deg) scale(0.85); /* scale για να χωρέσει τέλεια στο πλαίσιο */
+            transform: rotate(-90deg) scale(0.85);
         }
 
         .gallery-card:hover .gallery-img-container img.rotate-left {
@@ -781,7 +781,7 @@
         </div>
     </section>
 
-    <!-- Projects Gallery Section (Με τις 6 πρώτες εικόνες περιστρεφόμενες κατά -90deg) -->
+    <!-- Projects Gallery Section -->
     <section id="gallery">
         <div class="section-header">
             <span class="section-tag" id="gallery-tag">📸 Gallery Έργων</span>
@@ -957,6 +957,57 @@
                     <div class="tag-list">
                         <span class="tag">📈 Program Logic</span>
                         <span class="tag">💧 Thresholds</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SevenPrograms 1 (Βιολογικός - Πίνακας) -->
+            <div class="gallery-card">
+                <div class="gallery-img-container">
+                    <img src="SevenPrograms1.jpg" alt="SevenPrograms 1" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>⚙️</div>';">
+                </div>
+                <div class="gallery-content">
+                    <div>
+                        <h3>Επιλογέας 7 Προγραμμάτων Βιολογικού (1)</h3>
+                        <p>Εξωτερικός πίνακας ελέγχου με επιλογέα 7 θέσεων και ενδεικτικά 230V/24V για τη διαχείριση του βιολογικού καθαρισμού.</p>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">⚙️ 7-Program Selector</span>
+                        <span class="tag">🎛️ Biological Control</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SevenPrograms 2 (Βιολογικός - Εσωτερικό) -->
+            <div class="gallery-card">
+                <div class="gallery-img-container">
+                    <img src="SevenPrograms2.jpg" alt="SevenPrograms 2" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>📟</div>';">
+                </div>
+                <div class="gallery-content">
+                    <div>
+                        <h3>Εσωτερική Διάταξη & Siemens LOGO! (2)</h3>
+                        <p>Κεντρική μονάδα Siemens LOGO! με μονάδες επέκτασης, ασφαλιστικό υλικό ράγας DIN και κλέμες πεδίου.</p>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">📟 Siemens LOGO!</span>
+                        <span class="tag">⚡ Expansion Modules</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SevenPrograms 3 (Βιολογικός - Λογική) -->
+            <div class="gallery-card">
+                <div class="gallery-img-container">
+                    <img src="SevenPrograms3.jpg" alt="SevenPrograms 3" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>💻</div>';">
+                </div>
+                <div class="gallery-content">
+                    <div>
+                        <h3>Λογική 500+ Timers & 365 Ημερών (3)</h3>
+                        <p>Προγραμματισμός function blocks σε LOGO! Soft Comfort για ετήσιο χρονοπρογραμματισμό μοτέρ ανάδευσης ανάλογα με τις εποχές και την παραγωγή.</p>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">⏱️ 500+ Timers</span>
+                        <span class="tag">📈 365-Day Schedule</span>
                     </div>
                 </div>
             </div>
