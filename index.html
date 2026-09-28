@@ -1393,15 +1393,88 @@
 
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Με επιφύλαξη παντός δικαιώματος. • Πέτρος Λάμπου';
 
-        } else if(lang === 'en') {
+        } else if(lang === 'en' || lang === 'de' || lang === 'it' || lang === 'fr') {
+            // Ολοκληρωμένη μετάφραση/προσαρμογή για τις ξένες γλώσσες (English / Multi-Lang fallback)
+            document.getElementById('status-badge-text').innerText = 'Available for Custom Projects & Global Remote Support';
+            document.getElementById('hero-badge').innerText = 'Marine & Industrial Automation • Petros Lampou';
+            document.getElementById('hero-title-main').innerText = 'Lampou Marine';
+            document.getElementById('hero-title-sub').innerText = 'Automation Systems';
+            document.getElementById('hero-desc').innerText = 'Advanced marine automation, Siemens LOGO! PLC programming, telemetry systems, pumping stations, and high-reliability industrial control. Worldwide remote support & on-site services.';
+            document.getElementById('btn-contact-hero').innerText = '📋 Request a Quote';
+            document.getElementById('btn-serv-hero').innerText = '🧭 Discover Services';
+
+            document.getElementById('rfq-tag').innerText = '📝 Custom RFQ';
+            document.getElementById('rfq-title').innerText = 'Interactive Quote Request';
+            document.getElementById('rfq-desc').innerText = 'Select your installation type and required features for an instant inquiry.';
+            document.getElementById('lbl-vessel').innerText = 'Installation Type';
+            document.getElementById('lbl-other-vessel').innerText = 'Describe installation type:';
+            document.getElementById('lbl-features').innerText = 'Required Features / Alarms:';
+            document.getElementById('lbl-notes').innerText = 'Additional Notes / Details:';
             document.getElementById('opt-v1').innerText = 'Leisure Vessel (Yacht / RIB)';
             document.getElementById('opt-v2').innerText = 'Commercial / Tour Boat';
             document.getElementById('opt-v3').innerText = '💧 Pumping Station / Level & Pressure Control';
             document.getElementById('opt-v4').innerText = '⚙️ Industrial Automation / PLC Panel';
             document.getElementById('opt-v5').innerText = '✏️ Other (Specify)';
-            document.getElementById('lbl-other-vessel').innerText = 'Describe custom installation type:';
             document.getElementById('btn-email-quote').innerText = '📧 Send via Email';
             document.getElementById('btn-wa-quote').innerText = '💬 Send via WhatsApp';
+
+            document.getElementById('serv-tag').innerText = '💡 What We Offer';
+            document.getElementById('serv-title').innerText = 'Specialized Automation Services';
+            document.getElementById('serv-desc').innerText = 'High-tech solutions tailored to marine and industrial requirements.';
+
+            document.getElementById('s1-title').innerText = 'Marine Systems';
+            document.getElementById('s1-desc').innerText = 'Bilge monitoring, temperature, LPG gas detection, battery status, man overboard, and custom control panels.';
+            document.getElementById('s2-title').innerText = 'Siemens LOGO! & PLCs';
+            document.getElementById('s2-desc').innerText = 'Control logic programming, password security locking, and standalone timer management.';
+            document.getElementById('s3-title').innerText = 'Pumping & Level Control';
+            document.getElementById('s3-desc').innerText = 'Tank control, pump alternation, dry-run protection, 4-20mA sensors, and pressure booster sets.';
+            document.getElementById('s4-title').innerText = 'Industrial Control';
+            document.getElementById('s4-desc').innerText = 'SINAMICS/ABB inverters, safety mats, interlocking relays, control valves, and general troubleshooting.';
+
+            document.getElementById('gallery-tag').innerText = '📸 Project Gallery';
+            document.getElementById('gallery-title').innerHTML = '<a href="#gallery" style="color: inherit; text-decoration: none;">Photographic Evidence from Applications</a>';
+            document.getElementById('gallery-desc').innerText = 'Images from actual industrial and marine applications, PLC programming, and custom automation.';
+
+            document.getElementById('proj-tag').innerText = '🛠️ Applications';
+            document.getElementById('proj-title').innerText = 'System Architecture';
+            document.getElementById('proj-desc').innerText = 'Field applications emphasizing safety, visualization, and error prevention.';
+
+            document.getElementById('p1-title').innerText = 'Remote Telemetry';
+            document.getElementById('p1-desc').innerText = 'Real-time monitoring of critical measurements via communication modules and user-friendly Web HMI.';
+            document.getElementById('p2-title').innerText = 'Password-Locked Panels';
+            document.getElementById('p2-desc').innerText = 'Prevention of unauthorized access to panel programs and settings with strict key and screen locking.';
+            document.getElementById('p3-title').innerText = 'Lampou Marine System';
+            document.getElementById('p3-desc').innerText = 'Central vessel control unit with LOGO! screen, automatic alarms, and direct emergency event visualization. The LOGO! screen displays exclusively time and date during normal operation, while all active alarms are prominently shown.';
+
+            document.getElementById('about-tag').innerText = '⭐ Why Lampou Marine';
+            document.getElementById('about-title').innerText = 'Technical excellence and absolute control.';
+            document.getElementById('about-desc').innerText = 'Every project is custom-designed based on operating conditions and your precise requirements.';
+            document.getElementById('chk-1').innerHTML = '<span class="check-icon">🔹</span> Custom design and Siemens LOGO! programming';
+            document.getElementById('chk-2').innerHTML = '<span class="check-icon">🔹</span> Complete security with password locking on buttons and programs';
+            document.getElementById('chk-3').innerHTML = '<span class="check-icon">🔹</span> Specialization in leisure and commercial vessels (Greece & Europe)';
+            document.getElementById('chk-4').innerHTML = '<span class="check-icon">🔹</span> Telemetry systems, level sensors, and gas detectors';
+            document.getElementById('chk-5').innerHTML = '<span class="check-icon">🔹</span> Prompt technical support, on-site & remote troubleshooting';
+
+            document.getElementById('profile-name').innerText = '👨‍🔧 Petros Lampou';
+            document.getElementById('profile-role').innerText = '⚙️ Automation & Maintenance Engineer';
+            document.getElementById('profile-desc').innerText = 'Specialization in PLC systems, marine electronics, industrial automation, and high-demand maritime applications.';
+
+            document.getElementById('faq-tag').innerText = '📚 Knowledge Base';
+            document.getElementById('faq-title').innerText = 'Technical FAQ';
+            document.getElementById('faq-desc').innerText = 'Detailed guide for marine and industrial automation.';
+            document.getElementById('f1-q').innerText = '❓ What does a Lampou Marine boat automation system include?';
+            document.getElementById('f1-a').innerText = 'It includes bilge monitoring, battery control, LPG gas detection, safety alarms, and central visualization on the LOGO! screen (which exclusively displays time and date during normal operation while simultaneously displaying all active alarms).';
+            document.getElementById('f2-q').innerText = '❓ How is access protection achieved on the control panels?';
+            document.getElementById('f2-a').innerText = 'Password-locking is utilized in combination with programmed logic inside the Siemens LOGO! to prevent any unauthorized changes to settings and keys.';
+            document.getElementById('f3-q').innerText = '❓ Can the systems connect to a mobile phone?';
+            document.getElementById('f3-a').innerText = 'Yes, telemetry modules and Web HMI are supported for remote measurement monitoring and alarm notifications directly on mobile devices.';
+
+            document.getElementById('cont-title').innerText = '📬 Contact';
+            document.getElementById('cont-desc').innerText = 'We are at your disposal for any technical application, study, or support (Greece & Worldwide).';
+            document.getElementById('qr-title').innerText = '📇 Save Contact';
+            document.getElementById('qr-desc').innerText = 'Scan to instantly save to your contacts';
+
+            document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. All rights reserved. • Petros Lampou';
         }
     }
     </script>
