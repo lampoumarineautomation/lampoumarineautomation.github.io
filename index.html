@@ -108,6 +108,78 @@
             justify-content: space-between;
             align-items: center;
             padding: 0.8rem 2rem;
+            position: relative;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        /* Hamburger Menu Styles */
+        .menu-toggle {
+            background: var(--primary-light);
+            border: 1px solid var(--border-color);
+            color: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .menu-toggle:hover {
+            border-color: var(--accent);
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 2rem;
+            background: rgba(10, 25, 47, 0.98);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+            width: 240px;
+            padding: 0.5rem 0;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 1100;
+        }
+
+        .dropdown-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--accent);
+            padding-left: 1.5rem;
         }
 
         .logo {
@@ -400,7 +472,6 @@
             transition: var(--transition);
         }
 
-        /* Περιστροφή 90 μοίρες αριστερά όπου απαιτείται */
         .gallery-img-container img.rotate-left {
             transform: rotate(-90deg) scale(0.85);
         }
@@ -709,7 +780,26 @@
     <!-- Header & Navigation -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">⚡ <span id="logo-text">Lampou Marine</span></a>
+            <div class="nav-left">
+                <!-- Hamburger Menu Button -->
+                <div style="position: relative;">
+                    <button class="menu-toggle" onclick="toggleMenu(event)" title="Menu">
+                        ☰
+                    </button>
+                    <!-- Dropdown Navigation Links -->
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="#services" class="dropdown-item" onclick="closeMenu()">💡 <span id="m-serv">Υπηρεσίες</span></a>
+                        <a href="#gallery" class="dropdown-item" onclick="closeMenu()">📸 <span id="m-gall">Gallery Έργων</span></a>
+                        <a href="#projects" class="dropdown-item" onclick="closeMenu()">🛠️ <span id="m-proj">Εφαρμογές</span></a>
+                        <a href="#quote-section" class="dropdown-item" onclick="closeMenu()">📝 <span id="m-rfq">Αίτηση Προσφοράς</span></a>
+                        <a href="#about" class="dropdown-item" onclick="closeMenu()">⭐ <span id="m-about">Σχετικά</span></a>
+                        <a href="#faq" class="dropdown-item" onclick="closeMenu()">📚 <span id="m-faq">FAQ</span></a>
+                        <a href="#contact" class="dropdown-item" onclick="closeMenu()">📬 <span id="m-cont">Επικοινωνία</span></a>
+                    </div>
+                </div>
+                <a href="#" class="logo">⚡ <span id="logo-text">Lampou Marine</span></a>
+            </div>
+
             <div class="nav-actions">
                 <div class="lang-switch">
                     <button class="lang-btn active" onclick="setLanguage('el', event)" title="Ελληνικά">🇬🇷</button>
@@ -791,7 +881,7 @@
             <p class="section-desc" id="gallery-desc">Εικόνες από πραγματικές βιομηχανικές και ναυτιλιακές εφαρμογές, προγραμματισμό PLC και αυτοματισμούς.</p>
         </div>
         <div class="gallery-grid" id="galleryGrid">
-            <!-- Petros Laboratory (New Lab Card) -->
+            <!-- Petros Laboratory -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
                     <img src="PetrosLaboratory.jpg" alt="Petros Laboratory" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>👨‍🔧</div>';">
@@ -978,7 +1068,7 @@
                 </div>
             </div>
 
-            <!-- SevenPrograms 1 (Βιολογικός - Πίνακας) -->
+            <!-- SevenPrograms 1 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
                     <img src="SevenPrograms1.jpg" alt="SevenPrograms 1" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>⚙️</div>';">
@@ -995,7 +1085,7 @@
                 </div>
             </div>
 
-            <!-- SevenPrograms 2 (Βιολογικός - Εσωτερικό) -->
+            <!-- SevenPrograms 2 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
                     <img src="SevenPrograms2.jpg" alt="SevenPrograms 2" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>📟</div>';">
@@ -1012,7 +1102,7 @@
                 </div>
             </div>
 
-            <!-- SevenPrograms 3 (Βιολογικός - Λογική) -->
+            <!-- SevenPrograms 3 -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
                     <img src="SevenPrograms3.jpg" alt="SevenPrograms 3" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>💻</div>';">
@@ -1029,7 +1119,7 @@
                 </div>
             </div>
 
-            <!-- SoftStarterAbb (ABB Softstarter PSE45-600-70) -->
+            <!-- SoftStarterAbb -->
             <div class="gallery-card">
                 <div class="gallery-img-container">
                     <img src="SoftStarterAbb.jpg" alt="SoftStarterAbb" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'gallery-placeholder-icon\'>🔌</div>';">
@@ -1232,15 +1322,31 @@
     </footer>
 
     <script>
+    function toggleMenu(event) {
+        event.stopPropagation();
+        const menu = document.getElementById('dropdownMenu');
+        menu.classList.toggle('active');
+    }
+
+    function closeMenu() {
+        const menu = document.getElementById('dropdownMenu');
+        menu.classList.remove('active');
+    }
+
     function toggleFab() {
         const container = document.getElementById('fabContainer');
         container.classList.toggle('active');
     }
 
     document.addEventListener('click', function(event) {
-        const container = document.getElementById('fabContainer');
-        if (!container.contains(event.target)) {
-            container.classList.remove('active');
+        const fabContainer = document.getElementById('fabContainer');
+        if (!fabContainer.contains(event.target)) {
+            fabContainer.classList.remove('active');
+        }
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const menuToggle = document.querySelector('.menu-toggle');
+        if (!dropdownMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+            dropdownMenu.classList.remove('active');
         }
     });
 
@@ -1312,6 +1418,14 @@
         }
 
         if(lang === 'el') {
+            document.getElementById('m-serv').innerText = 'Υπηρεσίες';
+            document.getElementById('m-gall').innerText = 'Gallery Έργων';
+            document.getElementById('m-proj').innerText = 'Εφαρμογές';
+            document.getElementById('m-rfq').innerText = 'Αίτηση Προσφοράς';
+            document.getElementById('m-about').innerText = 'Σχετικά';
+            document.getElementById('m-faq').innerText = 'FAQ';
+            document.getElementById('m-cont').innerText = 'Επικοινωνία';
+
             document.getElementById('status-badge-text').innerText = 'Διαθέσιμος για Custom Έργα & Πανελλαδική/Διεθνή Κάλυψη';
             document.getElementById('hero-badge').innerText = 'Marine & Industrial Automation • Πέτρος Λάμπου';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
@@ -1394,6 +1508,14 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Με επιφύλαξη παντός δικαιώματος. • Πέτρος Λάμπου';
 
         } else if(lang === 'en') {
+            document.getElementById('m-serv').innerText = 'Services';
+            document.getElementById('m-gall').innerText = 'Project Gallery';
+            document.getElementById('m-proj').innerText = 'Applications';
+            document.getElementById('m-rfq').innerText = 'Request a Quote';
+            document.getElementById('m-about').innerText = 'About';
+            document.getElementById('m-faq').innerText = 'FAQ';
+            document.getElementById('m-cont').innerText = 'Contact';
+
             document.getElementById('status-badge-text').innerText = 'Available for Custom Projects & Global Remote Support';
             document.getElementById('hero-badge').innerText = 'Marine & Industrial Automation • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
@@ -1476,6 +1598,14 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. All rights reserved. • Petros Lampou';
 
         } else if(lang === 'de') {
+            document.getElementById('m-serv').innerText = 'Dienstleistungen';
+            document.getElementById('m-gall').innerText = 'Projektgalerie';
+            document.getElementById('m-proj').innerText = 'Anwendungen';
+            document.getElementById('m-rfq').innerText = 'Angebot Anfordern';
+            document.getElementById('m-about').innerText = 'Über Uns';
+            document.getElementById('m-faq').innerText = 'FAQ';
+            document.getElementById('m-cont').innerText = 'Kontakt';
+
             document.getElementById('status-badge-text').innerText = 'Verfügbar für Sonderprojekte & Weltweiten Fernsupport';
             document.getElementById('hero-badge').innerText = 'Marine- & Industrieautomation • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
@@ -1558,6 +1688,14 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Alle Rechte vorbehalten. • Petros Lampou';
 
         } else if(lang === 'it') {
+            document.getElementById('m-serv').innerText = 'Servizi';
+            document.getElementById('m-gall').innerText = 'Galleria Progetti';
+            document.getElementById('m-proj').innerText = 'Applicazioni';
+            document.getElementById('m-rfq').innerText = 'Richiedi Preventivo';
+            document.getElementById('m-about').innerText = 'Chi Siamo';
+            document.getElementById('m-faq').innerText = 'FAQ';
+            document.getElementById('m-cont').innerText = 'Contatti';
+
             document.getElementById('status-badge-text').innerText = 'Disponibile per Progetti Custom & Supporto Remoto Globale';
             document.getElementById('hero-badge').innerText = 'Automazione Navale & Industriale • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
@@ -1640,6 +1778,14 @@
             document.getElementById('footer-text').innerHTML = '&copy; 2026 Lampou Marine Automation Systems. Tutti i diritti riservati. • Petros Lampou';
 
         } else if(lang === 'fr') {
+            document.getElementById('m-serv').innerText = 'Services';
+            document.getElementById('m-gall').innerText = 'Galerie de Projets';
+            document.getElementById('m-proj').innerText = 'Applications';
+            document.getElementById('m-rfq').innerText = 'Demander un Devis';
+            document.getElementById('m-about').innerText = 'À Propos';
+            document.getElementById('m-faq').innerText = 'FAQ';
+            document.getElementById('m-cont').innerText = 'Contact';
+
             document.getElementById('status-badge-text').innerText = 'Disponible pour Projets Sur Mesure & Support à Distance Global';
             document.getElementById('hero-badge').innerText = 'Automatisation Marine & Industrielle • Petros Lampou';
             document.getElementById('hero-title-main').innerText = 'Lampou Marine';
