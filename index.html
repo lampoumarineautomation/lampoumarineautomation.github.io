@@ -6,9 +6,14 @@
     <title>Lampou Marine Automation Systems | Πανελλαδικοί & Διεθνείς Αυτοματισμοί Σκαφών</title>
     <meta name="description" content="Εξειδικευμένοι αυτοματισμοί σκαφών, προγραμματισμός Siemens LOGO!, συστήματα τηλεμετρίας, αντλιοστάσια και βιομηχανικός έλεγχος υψηλής αξιοπιστίας από τον Πέτρο Λάμπου. Πανελλαδική κάλυψη & remote support.">
     <meta name="keywords" content="marine automation greece, siemens logo boat automation, lambou marine, πετρος λαμου, αυτοματισμοι σκαφων, τηλεμετρια σκαφους">
-    <meta property="og:title" content="Lampou Marine Automation Systems">
+    
+    <!-- Open Graph SEO Tags -->
+    <meta property="og:title" content="Lampou Marine Automation Systems | Petros Lampou">
     <meta property="og:description" content="Advanced Marine & Industrial Automation, Siemens LOGO! PLC, Telemetry, Nationwide & International Remote Support.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lampoumarineautomation.github.io/">
+    <meta property="og:image" content="https://lampoumarineautomation.github.io/PetrosLaboratory.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -71,6 +76,19 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        [data-theme="light"] {
+            --primary: #f1f5f9;
+            --primary-light: #e2e8f0;
+            --accent: #0284c7;
+            --accent-blue: #2563eb;
+            --success-green: #059669;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --bg-body: #f8fafc;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --border-color: rgba(15, 23, 42, 0.12);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -88,6 +106,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             padding-top: 85px; 
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         header {
@@ -96,9 +115,11 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(2, 6, 23, 0.95);
+            background: var(--bg-body);
+            opacity: 0.97;
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
+            transition: background 0.3s ease, border-color 0.3s ease;
         }
 
         .nav-container {
@@ -142,10 +163,10 @@
             position: absolute;
             top: 100%;
             left: 2rem;
-            background: rgba(10, 25, 47, 0.98);
+            background: var(--bg-body);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(12px);
             width: 240px;
             padding: 0.5rem 0;
@@ -176,7 +197,7 @@
             gap: 0.5rem;
         }
 
-        .dropdown-item:hover {
+        .dropdown-item:hover, .dropdown-item.active-link {
             background: rgba(0, 240, 255, 0.1);
             color: var(--accent);
             padding-left: 1.5rem;
@@ -201,6 +222,25 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+        }
+
+        .theme-toggle {
+            background: var(--primary-light);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent);
         }
 
         .lang-switch {
@@ -239,7 +279,7 @@
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 600;
-            color: #34d399;
+            color: var(--success-green);
             margin-bottom: 1.5rem;
         }
 
@@ -347,7 +387,7 @@
         .btn-cyan {
             background: linear-gradient(135deg, var(--accent), var(--accent-blue));
             background-size: 200% 200%;
-            color: var(--primary);
+            color: #0a192f;
             animation: neonPulse 3s infinite ease-in-out, gradientShift 6s infinite ease;
             border: 1px solid rgba(0, 240, 255, 0.4);
         }
@@ -423,7 +463,7 @@
         .service-card:hover {
             transform: translateY(-5px);
             border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .service-icon { font-size: 2.5rem; margin-bottom: 1.5rem; }
@@ -592,7 +632,7 @@
             border: 1px solid var(--border-color);
             border-radius: 24px;
             padding: 3rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
         .form-group {
             margin-bottom: 1.5rem;
@@ -605,7 +645,7 @@
         }
         .form-control, select.form-control {
             width: 100%;
-            background: rgba(2, 6, 23, 0.8);
+            background: var(--primary-light);
             border: 1px solid var(--border-color);
             border-radius: 10px;
             padding: 0.85rem 1rem;
@@ -627,7 +667,7 @@
             display: flex;
             align-items: center;
             gap: 0.6rem;
-            background: rgba(2, 6, 23, 0.4);
+            background: var(--primary-light);
             border: 1px solid var(--border-color);
             padding: 0.6rem 1rem;
             border-radius: 8px;
@@ -654,11 +694,26 @@
             background: #25d366;
             color: #000;
             border: none;
+            font-weight: 600;
         }
         .btn-whatsapp:hover {
             box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
             transform: translateY(-2px);
         }
+
+        .cta-banner {
+            max-width: 1000px;
+            margin: 4rem auto;
+            background: linear-gradient(135deg, var(--primary-light), var(--card-bg));
+            border: 1px solid var(--accent);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.1);
+        }
+        .cta-banner h3 { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-main); }
+        .cta-banner p { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem; }
+        .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
         .contact-container {
             display: grid;
@@ -683,7 +738,7 @@
         .contact-item:hover { color: var(--accent); }
 
         .vcard-qr-box {
-            background: rgba(2, 6, 23, 0.6);
+            background: var(--primary-light);
             border: 1px solid rgba(0, 240, 255, 0.3);
             border-radius: 20px;
             padding: 2rem;
@@ -724,7 +779,7 @@
             height: 60px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--accent), var(--accent-blue));
-            color: var(--primary);
+            color: #0a192f;
             border: 1px solid rgba(0, 240, 255, 0.5);
             font-size: 1.5rem;
             cursor: pointer;
@@ -775,7 +830,7 @@
         }
     </style>
 </head>
-<body>
+<body data-theme="dark">
 
     <!-- Header & Navigation -->
     <header>
@@ -801,6 +856,10 @@
             </div>
 
             <div class="nav-actions">
+                <!-- Theme (Dark/Light) Toggle Button -->
+                <button class="theme-toggle" onclick="toggleTheme()" id="themeToggleBtn" title="Toggle Theme">
+                    🌙
+                </button>
                 <div class="lang-switch">
                     <button class="lang-btn active" onclick="setLanguage('el', event)" title="Ελληνικά">🇬🇷</button>
                     <button class="lang-btn" onclick="setLanguage('en', event)" title="English">🇬🇧</button>
@@ -813,7 +872,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
             <div class="status-badge-container">
                 <div class="status-dot"></div>
@@ -1231,6 +1290,16 @@
         </div>
     </section>
 
+    <!-- Quick CTA Banner -->
+    <div class="cta-banner">
+        <h3 id="cta-title">Χρειάζεστε άμεση τεχνική υποστήριξη ή μελέτη έργου;</h3>
+        <p id="cta-desc">Επικοινωνήστε απευθείας τηλεφωνικά ή μέσω WhatsApp για γρήγορη ανταπόκριση.</p>
+        <div class="cta-buttons">
+            <a href="tel:+306932942432" class="btn btn-cyan">📞 +30 6932942432</a>
+            <a href="https://wa.me/306932942432" target="_blank" class="btn btn-whatsapp">💬 WhatsApp Chat</a>
+        </div>
+    </div>
+
     <!-- About Section -->
     <section id="about">
         <div class="about-grid">
@@ -1337,6 +1406,42 @@
         const container = document.getElementById('fabContainer');
         container.classList.toggle('active');
     }
+
+    function toggleTheme() {
+        const body = document.body;
+        const btn = document.getElementById('themeToggleBtn');
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.setAttribute('data-theme', 'light');
+            btn.innerText = '☀️';
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            btn.innerText = '🌙';
+        }
+    }
+
+    // Smooth Scroll & Active Menu Highlighting Observer
+    window.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.dropdown-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active-link');
+                if (item.getAttribute('href').includes(current)) {
+                    item.classList.add('active-link');
+                }
+            });
+        });
+    });
 
     document.addEventListener('click', function(event) {
         const fabContainer = document.getElementById('fabContainer');
@@ -1449,6 +1554,9 @@
             document.getElementById('btn-email-quote').innerText = '📧 Αποστολή με Email';
             document.getElementById('btn-wa-quote').innerText = '💬 Αποστολή μέσω WhatsApp';
 
+            document.getElementById('cta-title').innerText = 'Χρειάζεστε άμεση τεχνική υποστήριξη ή μελέτη έργου;';
+            document.getElementById('cta-desc').innerText = 'Επικοινωνήστε απευθείας τηλεφωνικά ή μέσω WhatsApp για γρήγορη ανταπόκριση.';
+
             document.getElementById('serv-tag').innerText = '💡 Τι προσφέρουμε';
             document.getElementById('serv-title').innerText = 'Εξειδικευμένες Υπηρεσίες Αυτοματισμού';
             document.getElementById('serv-desc').innerText = 'Λύσεις υψηλής τεχνολογίας προσαρμοσμένες στις απαιτήσεις της θάλασσας και της βιομηχανίας.';
@@ -1538,6 +1646,9 @@
             document.getElementById('opt-v5').innerText = '✏️ Other (Specify)';
             document.getElementById('btn-email-quote').innerText = '📧 Send via Email';
             document.getElementById('btn-wa-quote').innerText = '💬 Send via WhatsApp';
+
+            document.getElementById('cta-title').innerText = 'Need immediate technical support or project consultation?';
+            document.getElementById('cta-desc').innerText = 'Contact directly by phone or via WhatsApp for a fast response.';
 
             document.getElementById('serv-tag').innerText = '💡 What We Offer';
             document.getElementById('serv-title').innerText = 'Specialized Automation Services';
@@ -1629,6 +1740,9 @@
             document.getElementById('btn-email-quote').innerText = '📧 Per E-Mail Senden';
             document.getElementById('btn-wa-quote').innerText = '💬 Über WhatsApp Senden';
 
+            document.getElementById('cta-title').innerText = 'Benötigen Sie technischen Support oder eine Projektberatung?';
+            document.getElementById('cta-desc').innerText = 'Kontaktieren Sie uns direkt telefonisch oder via WhatsApp.';
+
             document.getElementById('serv-tag').innerText = '💡 Unser Angebot';
             document.getElementById('serv-title').innerText = 'Spezialisierte Automatisierungsdienste';
             document.getElementById('serv-desc').innerText = 'Hochtechnologielösungen zugeschnitten auf Marine- und Industrieanforderungen.';
@@ -1719,6 +1833,9 @@
             document.getElementById('btn-email-quote').innerText = '📧 Invia via Email';
             document.getElementById('btn-wa-quote').innerText = '💬 Invia tramite WhatsApp';
 
+            document.getElementById('cta-title').innerText = 'Hai bisogno di supporto tecnico immediato o di una consulenza?';
+            document.getElementById('cta-desc').innerText = 'Contatta direttamente via telefono o WhatsApp.';
+
             document.getElementById('serv-tag').innerText = '💡 Cosa Offriamo';
             document.getElementById('serv-title').innerText = 'Servizi di Automazione Specializzati';
             document.getElementById('serv-desc').innerText = 'Soluzioni high-tech su misura per requisiti navali e industriali.';
@@ -1808,6 +1925,9 @@
             document.getElementById('opt-v5').innerText = '✏️ Autre (Préciser)';
             document.getElementById('btn-email-quote').innerText = '📧 Envoyer par Email';
             document.getElementById('btn-wa-quote').innerText = '💬 Envoyer via WhatsApp';
+
+            document.getElementById('cta-title').innerText = 'Besoin d’un support technique ou d’une consultation ?';
+            document.getElementById('cta-desc').innerText = 'Contactez-nous directement par téléphone ou via WhatsApp.';
 
             document.getElementById('serv-tag').innerText = '💡 Ce Que Nous Offrons';
             document.getElementById('serv-title').innerText = 'Services d’Automatisation Spécialisés';
