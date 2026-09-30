@@ -128,14 +128,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.8rem 2rem;
+            padding: 0.6rem 1rem;
             position: relative;
+            gap: 0.5rem;
         }
 
         .nav-left {
             display: flex;
             align-items: center;
-            gap: 1.25rem;
+            gap: 0.75rem;
         }
 
         /* Hamburger Menu Styles */
@@ -143,15 +144,16 @@
             background: var(--primary-light);
             border: 1px solid var(--border-color);
             color: var(--accent);
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             cursor: pointer;
             transition: var(--transition);
+            flex-shrink: 0;
         }
 
         .menu-toggle:hover {
@@ -162,7 +164,7 @@
         .dropdown-menu {
             position: absolute;
             top: 100%;
-            left: 2rem;
+            left: 1rem;
             background: var(--bg-body);
             border: 1px solid var(--border-color);
             border-radius: 12px;
@@ -205,13 +207,14 @@
 
         .logo {
             font-weight: 800;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             letter-spacing: -0.5px;
             color: var(--text-main);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
+            white-space: nowrap;
         }
 
         .logo span {
@@ -221,22 +224,23 @@
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
         }
 
         .theme-toggle {
             background: var(--primary-light);
             border: 1px solid var(--border-color);
             color: var(--text-main);
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 1rem;
+            font-size: 0.9rem;
+            flex-shrink: 0;
         }
 
         .theme-toggle:hover {
@@ -249,18 +253,19 @@
             border-radius: 8px;
             padding: 2px;
             border: 1px solid var(--border-color);
-            gap: 2px;
+            gap: 1px;
         }
 
         .lang-btn {
             background: transparent;
             border: none;
             color: var(--text-muted);
-            padding: 4px 8px;
-            font-size: 0.85rem;
+            padding: 3px 5px;
+            font-size: 0.75rem;
             cursor: pointer;
-            border-radius: 6px;
+            border-radius: 5px;
             transition: var(--transition);
+            flex-shrink: 0;
         }
 
         .lang-btn.active {
@@ -1317,8 +1322,8 @@
             </div>
             <div>
                 <div class="why-card-box">
-                    <h3 id="profile-name">👨‍🔧 Πέτρος Λάμπου</h3>
-                    <p><strong id="profile-role">⚙️ Automation & Maintenance Engineer</strong></p>
+                    <h3 id="profile-name">👨‍‍🔧 Πέτρος Λάμπου</h3>
+                    <p><strong id="profile-role">⚙️️ Automation & Maintenance Engineer</strong></p>
                     <p id="profile-desc" style="color: var(--text-muted); margin-top: 1rem;">Εξειδίκευση σε συστήματα PLC, ηλεκτρονικά σκαφών, βιομηχανική αυτοποίηση και ναυτιλιακές εφαρμογές υψηλών απαιτήσεων.</p>
                 </div>
             </div>
@@ -1554,7 +1559,7 @@
             document.getElementById('btn-email-quote').innerText = '📧 Αποστολή με Email';
             document.getElementById('btn-wa-quote').innerText = '💬 Αποστολή μέσω WhatsApp';
 
-            document.getElementById('cta-title').innerText = 'Χρειάζεστε άμεση τεχνική υποστήριξη ή μελέτη έργου;';
+            document.getElementById('cta-title').innerText = 'Χρειάζεστε άμεση τεχνική υποστήριξη ή μελέτη έργου?';
             document.getElementById('cta-desc').innerText = 'Επικοινωνήστε απευθείας τηλεφωνικά ή μέσω WhatsApp για γρήγορη ανταπόκριση.';
 
             document.getElementById('serv-tag').innerText = '💡 Τι προσφέρουμε';
@@ -1780,7 +1785,7 @@
             document.getElementById('chk-4').innerHTML = '<span class="check-icon">🔹</span> Telemetriesysteme, Füllstandssensoren und Gasmelder';
             document.getElementById('chk-5').innerHTML = '<span class="check-icon">🔹</span> Prompt technischer Support, Vor-Ort & Remote';
 
-            document.getElementById('profile-name').innerText = '👨‍🔧 Petros Lampou';
+            document.getElementById('profile-name').innerText = '👨‍‍🔧 Petros Lampou';
             document.getElementById('profile-role').innerText = '⚙️ Automation & Maintenance Engineer';
             document.getElementById('profile-desc').innerText = 'Spezialisierung auf SPS-Systeme, Schiffelektronik, Industrieautomation und anspruchsvolle maritime Anwendungen.';
 
