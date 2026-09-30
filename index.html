@@ -105,7 +105,7 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 85px; 
+            padding-top: 80px; 
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
@@ -128,15 +128,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.6rem 1rem;
+            padding: 0.5rem 0.6rem;
             position: relative;
-            gap: 0.5rem;
+            gap: 0.2rem;
         }
 
         .nav-left {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.5rem;
+            min-width: 0;
         }
 
         /* Hamburger Menu Styles */
@@ -144,13 +145,13 @@
             background: var(--primary-light);
             border: 1px solid var(--border-color);
             color: var(--accent);
-            width: 38px;
-            height: 38px;
-            border-radius: 8px;
+            width: 34px;
+            height: 34px;
+            border-radius: 7px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: var(--transition);
             flex-shrink: 0;
@@ -164,7 +165,7 @@
         .dropdown-menu {
             position: absolute;
             top: 100%;
-            left: 1rem;
+            left: 0.5rem;
             background: var(--bg-body);
             border: 1px solid var(--border-color);
             border-radius: 12px;
@@ -207,14 +208,16 @@
 
         .logo {
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 1rem;
             letter-spacing: -0.5px;
             color: var(--text-main);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.3rem;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .logo span {
@@ -224,22 +227,23 @@
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.3rem;
+            flex-shrink: 0;
         }
 
         .theme-toggle {
             background: var(--primary-light);
             border: 1px solid var(--border-color);
             color: var(--text-main);
-            width: 34px;
-            height: 34px;
-            border-radius: 8px;
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             flex-shrink: 0;
         }
 
@@ -250,8 +254,8 @@
         .lang-switch {
             display: flex;
             background: var(--primary-light);
-            border-radius: 8px;
-            padding: 2px;
+            border-radius: 7px;
+            padding: 1px;
             border: 1px solid var(--border-color);
             gap: 1px;
         }
@@ -260,10 +264,10 @@
             background: transparent;
             border: none;
             color: var(--text-muted);
-            padding: 3px 5px;
-            font-size: 0.75rem;
+            padding: 2px 3px;
+            font-size: 0.7rem;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 4px;
             transition: var(--transition);
             flex-shrink: 0;
         }
@@ -305,7 +309,7 @@
 
         .hero {
             position: relative;
-            min-height: calc(100vh - 85px);
+            min-height: calc(100vh - 80px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -857,7 +861,7 @@
                         <a href="#contact" class="dropdown-item" onclick="closeMenu()">📬 <span id="m-cont">Επικοινωνία</span></a>
                     </div>
                 </div>
-                <a href="#" class="logo">⚡ <span id="logo-text">Lampou Marine</span></a>
+                <a href="#" class="logo">⚡ <span id="logo-text">Lampou</span></a>
             </div>
 
             <div class="nav-actions">
@@ -1205,7 +1209,7 @@
     <!-- Projects / Applications Overview Section -->
     <section id="projects">
         <div class="section-header">
-            <span class="section-tag" id="proj-tag">🛠️ Applications</span>
+            <span class="section-tag" id="proj-tag">🛠️️ Applications</span>
             <h2 class="section-title" id="proj-title">Αρχιτεκτονική Συστημάτων</h2>
             <p class="section-desc" id="proj-desc">Εφαρμογές πεδίου με έμφαση στην ασφάλεια, την οπτικοποίηση και την αποτροπή σφαλμάτων.</p>
         </div>
@@ -1322,8 +1326,8 @@
             </div>
             <div>
                 <div class="why-card-box">
-                    <h3 id="profile-name">👨‍‍🔧 Πέτρος Λάμπου</h3>
-                    <p><strong id="profile-role">⚙️️ Automation & Maintenance Engineer</strong></p>
+                    <h3 id="profile-name">👨‍🔧 Πέτρος Λάμπου</h3>
+                    <p><strong id="profile-role">⚙️ Automation & Maintenance Engineer</strong></p>
                     <p id="profile-desc" style="color: var(--text-muted); margin-top: 1rem;">Εξειδίκευση σε συστήματα PLC, ηλεκτρονικά σκαφών, βιομηχανική αυτοποίηση και ναυτιλιακές εφαρμογές υψηλών απαιτήσεων.</p>
                 </div>
             </div>
@@ -1555,11 +1559,11 @@
             document.getElementById('opt-v2').innerText = 'Επαγγελματικό / Τουριστικό Σκάφος';
             document.getElementById('opt-v3').innerText = '💧 Αντλιοστάσιο / Level & Pressure Control';
             document.getElementById('opt-v4').innerText = '⚙️ Βιομηχανικός Αυτοματισμός / PLC Panel';
-            document.getElementById('opt-v5').innerText = '✏️ Άλλο / Other (Περιγράψτε)';
+            document.getElementById('opt-v5').innerText = '✏️️ Άλλο / Other (Περιγράψτε)';
             document.getElementById('btn-email-quote').innerText = '📧 Αποστολή με Email';
             document.getElementById('btn-wa-quote').innerText = '💬 Αποστολή μέσω WhatsApp';
 
-            document.getElementById('cta-title').innerText = 'Χρειάζεστε άμεση τεχνική υποστήριξη ή μελέτη έργου?';
+            document.getElementById('cta-title').innerText = 'Χρειάζεστε άμεση τεχνική υποστήριξη ή μελέτη έργου;';
             document.getElementById('cta-desc').innerText = 'Επικοινωνήστε απευθείας τηλεφωνικά ή μέσω WhatsApp για γρήγορη ανταπόκριση.';
 
             document.getElementById('serv-tag').innerText = '💡 Τι προσφέρουμε';
@@ -1785,7 +1789,7 @@
             document.getElementById('chk-4').innerHTML = '<span class="check-icon">🔹</span> Telemetriesysteme, Füllstandssensoren und Gasmelder';
             document.getElementById('chk-5').innerHTML = '<span class="check-icon">🔹</span> Prompt technischer Support, Vor-Ort & Remote';
 
-            document.getElementById('profile-name').innerText = '👨‍‍🔧 Petros Lampou';
+            document.getElementById('profile-name').innerText = '👨‍🔧 Petros Lampou';
             document.getElementById('profile-role').innerText = '⚙️ Automation & Maintenance Engineer';
             document.getElementById('profile-desc').innerText = 'Spezialisierung auf SPS-Systeme, Schiffelektronik, Industrieautomation und anspruchsvolle maritime Anwendungen.';
 
@@ -1951,7 +1955,7 @@
             document.getElementById('gallery-title').innerHTML = '<a href="#gallery" style="color: inherit; text-decoration: none;">Preuves Photographiques d’Applications</a>';
             document.getElementById('gallery-desc').innerText = 'Images d’applications industrielles et maritimes réelles, programmation PLC et automatisation.';
 
-            document.getElementById('proj-tag').innerText = '🛠️ Applications';
+            document.getElementById('proj-tag').innerText, document.getElementById('proj-tag').innerText = '🛠️ Applications';
             document.getElementById('proj-title').innerText = 'Architecture des Systèmes';
             document.getElementById('proj-desc').innerText = 'Applications de terrain mettant l’accent sur la sécurité, la visualisation et la prévention des erreurs.';
 
