@@ -1997,24 +1997,4 @@
     }
     </script>
 </body>
-        </script>
-    <!-- Αυτόματος Τοπικός Μετρητής Επισκέψεων -->
-    <div style="text-align: center; margin: 25px 0; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-        <p style="color: var(--text-muted, #94a3b8); font-size: 0.85rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">📊 Στατιστικά Σελίδας</p>
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.3); padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(0,255,200,0.2);">
-            <span style="width: 8px; height: 8px; background-color: #10b981; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px #10b981;"></span>
-            <span style="color: #ffffff; font-size: 0.9rem; font-weight: 600; font-family: monospace;">Συνολικές Επισκέψεις: <span id="visit-count">1</span></span>
-        </div>
-    </div>
-    <script>
-        // Αυτόματη καταμέτρηση επισκέψεων
-        let visits = localStorage.getItem('lampou_marine_visits');
-        if (!visits) {
-            visits = 1240; // Αρχική τιμή εκκίνησης για να φαίνεται ζωντανό
-        }
-        visits = parseInt(visits) + 1;
-        localStorage.setItem('lampou_marine_visits', visits);
-        document.getElementById('visit-count').innerText = visits;
-    </script>
-</body>
 </html>
